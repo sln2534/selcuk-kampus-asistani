@@ -9,3 +9,5 @@ data/stats.jsonl
 eval/sonuclar.csv
 .vscode/
 .DS_Store
+.vs/
+.idea/
