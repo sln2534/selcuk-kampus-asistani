@@ -1,0 +1,37 @@
+{
+  "_not": "ÖRNEK VERİ! Tarihler gerçek değildir. Zehra Nur: 2026-2027 resmî akademik takvim PDF'inden doldurup 'kaynak' alanını güncelle. Tarih formatı YYYY-AA-GG.",
+  "donem": "2026-2027 Güz",
+  "kaynak": "Selçuk Üniversitesi 2026-2027 Akademik Takvimi (ÖRNEK – doğrulanmadı)",
+  "etkinlikler": [
+    {
+      "ad": "Ara sınavlar (vize)",
+      "baslangic": "2026-11-16",
+      "bitis": "2026-11-22",
+      "anahtar_kelimeler": ["vize", "ara sınav", "arasınav"]
+    },
+    {
+      "ad": "Ara sınav mazeret sınavları",
+      "baslangic": "2026-12-07",
+      "bitis": "2026-12-09",
+      "anahtar_kelimeler": ["mazeret"]
+    },
+    {
+      "ad": "Yarıyıl sonu sınavları (final)",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-22",
+      "anahtar_kelimeler": ["final", "yarıyıl sonu", "dönem sonu"]
+    },
+    {
+      "ad": "Bütünleme sınavları",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-02-07",
+      "anahtar_kelimeler": ["bütünleme", "büt"]
+    },
+    {
+      "ad": "Bahar yarıyılı ders kayıtları",
+      "baslangic": "2027-02-08",
+      "bitis": "2027-02-12",
+      "anahtar_kelimeler": ["ders kaydı", "kayıt yenileme", "ders seçimi"]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "_not": "Zehra Nur: iletişim bilgilerini YALNIZCA selcuk.edu.tr üzerindeki resmî sayfalardan doldur. Boş alanlar botta gösterilmez. TODO işaretli alanları doğrulamadan yayına alma.",
+  "birimler": [
+    {
+      "ad": "Öğrenci İşleri Daire Başkanlığı",
+      "varsayilan": true,
+      "anahtar_kelimeler": ["kayıt", "transkript", "belge", "öğrenci belgesi", "mezuniyet", "yatay geçiş", "dondurma", "harç", "not", "sınav", "mazeret", "muafiyet", "devamsızlık"],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://www.selcuk.edu.tr",
+      "konum": ""
+    },
+    {
+      "ad": "Sağlık, Kültür ve Spor Daire Başkanlığı",
+      "anahtar_kelimeler": ["burs", "yemekhane", "yemek", "menü", "kulüp", "topluluk", "etkinlik", "kısmi zamanlı", "part time", "spor"],
+      "telefon": "",
+      "eposta": "",
+      "web": "",
+      "konum": ""
+    },
+    {
+      "ad": "Kütüphane ve Dokümantasyon Daire Başkanlığı",
+      "anahtar_kelimeler": ["kütüphane", "kitap", "ödünç", "çalışma salonu"],
+      "telefon": "",
+      "eposta": "",
+      "web": "",
+      "konum": ""
+    },
+    {
+      "ad": "Konya Büyükşehir Belediyesi Ulaşım (ATUS) / ring bilgisi",
+      "anahtar_kelimeler": ["ring", "otobüs", "tramvay", "dolmuş", "ulaşım", "sefer"],
+      "telefon": "",
+      "eposta": "",
+      "web": "",
+      "konum": ""
+    },
+    {
+      "ad": "Kredi ve Yurtlar (KYK) / Yurt müdürlüğü",
+      "anahtar_kelimeler": ["yurt", "kyk", "barınma"],
+      "telefon": "",
+      "eposta": "",
+      "web": "",
+      "konum": ""
+    }
+  ]
+}

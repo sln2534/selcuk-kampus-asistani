@@ -1,0 +1,77 @@
+"""FastAPI servisi.
+
+    uvicorn app.api:app --reload
+"""
+import re
+import time
+
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, Field
+
+from app import stats, takvim
+from app.config import get_settings
+from app.rag.answer import answer_question
+
+app = FastAPI(title="Selçuk Kampüs Asistanı API", version="0.1.0")
+
+DISCLAIMER = "ℹ️ Öğrenci projesidir, resmî değildir. Kesin bilgi için Öğrenci İşleri'ne danışın."
+
+# Basit prompt-injection ön filtresi. Asıl koruma sistem prompt'undadır; bu yalnızca bariz denemeleri keser.
+INJECTION_PATTERNS = [
+    r"(önceki|yukarıdaki|tüm)\s+(talimat|kural)\w*\s+(unut|yok say|görmezden)",
+    r"ignore (all |the )?(previous|above) (instructions|rules)",
+    r"system prompt",
+    r"sistem (prompt|talimat)\w*\s*(göster|yaz|ver)",
+    r"you are now|artık sen bir",
+]
+
+
+class AskRequest(BaseModel):
+    question: str = Field(..., min_length=2)
+    user_id: str | None = None  # yalnızca anonim sayım için; saklanmaz
+
+
+class AskResponse(BaseModel):
+    answer: str
+    sources: list[str] = []
+    answered: bool
+    kind: str
+    latency_ms: int
+
+
+def looks_like_injection(q: str) -> bool:
+    ql = q.lower()
+    return any(re.search(p, ql) for p in INJECTION_PATTERNS)
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
+@app.get("/stats")
+def get_stats():
+    return stats.summary()
+
+
+@app.post("/ask", response_model=AskResponse)
+def ask(req: AskRequest):
+    s = get_settings()
+    q = req.question.strip()
+    if len(q) > s.max_question_len:
+        raise HTTPException(400, f"Soru en fazla {s.max_question_len} karakter olabilir.")
+
+    start = time.perf_counter()
+    sources: list[str] = []
+    if looks_like_injection(q):
+        kind, answered = "guvenlik", False
+        text = "Bu isteğe yardımcı olamam. Üniversiteyle ilgili bir soru sorabilirsin. 😊"
+    elif (cal := takvim.answer_date_question(q)) is not None:
+        kind, answered, text = "takvim", True, cal
+    else:
+        res = answer_question(q)
+        kind, answered, text, sources = "rag", res.answered, res.text, res.sources
+
+    latency = int((time.perf_counter() - start) * 1000)
+    stats.log_event(kind=kind, latency_ms=latency, answered=answered, user=stats.anon_user(req.user_id))
+    return AskResponse(answer=text, sources=sources, answered=answered, kind=kind, latency_ms=latency)
