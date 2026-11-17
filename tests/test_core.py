@@ -122,3 +122,10 @@ def test_ingest_and_retrieve_end_to_end(tmp_path, monkeypatch):
     docs = answer.retrieve("Mazeret sinavi")
     assert docs and docs[0].metadata["source"] == "yonetmelik.pdf"
     store.get_vectorstore.cache_clear()
+
+
+def test_bot_handler_does_not_shadow_takvim_module():
+    """/takvim komut fonksiyonu takvim modülünün üstüne yazmamalı."""
+    from app import bot
+
+    assert hasattr(bot.takvim, "upcoming")

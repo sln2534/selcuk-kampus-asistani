@@ -30,7 +30,7 @@ async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(WELCOME, parse_mode=ParseMode.MARKDOWN)
 
 
-async def takvim(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
+async def takvim_komutu(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     evs = takvim.upcoming()
     if not evs:
         await update.message.reply_text("Takvimde yaklaşan bir tarih bulamadım.")
@@ -71,7 +71,7 @@ def main() -> None:
     app = Application.builder().token(token).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler(["yardim", "help"], start))
-    app.add_handler(CommandHandler("takvim", takvim))
+    app.add_handler(CommandHandler("takvim", takvim_komutu))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_question))
     log.info("Bot çalışıyor…")
     app.run_polling(allowed_updates=Update.ALL_TYPES)
