@@ -19,13 +19,17 @@ NO_ANSWER = "BILGI_YOK"
 log = logging.getLogger("rag")
 
 
+# Yeniden denemenin işe yaramayacağı kalıcı hatalar (yanlış model adı, geçersiz anahtar vb.)
+PERMANENT_ERRORS = ("NOT_FOUND", "PERMISSION_DENIED", "INVALID_ARGUMENT", "API_KEY_INVALID", "UNAUTHENTICATED")
+
+
 def with_retry(fn, *args, attempts: int = 3, base_delay: float = 1.0):
     """Gemini'ye giden çağrıları geçici ağ hatalarında yeniden dener (1 sn, 2 sn bekleyerek)."""
     for i in range(attempts):
         try:
             return fn(*args)
         except Exception as e:  # noqa: BLE001 - kütüphaneler farklı hata türleri fırlatıyor
-            if i == attempts - 1:
+            if i == attempts - 1 or any(code in str(e) for code in PERMANENT_ERRORS):
                 raise
             log.warning("Gemini çağrısı başarısız (%s/%s): %s", i + 1, attempts, e)
             time.sleep(base_delay * (2**i))

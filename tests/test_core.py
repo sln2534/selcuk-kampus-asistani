@@ -152,3 +152,15 @@ def test_ask_returns_friendly_message_when_gemini_down(monkeypatch):
     monkeypatch.setattr(api, "answer_question", boom)
     r = client.post("/ask", json={"question": "Kayıt dondurma şartları?"})
     assert r.status_code == 200 and r.json()["kind"] == "hata"
+
+
+def test_retry_skips_permanent_errors():
+    calls = {"n": 0}
+
+    def wrong_model(q):
+        calls["n"] += 1
+        raise RuntimeError("404 NOT_FOUND: model is no longer available")
+
+    with pytest.raises(RuntimeError):
+        answer.answer_question("x", retriever=wrong_model, llm=lambda q, c: "")
+    assert calls["n"] == 1
