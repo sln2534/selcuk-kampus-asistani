@@ -88,23 +88,41 @@ def retrieve(question: str) -> list[Document]:
     return [doc for doc, dist in results if dist <= s.max_distance]
 
 
-def call_llm(question: str, context: str) -> str:
+def model_chain() -> list[str]:
+    s = get_settings()
+    chain = [s.gemini_model] + [m.strip() for m in s.gemini_fallback_models.split(",") if m.strip()]
+    return list(dict.fromkeys(chain))  # tekrarları at, sırayı koru
+
+
+def call_model(model: str, messages) -> str:
     from langchain_google_genai import ChatGoogleGenerativeAI
 
     s = get_settings()
     llm = ChatGoogleGenerativeAI(
-        model=s.gemini_model,
+        model=model,
         google_api_key=s.gemini_api_key,
         temperature=0.1,
         timeout=s.llm_timeout,
-        max_retries=1,  # kütüphanenin varsayılanı 6; yeniden denemeyi with_retry yönetiyor
+        max_retries=0,  # yoğunlukta aynı modelde beklemek yerine sıradaki modele geçilir
     )
+    # Gemini 3 modelleri içeriği parça listesi olarak döndürüyor; .text hepsini düz metne çevirir.
+    return (llm.invoke(messages).text or "").strip()
+
+
+def call_llm(question: str, context: str, call=call_model) -> str:
+    """Modelleri sırayla dener; biri meşgul ya da kullanılamaz durumdaysa sıradakine geçer."""
     messages = [
         ("system", SYSTEM_PROMPT),
         ("human", f"<belgeler>\n{context}\n</belgeler>\n\n<soru>\n{question}\n</soru>"),
     ]
-    # Gemini 3 modelleri içeriği parça listesi olarak döndürüyor; .text hepsini düz metne çevirir.
-    return (llm.invoke(messages).text or "").strip()
+    last_error: Exception | None = None
+    for model in model_chain():
+        try:
+            return call(model, messages)
+        except Exception as e:  # noqa: BLE001
+            log.warning("%s yanıt vermedi, sıradaki modele geçiliyor: %s", model, str(e)[:200])
+            last_error = e
+    raise last_error  # type: ignore[misc]
 
 
 def fallback(question: str) -> Answer:
@@ -120,7 +138,7 @@ def answer_question(question: str, retriever=retrieve, llm=call_llm) -> Answer:
     docs = with_retry(retriever, question)
     if not docs:
         return fallback(question)
-    reply = with_retry(llm, question, format_context(docs))
+    reply = llm(question, format_context(docs))
     if not reply or NO_ANSWER in reply:
         return fallback(question)
     return Answer(text=reply, sources=unique_sources(docs))
