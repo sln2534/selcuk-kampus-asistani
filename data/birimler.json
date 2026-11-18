@@ -4,31 +4,68 @@
     {
       "ad": "Öğrenci İşleri Daire Başkanlığı",
       "varsayilan": true,
-      "anahtar_kelimeler": ["kayıt", "transkript", "belge", "öğrenci belgesi", "mezuniyet", "yatay geçiş", "dondurma", "harç", "not", "sınav", "mazeret", "muafiyet", "devamsızlık"],
-      "telefon": "",
-      "eposta": "",
-      "web": "https://www.selcuk.edu.tr",
-      "konum": ""
+      "anahtar_kelimeler": [
+        "kayıt",
+        "transkript",
+        "belge",
+        "öğrenci belgesi",
+        "mezuniyet",
+        "yatay geçiş",
+        "dondurma",
+        "harç",
+        "not",
+        "sınav",
+        "mazeret",
+        "muafiyet",
+        "devamsızlık"
+      ],
+      "telefon": "0332 223 84 13",
+      "eposta": "ogrisleri@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/index/5360",
+      "konum": "Selçuk Üniversitesi Rektörlüğü, Akademi Mah. Yeni İstanbul Cad. No:369, Selçuklu/Konya"
     },
     {
       "ad": "Sağlık, Kültür ve Spor Daire Başkanlığı",
-      "anahtar_kelimeler": ["burs", "yemekhane", "yemek", "menü", "kulüp", "topluluk", "etkinlik", "kısmi zamanlı", "part time", "spor"],
-      "telefon": "",
-      "eposta": "",
-      "web": "",
-      "konum": ""
+      "anahtar_kelimeler": [
+        "burs",
+        "yemekhane",
+        "yemek",
+        "menü",
+        "kulüp",
+        "topluluk",
+        "etkinlik",
+        "kısmi zamanlı",
+        "part time",
+        "spor"
+      ],
+      "telefon": "0332 223 49 31",
+      "eposta": "selcuksks@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/Birim/daire-baskanliklari/saglik_kultur/1956",
+      "konum": "Alaeddin Keykubat Yerleşkesi, Akademi Mah. Yeni İstanbul Cad. No:329, Selçuklu/Konya"
     },
     {
       "ad": "Kütüphane ve Dokümantasyon Daire Başkanlığı",
-      "anahtar_kelimeler": ["kütüphane", "kitap", "ödünç", "çalışma salonu"],
-      "telefon": "",
-      "eposta": "",
-      "web": "",
-      "konum": ""
+      "anahtar_kelimeler": [
+        "kütüphane",
+        "kitap",
+        "ödünç",
+        "çalışma salonu"
+      ],
+      "telefon": "0332 223 24 33",
+      "eposta": "kutuphane@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/sayfa/5356/kutuphaneciye-sor-851",
+      "konum": "Prof. Dr. Erol Güngör Kütüphanesi, Akademi Mah. Yeni İstanbul Yolu No:325, Selçuklu/Konya"
     },
     {
       "ad": "Konya Büyükşehir Belediyesi Ulaşım (ATUS) / ring bilgisi",
-      "anahtar_kelimeler": ["ring", "otobüs", "tramvay", "dolmuş", "ulaşım", "sefer"],
+      "anahtar_kelimeler": [
+        "ring",
+        "otobüs",
+        "tramvay",
+        "dolmuş",
+        "ulaşım",
+        "sefer"
+      ],
       "telefon": "",
       "eposta": "",
       "web": "",
@@ -36,11 +73,62 @@
     },
     {
       "ad": "Kredi ve Yurtlar (KYK) / Yurt müdürlüğü",
-      "anahtar_kelimeler": ["yurt", "kyk", "barınma"],
+      "anahtar_kelimeler": [
+        "yurt",
+        "kyk",
+        "barınma"
+      ],
       "telefon": "",
       "eposta": "",
       "web": "",
       "konum": ""
+    },
+    {
+      "ad": "Erasmus+ Kurum Koordinatörlüğü",
+      "anahtar_kelimeler": [
+        "erasmus",
+        "öğrenci değişimi",
+        "yurt dışı eğitim",
+        "yurtdışı eğitim",
+        "öğrenim hareketliliği",
+        "staj hareketliliği"
+      ],
+      "telefon": "0332 223 44 61",
+      "eposta": "erasmus@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/sayfa/5473/iletisim-2006",
+      "konum": "Akademi Mah. Yeni İstanbul Cad. No:277A, Selçuklu/Konya"
+    },
+    {
+      "ad": "Engelli Öğrenci Birimi Koordinatörlüğü",
+      "anahtar_kelimeler": [
+        "engelli öğrenci",
+        "erişilebilirlik",
+        "engelsiz kampüs",
+        "özel gereksinim",
+        "engelsiz yaşam"
+      ],
+      "telefon": "0332 223 25 34",
+      "eposta": "engelsizyasam@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/engelli_ogrenci/5477",
+      "konum": "Alaeddin Keykubat Kampüsü, Prof. Dr. Erol Güngör Kütüphanesi, Selçuklu/Konya"
+    },
+    {
+      "ad": "Bilgi İşlem Daire Başkanlığı",
+      "anahtar_kelimeler": [
+        "bilgi işlem",
+        "wifi",
+        "wi-fi",
+        "internet",
+        "kablosuz ağ",
+        "hesap sorunu",
+        "teknik destek",
+        "otomasyon sorunu",
+        "şifre sorunu"
+      ],
+      "telefon": "0332 223 43 11",
+      "eposta": "bim@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/icerik/5354/bilgi-islem-daire-baskanligi-destek-talep-olusturma-sistemi-67210",
+      "konum": "Alaeddin Keykubat Kampüsü, Akademi Mah. Yeni İstanbul Cad. No:335/3, Selçuklu/Konya"
     }
   ]
 }
