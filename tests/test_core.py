@@ -13,6 +13,7 @@ from app.rag import answer, ingest
 @pytest.fixture(autouse=True)
 def tmp_stats(tmp_path, monkeypatch):
     monkeypatch.setattr(get_settings(), "stats_file", tmp_path / "stats.jsonl")
+    monkeypatch.setattr(answer.time, "sleep", lambda s: None)
 
 
 # --- takvim -------------------------------------------------------------
@@ -129,3 +130,25 @@ def test_bot_handler_does_not_shadow_takvim_module():
     from app import bot
 
     assert hasattr(bot.takvim, "upcoming")
+
+
+def test_retry_recovers_from_transient_error():
+    calls = {"n": 0}
+
+    def flaky(q):
+        calls["n"] += 1
+        if calls["n"] < 3:
+            raise ConnectionError("Server disconnected")
+        return [DOC]
+
+    res = answer.answer_question("mazeret?", retriever=flaky, llm=lambda q, c: "cevap")
+    assert res.answered and calls["n"] == 3
+
+
+def test_ask_returns_friendly_message_when_gemini_down(monkeypatch):
+    def boom(q):
+        raise ConnectionError("Server disconnected")
+
+    monkeypatch.setattr(api, "answer_question", boom)
+    r = client.post("/ask", json={"question": "Kayıt dondurma şartları?"})
+    assert r.status_code == 200 and r.json()["kind"] == "hata"

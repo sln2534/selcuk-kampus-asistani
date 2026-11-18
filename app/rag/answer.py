@@ -5,6 +5,8 @@ Kurallar (teklif formu, Bölüm 7):
 * Cevap yoksa "bilmiyorum" akışı: ilgili birime yönlendir.
 * Kaynağı (belge adı + sayfa) her zaman göster.
 """
+import logging
+import time
 from dataclasses import dataclass, field
 
 from langchain_core.documents import Document
@@ -13,6 +15,20 @@ from app import units
 from app.config import get_settings
 
 NO_ANSWER = "BILGI_YOK"
+
+log = logging.getLogger("rag")
+
+
+def with_retry(fn, *args, attempts: int = 3, base_delay: float = 1.0):
+    """Gemini'ye giden çağrıları geçici ağ hatalarında yeniden dener (1 sn, 2 sn bekleyerek)."""
+    for i in range(attempts):
+        try:
+            return fn(*args)
+        except Exception as e:  # noqa: BLE001 - kütüphaneler farklı hata türleri fırlatıyor
+            if i == attempts - 1:
+                raise
+            log.warning("Gemini çağrısı başarısız (%s/%s): %s", i + 1, attempts, e)
+            time.sleep(base_delay * (2**i))
 
 SYSTEM_PROMPT = f"""Sen Selçuk Üniversitesi öğrencilerine yardım eden, samimi ve yardımsever bir kampüs asistanısın.
 Bu bir öğrenci projesidir, resmî bir üniversite hizmeti değildir.
@@ -78,10 +94,10 @@ def fallback(question: str) -> Answer:
 
 
 def answer_question(question: str, retriever=retrieve, llm=call_llm) -> Answer:
-    docs = retriever(question)
+    docs = with_retry(retriever, question)
     if not docs:
         return fallback(question)
-    reply = llm(question, format_context(docs))
+    reply = with_retry(llm, question, format_context(docs))
     if not reply or NO_ANSWER in reply:
         return fallback(question)
     return Answer(text=reply, sources=unique_sources(docs))
