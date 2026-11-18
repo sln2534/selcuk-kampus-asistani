@@ -19,8 +19,19 @@ NO_ANSWER = "BILGI_YOK"
 log = logging.getLogger("rag")
 
 
-# Yeniden denemenin işe yaramayacağı kalıcı hatalar (yanlış model adı, geçersiz anahtar vb.)
-PERMANENT_ERRORS = ("NOT_FOUND", "PERMISSION_DENIED", "INVALID_ARGUMENT", "API_KEY_INVALID", "UNAUTHENTICATED")
+# Yalnızca bu tür geçici ağ/sunucu hatalarında yeniden denenir. Kod hataları ve kalıcı API
+# hataları (yanlış model adı, geçersiz anahtar) hemen yükseltilir; böylece boşuna beklenmez.
+TRANSIENT_ERRORS = (
+    "disconnected", "timed out", "timeout", "connection", "temporarily",
+    "503", "UNAVAILABLE", "500", "INTERNAL", "429", "RESOURCE_EXHAUSTED",
+)
+
+
+def is_transient(e: Exception) -> bool:
+    if isinstance(e, (ConnectionError, TimeoutError)):
+        return True
+    text = f"{type(e).__name__}: {e}"
+    return any(marker.lower() in text.lower() for marker in TRANSIENT_ERRORS)
 
 
 def with_retry(fn, *args, attempts: int = 3, base_delay: float = 1.0):
@@ -29,10 +40,11 @@ def with_retry(fn, *args, attempts: int = 3, base_delay: float = 1.0):
         try:
             return fn(*args)
         except Exception as e:  # noqa: BLE001 - kütüphaneler farklı hata türleri fırlatıyor
-            if i == attempts - 1 or any(code in str(e) for code in PERMANENT_ERRORS):
+            if i == attempts - 1 or not is_transient(e):
                 raise
             log.warning("Gemini çağrısı başarısız (%s/%s): %s", i + 1, attempts, e)
             time.sleep(base_delay * (2**i))
+
 
 SYSTEM_PROMPT = f"""Sen Selçuk Üniversitesi öğrencilerine yardım eden, samimi ve yardımsever bir kampüs asistanısın.
 Bu bir öğrenci projesidir, resmî bir üniversite hizmeti değildir.
@@ -80,12 +92,19 @@ def call_llm(question: str, context: str) -> str:
     from langchain_google_genai import ChatGoogleGenerativeAI
 
     s = get_settings()
-    llm = ChatGoogleGenerativeAI(model=s.gemini_model, google_api_key=s.gemini_api_key, temperature=0.1)
+    llm = ChatGoogleGenerativeAI(
+        model=s.gemini_model,
+        google_api_key=s.gemini_api_key,
+        temperature=0.1,
+        timeout=s.llm_timeout,
+        max_retries=1,  # kütüphanenin varsayılanı 6; yeniden denemeyi with_retry yönetiyor
+    )
     messages = [
         ("system", SYSTEM_PROMPT),
         ("human", f"<belgeler>\n{context}\n</belgeler>\n\n<soru>\n{question}\n</soru>"),
     ]
-    return llm.invoke(messages).content.strip()
+    # Gemini 3 modelleri içeriği parça listesi olarak döndürüyor; .text hepsini düz metne çevirir.
+    return (llm.invoke(messages).text or "").strip()
 
 
 def fallback(question: str) -> Answer:

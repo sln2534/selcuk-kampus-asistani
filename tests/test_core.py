@@ -154,13 +154,33 @@ def test_ask_returns_friendly_message_when_gemini_down(monkeypatch):
     assert r.status_code == 200 and r.json()["kind"] == "hata"
 
 
-def test_retry_skips_permanent_errors():
+@pytest.mark.parametrize("err", [
+    RuntimeError("404 NOT_FOUND: model is no longer available"),
+    AttributeError("'list' object has no attribute 'strip'"),
+])
+def test_retry_skips_non_transient_errors(err):
     calls = {"n": 0}
 
-    def wrong_model(q):
+    def broken(q):
         calls["n"] += 1
-        raise RuntimeError("404 NOT_FOUND: model is no longer available")
+        raise err
 
-    with pytest.raises(RuntimeError):
-        answer.answer_question("x", retriever=wrong_model, llm=lambda q, c: "")
+    with pytest.raises(type(err)):
+        answer.answer_question("x", retriever=broken, llm=lambda q, c: "")
     assert calls["n"] == 1
+
+
+def test_call_llm_handles_gemini3_list_content(monkeypatch):
+    """Gemini 3 cevabı parça listesi olarak döner; düz metne çevrilmeli."""
+    from langchain_core.messages import AIMessage
+
+    class FakeLLM:
+        def __init__(self, **kw):
+            pass
+
+        def invoke(self, messages):
+            return AIMessage(content=[{"type": "text", "text": " Dilekçe ver. ", "extras": {"signature": "x"}}])
+
+    import langchain_google_genai
+    monkeypatch.setattr(langchain_google_genai, "ChatGoogleGenerativeAI", FakeLLM)
+    assert answer.call_llm("soru", "bağlam") == "Dilekçe ver."
