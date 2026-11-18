@@ -1,37 +1,390 @@
 {
-  "_not": "ÖRNEK VERİ! Tarihler gerçek değildir. Zehra Nur: 2026-2027 resmî akademik takvim PDF'inden doldurup 'kaynak' alanını güncelle. Tarih formatı YYYY-AA-GG.",
-  "donem": "2026-2027 Güz",
-  "kaynak": "Selçuk Üniversitesi 2026-2027 Akademik Takvimi (ÖRNEK – doğrulanmadı)",
+  "donem": "2026-2027 Güz ve Bahar",
+  "kaynak": "Selçuk Üniversitesi 2026-2027 Eğitim-Öğretim Yılı Ön Lisans - Lisans Akademik Takvimi",
   "etkinlikler": [
     {
-      "ad": "Ara sınavlar (vize)",
-      "baslangic": "2026-11-16",
-      "bitis": "2026-11-22",
-      "anahtar_kelimeler": ["vize", "ara sınav", "arasınav"]
+      "ad": "E-Devlet üzerinden elektronik kayıt",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-26",
+      "anahtar_kelimeler": [
+        "e-devlet kayıt",
+        "elektronik kayıt",
+        "ilk kayıt"
+      ]
     },
     {
-      "ad": "Ara sınav mazeret sınavları",
-      "baslangic": "2026-12-07",
-      "bitis": "2026-12-09",
-      "anahtar_kelimeler": ["mazeret"]
+      "ad": "Yüz yüze kayıt",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-28",
+      "anahtar_kelimeler": [
+        "yüz yüze kayıt",
+        "kesin kayıt"
+      ]
     },
     {
-      "ad": "Yarıyıl sonu sınavları (final)",
+      "ad": "Güz ders programlarının ilanı için son tarih",
+      "baslangic": "2026-08-31",
+      "bitis": "2026-08-31",
+      "anahtar_kelimeler": [
+        "ders programı",
+        "güz ders programı"
+      ]
+    },
+    {
+      "ad": "Güz kayıt yenileme",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-12",
+      "anahtar_kelimeler": [
+        "güz ders kaydı",
+        "kayıt yenileme",
+        "ders seçimi"
+      ]
+    },
+    {
+      "ad": "Güz danışman onayı",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-13",
+      "anahtar_kelimeler": [
+        "danışman onayı",
+        "güz onay"
+      ]
+    },
+    {
+      "ad": "Güz ders ekleme ve bırakma",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-15",
+      "anahtar_kelimeler": [
+        "ders ekle bırak",
+        "güz ders ekleme"
+      ]
+    },
+    {
+      "ad": "Güz ders dönemi",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-12-25",
+      "anahtar_kelimeler": [
+        "güz ders başlangıcı",
+        "güz ders bitişi"
+      ]
+    },
+    {
+      "ad": "Zorunlu yabancı dil muafiyet sınavı",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "yabancı dil muafiyet",
+        "muafiyet sınavı"
+      ]
+    },
+    {
+      "ad": "Hazırlık sınıfları yabancı dil yeterlik sınavı",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-09",
+      "anahtar_kelimeler": [
+        "hazırlık yeterlik",
+        "yabancı dil yeterlik"
+      ]
+    },
+    {
+      "ad": "Güz mazeretli geç kayıt son başvuru",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "güz geç kayıt",
+        "mazeretli kayıt"
+      ]
+    },
+    {
+      "ad": "Güz ek sınav final",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-18",
+      "anahtar_kelimeler": [
+        "ek sınav final",
+        "güz ek sınav"
+      ]
+    },
+    {
+      "ad": "Güz ek sınav final notları sisteme giriş son tarihi",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "ek sınav notu",
+        "güz ek final sonuç"
+      ]
+    },
+    {
+      "ad": "Güz ek sınav bütünleme",
+      "baslangic": "2026-09-28",
+      "bitis": "2026-10-02",
+      "anahtar_kelimeler": [
+        "ek sınav bütünleme",
+        "ek büt"
+      ]
+    },
+    {
+      "ad": "Güz ek sınav bütünleme notları sisteme giriş son tarihi",
+      "baslangic": "2026-10-09",
+      "bitis": "2026-10-09",
+      "anahtar_kelimeler": [
+        "ek bütünleme notları"
+      ]
+    },
+    {
+      "ad": "Güz ortak zorunlu dersler ara sınavı",
+      "baslangic": "2026-11-02",
+      "bitis": "2026-11-02",
+      "anahtar_kelimeler": [
+        "ortak zorunlu vize",
+        "türk dili vize",
+        "atatürk ilkeleri vize"
+      ]
+    },
+    {
+      "ad": "Güz ara sınavlar",
+      "baslangic": "2026-10-31",
+      "bitis": "2026-11-08",
+      "anahtar_kelimeler": [
+        "güz vize",
+        "ara sınav",
+        "vize"
+      ]
+    },
+    {
+      "ad": "Güz ilave ara sınav günleri (gerektiğinde)",
+      "baslangic": "2026-11-14",
+      "bitis": "2026-11-15",
+      "anahtar_kelimeler": [
+        "ek vize günleri",
+        "güz ek ara sınav"
+      ]
+    },
+    {
+      "ad": "Güz ara sınav notları sisteme giriş son tarihi",
+      "baslangic": "2026-12-11",
+      "bitis": "2026-12-11",
+      "anahtar_kelimeler": [
+        "vize notları",
+        "ara sınav sonuç"
+      ]
+    },
+    {
+      "ad": "Güz ortak zorunlu dersler final sınavı",
+      "baslangic": "2026-12-28",
+      "bitis": "2026-12-28",
+      "anahtar_kelimeler": [
+        "ortak zorunlu final"
+      ]
+    },
+    {
+      "ad": "Güz final sınavları",
+      "baslangic": "2026-12-26",
+      "bitis": "2027-01-03",
+      "anahtar_kelimeler": [
+        "güz final",
+        "final",
+        "yarıyıl sonu"
+      ]
+    },
+    {
+      "ad": "Güz final notları sisteme giriş son tarihi",
+      "baslangic": "2027-01-07",
+      "bitis": "2027-01-07",
+      "anahtar_kelimeler": [
+        "final notları",
+        "güz final sonuç"
+      ]
+    },
+    {
+      "ad": "Güz ortak zorunlu dersler bütünleme sınavı",
       "baslangic": "2027-01-11",
-      "bitis": "2027-01-22",
-      "anahtar_kelimeler": ["final", "yarıyıl sonu", "dönem sonu"]
+      "bitis": "2027-01-11",
+      "anahtar_kelimeler": [
+        "ortak zorunlu bütünleme"
+      ]
     },
     {
-      "ad": "Bütünleme sınavları",
-      "baslangic": "2027-02-01",
-      "bitis": "2027-02-07",
-      "anahtar_kelimeler": ["bütünleme", "büt"]
+      "ad": "Güz bütünleme sınavları",
+      "baslangic": "2027-01-09",
+      "bitis": "2027-01-17",
+      "anahtar_kelimeler": [
+        "güz bütünleme",
+        "büt"
+      ]
     },
     {
-      "ad": "Bahar yarıyılı ders kayıtları",
+      "ad": "Güz bütünleme notları sisteme giriş son tarihi",
+      "baslangic": "2027-01-24",
+      "bitis": "2027-01-24",
+      "anahtar_kelimeler": [
+        "bütünleme notları",
+        "güz büt sonuç"
+      ]
+    },
+    {
+      "ad": "Bahar ders programlarının ilanı için son tarih",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-11",
+      "anahtar_kelimeler": [
+        "bahar ders programı"
+      ]
+    },
+    {
+      "ad": "Bahar kayıt yenileme",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-23",
+      "anahtar_kelimeler": [
+        "bahar ders kaydı",
+        "kayıt yenileme",
+        "ders seçimi"
+      ]
+    },
+    {
+      "ad": "Bahar danışman onayı",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-24",
+      "anahtar_kelimeler": [
+        "bahar danışman onayı"
+      ]
+    },
+    {
+      "ad": "Bahar ders ekleme ve bırakma",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-26",
+      "anahtar_kelimeler": [
+        "bahar ekle bırak"
+      ]
+    },
+    {
+      "ad": "Bahar ders dönemi",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-05-14",
+      "anahtar_kelimeler": [
+        "bahar ders başlangıcı",
+        "bahar ders bitişi"
+      ]
+    },
+    {
+      "ad": "Bahar mazeretli geç kayıt son başvuru",
+      "baslangic": "2027-02-05",
+      "bitis": "2027-02-05",
+      "anahtar_kelimeler": [
+        "bahar geç kayıt"
+      ]
+    },
+    {
+      "ad": "Bahar ek sınav final",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-29",
+      "anahtar_kelimeler": [
+        "bahar ek sınav final"
+      ]
+    },
+    {
+      "ad": "Bahar ek sınav final notları sisteme giriş son tarihi",
+      "baslangic": "2027-02-04",
+      "bitis": "2027-02-04",
+      "anahtar_kelimeler": [
+        "bahar ek final notları"
+      ]
+    },
+    {
+      "ad": "Bahar ek sınav bütünleme",
       "baslangic": "2027-02-08",
       "bitis": "2027-02-12",
-      "anahtar_kelimeler": ["ders kaydı", "kayıt yenileme", "ders seçimi"]
+      "anahtar_kelimeler": [
+        "bahar ek bütünleme"
+      ]
+    },
+    {
+      "ad": "Bahar ek sınav bütünleme notları sisteme giriş son tarihi",
+      "baslangic": "2027-02-19",
+      "bitis": "2027-02-19",
+      "anahtar_kelimeler": [
+        "bahar ek büt notları"
+      ]
+    },
+    {
+      "ad": "Bahar ortak zorunlu dersler ara sınavı",
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-22",
+      "anahtar_kelimeler": [
+        "bahar ortak zorunlu vize"
+      ]
+    },
+    {
+      "ad": "Bahar ara sınavlar",
+      "baslangic": "2027-03-20",
+      "bitis": "2027-03-28",
+      "anahtar_kelimeler": [
+        "bahar vize",
+        "ara sınav"
+      ]
+    },
+    {
+      "ad": "Bahar ilave ara sınav günleri (gerektiğinde)",
+      "baslangic": "2027-04-03",
+      "bitis": "2027-04-04",
+      "anahtar_kelimeler": [
+        "bahar ek vize günleri"
+      ]
+    },
+    {
+      "ad": "Bahar ara sınav notları sisteme giriş son tarihi",
+      "baslangic": "2027-04-30",
+      "bitis": "2027-04-30",
+      "anahtar_kelimeler": [
+        "bahar vize notları"
+      ]
+    },
+    {
+      "ad": "Bahar ortak zorunlu dersler final sınavı",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-24",
+      "anahtar_kelimeler": [
+        "bahar ortak zorunlu final"
+      ]
+    },
+    {
+      "ad": "Bahar final sınavları",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-06-01",
+      "anahtar_kelimeler": [
+        "bahar final",
+        "final"
+      ]
+    },
+    {
+      "ad": "Bahar final notları sisteme giriş son tarihi",
+      "baslangic": "2027-06-04",
+      "bitis": "2027-06-04",
+      "anahtar_kelimeler": [
+        "bahar final notları"
+      ]
+    },
+    {
+      "ad": "Bahar ortak zorunlu dersler bütünleme sınavı",
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-07",
+      "anahtar_kelimeler": [
+        "bahar ortak zorunlu büt"
+      ]
+    },
+    {
+      "ad": "Bahar bütünleme sınavları",
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-15",
+      "anahtar_kelimeler": [
+        "bahar bütünleme",
+        "büt"
+      ]
+    },
+    {
+      "ad": "Bahar bütünleme notları sisteme giriş son tarihi",
+      "baslangic": "2027-06-22",
+      "bitis": "2027-06-22",
+      "anahtar_kelimeler": [
+        "bahar bütünleme notları"
+      ]
     }
   ]
 }
