@@ -184,3 +184,24 @@ def test_call_llm_handles_gemini3_list_content(monkeypatch):
     import langchain_google_genai
     monkeypatch.setattr(langchain_google_genai, "ChatGoogleGenerativeAI", FakeLLM)
     assert answer.call_llm("soru", "bağlam") == "Dilekçe ver."
+
+
+def test_call_llm_falls_back_when_model_busy():
+    tried = []
+
+    def fake_call(model, messages):
+        tried.append(model)
+        if len(tried) < 3:
+            raise RuntimeError("503 UNAVAILABLE: high demand")
+        return "yedek modelden cevap"
+
+    assert answer.call_llm("soru", "bağlam", call=fake_call) == "yedek modelden cevap"
+    assert len(tried) == 3 and tried[0] == get_settings().gemini_model
+
+
+def test_call_llm_raises_when_all_models_fail():
+    def always_busy(model, messages):
+        raise RuntimeError("503 UNAVAILABLE")
+
+    with pytest.raises(RuntimeError):
+        answer.call_llm("soru", "bağlam", call=always_busy)

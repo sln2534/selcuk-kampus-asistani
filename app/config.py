@@ -19,7 +19,9 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     gemini_model: str = "gemini-3.8-flash"
     embedding_model: str = "models/gemini-embedding-001"
-    llm_timeout: float = 25.0  # saniye; Gemini cevabı için en fazla bekleme
+    # Ana model meşgulse (503/504) ya da kullanılamıyorsa sırayla denenecek yedek modeller
+    gemini_fallback_models: str = "gemini-3.5-flash,gemini-3.1-flash-lite,gemini-2.5-flash-lite"
+    llm_timeout: float = 20.0  # saniye; her model için en fazla bekleme
 
     # RAG
     pdf_dir: Path = ROOT / "data" / "pdfs"
