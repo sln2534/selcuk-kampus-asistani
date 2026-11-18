@@ -17,8 +17,11 @@ class Settings(BaseSettings):
     # LLM (Gemini). Gemini 1.5 Flash emekliye ayrıldı; güncel model adını
     # Google AI Studio'dan kontrol edip GEMINI_MODEL ile değiştirin.
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-3.8-flash"
     embedding_model: str = "models/gemini-embedding-001"
+    # Ana model meşgulse (503/504) ya da kullanılamıyorsa sırayla denenecek yedek modeller
+    gemini_fallback_models: str = "gemini-3.5-flash,gemini-3.1-flash-lite,gemini-2.5-flash-lite"
+    llm_timeout: float = 20.0  # saniye; her model için en fazla bekleme
 
     # RAG
     pdf_dir: Path = ROOT / "data" / "pdfs"

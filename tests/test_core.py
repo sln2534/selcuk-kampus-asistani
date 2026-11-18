@@ -1,5 +1,6 @@
 """API anahtarı gerektirmeyen birim testleri (LLM ve vektör deposu sahte)."""
 from datetime import date
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
@@ -10,9 +11,19 @@ from app.config import get_settings
 from app.rag import answer, ingest
 
 
+FIXTURES = Path(__file__).parent / "fixtures"
+
+
 @pytest.fixture(autouse=True)
 def tmp_stats(tmp_path, monkeypatch):
     monkeypatch.setattr(get_settings(), "stats_file", tmp_path / "stats.jsonl")
+    # Testler gerçek takvim verisine değil, sabit test takvimine bakar; böylece
+    # data/takvim.json güncellendiğinde testler bozulmaz.
+    monkeypatch.setattr(get_settings(), "calendar_file", FIXTURES / "takvim.json")
+    takvim.load_calendar.cache_clear()
+    yield
+    takvim.load_calendar.cache_clear()
+    monkeypatch.setattr(answer.time, "sleep", lambda s: None)
 
 
 # --- takvim -------------------------------------------------------------
@@ -129,3 +140,92 @@ def test_bot_handler_does_not_shadow_takvim_module():
     from app import bot
 
     assert hasattr(bot.takvim, "upcoming")
+
+
+def test_retry_recovers_from_transient_error():
+    calls = {"n": 0}
+
+    def flaky(q):
+        calls["n"] += 1
+        if calls["n"] < 3:
+            raise ConnectionError("Server disconnected")
+        return [DOC]
+
+    res = answer.answer_question("mazeret?", retriever=flaky, llm=lambda q, c: "cevap")
+    assert res.answered and calls["n"] == 3
+
+
+def test_ask_returns_friendly_message_when_gemini_down(monkeypatch):
+    def boom(q):
+        raise ConnectionError("Server disconnected")
+
+    monkeypatch.setattr(api, "answer_question", boom)
+    r = client.post("/ask", json={"question": "Kayıt dondurma şartları?"})
+    assert r.status_code == 200 and r.json()["kind"] == "hata"
+
+
+@pytest.mark.parametrize("err", [
+    RuntimeError("404 NOT_FOUND: model is no longer available"),
+    AttributeError("'list' object has no attribute 'strip'"),
+])
+def test_retry_skips_non_transient_errors(err):
+    calls = {"n": 0}
+
+    def broken(q):
+        calls["n"] += 1
+        raise err
+
+    with pytest.raises(type(err)):
+        answer.answer_question("x", retriever=broken, llm=lambda q, c: "")
+    assert calls["n"] == 1
+
+
+def test_call_llm_handles_gemini3_list_content(monkeypatch):
+    """Gemini 3 cevabı parça listesi olarak döner; düz metne çevrilmeli."""
+    from langchain_core.messages import AIMessage
+
+    class FakeLLM:
+        def __init__(self, **kw):
+            pass
+
+        def invoke(self, messages):
+            return AIMessage(content=[{"type": "text", "text": " Dilekçe ver. ", "extras": {"signature": "x"}}])
+
+    import langchain_google_genai
+    monkeypatch.setattr(langchain_google_genai, "ChatGoogleGenerativeAI", FakeLLM)
+    assert answer.call_llm("soru", "bağlam") == "Dilekçe ver."
+
+
+def test_call_llm_falls_back_when_model_busy():
+    tried = []
+
+    def fake_call(model, messages):
+        tried.append(model)
+        if len(tried) < 3:
+            raise RuntimeError("503 UNAVAILABLE: high demand")
+        return "yedek modelden cevap"
+
+    assert answer.call_llm("soru", "bağlam", call=fake_call) == "yedek modelden cevap"
+    assert len(tried) == 3 and tried[0] == get_settings().gemini_model
+
+
+def test_call_llm_raises_when_all_models_fail():
+    def always_busy(model, messages):
+        raise RuntimeError("503 UNAVAILABLE")
+
+    with pytest.raises(RuntimeError):
+        answer.call_llm("soru", "bağlam", call=always_busy)
+
+
+def test_real_calendar_file_is_valid():
+    """data/takvim.json geçerli olmalı: zorunlu alanlar ve YYYY-AA-GG tarihleri."""
+    import json
+
+    from app.config import ROOT
+
+    data = json.loads((ROOT / "data" / "takvim.json").read_text(encoding="utf-8"))
+    assert data["kaynak"] and data["etkinlikler"]
+    for ev in data["etkinlikler"]:
+        assert ev["ad"] and ev["anahtar_kelimeler"]
+        start, end = date.fromisoformat(ev["baslangic"]), date.fromisoformat(ev.get("bitis") or ev["baslangic"])
+        assert start <= end, ev["ad"]

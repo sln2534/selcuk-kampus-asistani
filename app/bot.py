@@ -43,7 +43,7 @@ async def handle_question(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> Non
     question = update.message.text
     await ctx.bot.send_chat_action(update.effective_chat.id, ChatAction.TYPING)  # "yazıyor…"
     try:
-        async with httpx.AsyncClient(timeout=30) as client:
+        async with httpx.AsyncClient(timeout=90) as client:
             r = await client.post(
                 f"{get_settings().api_url}/ask",
                 json={"question": question, "user_id": str(update.effective_user.id)},

@@ -2,6 +2,7 @@
 
     uvicorn app.api:app --reload
 """
+import logging
 import re
 import time
 
@@ -11,6 +12,8 @@ from pydantic import BaseModel, Field
 from app import stats, takvim
 from app.config import get_settings
 from app.rag.answer import answer_question
+
+log = logging.getLogger("api")
 
 app = FastAPI(title="Selçuk Kampüs Asistanı API", version="0.1.0")
 
@@ -69,8 +72,13 @@ def ask(req: AskRequest):
     elif (cal := takvim.answer_date_question(q)) is not None:
         kind, answered, text = "takvim", True, cal
     else:
-        res = answer_question(q)
-        kind, answered, text, sources = "rag", res.answered, res.text, res.sources
+        try:
+            res = answer_question(q)
+            kind, answered, text, sources = "rag", res.answered, res.text, res.sources
+        except Exception:
+            log.exception("RAG yanıtı üretilemedi")
+            kind, answered = "hata", False
+            text = "Şu an yapay zekâ servisine ulaşamıyorum. Birkaç dakika sonra tekrar dener misin? 🙏"
 
     latency = int((time.perf_counter() - start) * 1000)
     stats.log_event(kind=kind, latency_ms=latency, answered=answered, user=stats.anon_user(req.user_id))
