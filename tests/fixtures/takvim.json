@@ -1,0 +1,9 @@
+{
+  "donem": "Test",
+  "kaynak": "Test takvimi",
+  "etkinlikler": [
+    {"ad": "Ara sınavlar (vize)", "baslangic": "2026-11-16", "bitis": "2026-11-22", "anahtar_kelimeler": ["vize", "ara sınav"]},
+    {"ad": "Final sınavları", "baslangic": "2027-01-11", "bitis": "2027-01-22", "anahtar_kelimeler": ["final"]},
+    {"ad": "Bütünleme sınavları", "baslangic": "2027-02-01", "bitis": "2027-02-07", "anahtar_kelimeler": ["bütünleme"]}
+  ]
+}

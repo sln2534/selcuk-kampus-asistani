@@ -1,5 +1,6 @@
 """API anahtarı gerektirmeyen birim testleri (LLM ve vektör deposu sahte)."""
 from datetime import date
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
@@ -10,9 +11,18 @@ from app.config import get_settings
 from app.rag import answer, ingest
 
 
+FIXTURES = Path(__file__).parent / "fixtures"
+
+
 @pytest.fixture(autouse=True)
 def tmp_stats(tmp_path, monkeypatch):
     monkeypatch.setattr(get_settings(), "stats_file", tmp_path / "stats.jsonl")
+    # Testler gerçek takvim verisine değil, sabit test takvimine bakar; böylece
+    # data/takvim.json güncellendiğinde testler bozulmaz.
+    monkeypatch.setattr(get_settings(), "calendar_file", FIXTURES / "takvim.json")
+    takvim.load_calendar.cache_clear()
+    yield
+    takvim.load_calendar.cache_clear()
     monkeypatch.setattr(answer.time, "sleep", lambda s: None)
 
 
@@ -205,3 +215,17 @@ def test_call_llm_raises_when_all_models_fail():
 
     with pytest.raises(RuntimeError):
         answer.call_llm("soru", "bağlam", call=always_busy)
+
+
+def test_real_calendar_file_is_valid():
+    """data/takvim.json geçerli olmalı: zorunlu alanlar ve YYYY-AA-GG tarihleri."""
+    import json
+
+    from app.config import ROOT
+
+    data = json.loads((ROOT / "data" / "takvim.json").read_text(encoding="utf-8"))
+    assert data["kaynak"] and data["etkinlikler"]
+    for ev in data["etkinlikler"]:
+        assert ev["ad"] and ev["anahtar_kelimeler"]
+        start, end = date.fromisoformat(ev["baslangic"]), date.fromisoformat(ev.get("bitis") or ev["baslangic"])
+        assert start <= end, ev["ad"]
