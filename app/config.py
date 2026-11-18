@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     # LLM (Gemini). Gemini 1.5 Flash emekliye ayrıldı; güncel model adını
     # Google AI Studio'dan kontrol edip GEMINI_MODEL ile değiştirin.
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-2.5-flash"
+    gemini_model: str = "gemini-3.8-flash"
     embedding_model: str = "models/gemini-embedding-001"
 
     # RAG
