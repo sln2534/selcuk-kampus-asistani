@@ -6,7 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 from langchain_core.documents import Document
 
-from app import api, stats, takvim, units
+from app import api, cache, stats, takvim, units
 from app.config import get_settings
 from app.rag import answer, ingest
 
@@ -20,6 +20,8 @@ def tmp_stats(tmp_path, monkeypatch):
     # Testler gerçek takvim verisine değil, sabit test takvimine bakar; böylece
     # data/takvim.json güncellendiğinde testler bozulmaz.
     monkeypatch.setattr(get_settings(), "calendar_file", FIXTURES / "takvim.json")
+    monkeypatch.setattr(get_settings(), "cache_file", tmp_path / "cevap_onbellek.json")
+    monkeypatch.setattr(cache, "_data", None)
     takvim.load_calendar.cache_clear()
     yield
     takvim.load_calendar.cache_clear()
@@ -229,3 +231,61 @@ def test_real_calendar_file_is_valid():
         assert ev["ad"] and ev["anahtar_kelimeler"]
         start, end = date.fromisoformat(ev["baslangic"]), date.fromisoformat(ev.get("bitis") or ev["baslangic"])
         assert start <= end, ev["ad"]
+
+
+# --- cevap önbelleği -----------------------------------------------------
+def _counting_answer(monkeypatch, result):
+    calls = {"n": 0}
+
+    def fake(q):
+        calls["n"] += 1
+        if isinstance(result, Exception):
+            raise result
+        return result
+
+    monkeypatch.setattr(api, "answer_question", fake)
+    return calls
+
+
+def test_cache_serves_repeated_question_without_gemini(monkeypatch):
+    calls = _counting_answer(monkeypatch, answer.Answer("5 iş günü içinde başvur.", ["y.pdf (s. 8)"]))
+    r1 = client.post("/ask", json={"question": "Mazeret sınavına nasıl başvururum?"}).json()
+    r2 = client.post("/ask", json={"question": "mazeret sınavına  nasıl başvururum"}).json()
+    assert calls["n"] == 1
+    assert not r1["cached"] and r2["cached"]
+    assert r2["answer"] == r1["answer"] and r2["sources"] == ["y.pdf (s. 8)"] and r2["kind"] == "rag"
+
+
+def test_cache_skips_not_found_answers(monkeypatch):
+    calls = _counting_answer(monkeypatch, answer.Answer("Bulamadım", answered=False))
+    for _ in range(2):
+        client.post("/ask", json={"question": "Kayıt dondurma şartları?"})
+    assert calls["n"] == 2
+
+
+def test_cache_skips_errors(monkeypatch):
+    calls = _counting_answer(monkeypatch, ConnectionError("503"))
+    for _ in range(2):
+        assert client.post("/ask", json={"question": "Kayıt dondurma şartları?"}).json()["kind"] == "hata"
+    assert calls["n"] == 2
+
+
+def test_cache_can_be_disabled(monkeypatch):
+    monkeypatch.setattr(get_settings(), "cache_enabled", False)
+    calls = _counting_answer(monkeypatch, answer.Answer("cevap", ["a.pdf (s. 1)"]))
+    for _ in range(2):
+        client.post("/ask", json={"question": "Kayıt dondurma şartları?"})
+    assert calls["n"] == 2
+
+
+def test_cache_invalidated_when_prompt_changes(monkeypatch):
+    cache.put("soru", "eski cevap", [])
+    monkeypatch.setattr(cache, "_data", None)  # yeniden başlatma gibi
+    monkeypatch.setattr(answer, "SYSTEM_PROMPT", answer.SYSTEM_PROMPT + " (v2)")
+    assert cache.get("soru") is None
+
+
+def test_cache_cleared_by_clear():
+    cache.put("soru", "cevap", [])
+    cache.clear()
+    assert cache.get("soru") is None and not get_settings().cache_file.exists()

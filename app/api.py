@@ -9,7 +9,7 @@ import time
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from app import stats, takvim
+from app import cache, stats, takvim
 from app.config import get_settings
 from app.rag.answer import answer_question
 
@@ -40,6 +40,7 @@ class AskResponse(BaseModel):
     answered: bool
     kind: str
     latency_ms: int
+    cached: bool = False
 
 
 def looks_like_injection(q: str) -> bool:
@@ -66,15 +67,20 @@ def ask(req: AskRequest):
 
     start = time.perf_counter()
     sources: list[str] = []
+    cached = False
     if looks_like_injection(q):
         kind, answered = "guvenlik", False
         text = "Bu isteğe yardımcı olamam. Üniversiteyle ilgili bir soru sorabilirsin. 😊"
     elif (cal := takvim.answer_date_question(q)) is not None:
         kind, answered, text = "takvim", True, cal
+    elif (hit := cache.get(q)) is not None:
+        kind, answered, text, sources, cached = "rag", True, hit["answer"], hit["sources"], True
     else:
         try:
             res = answer_question(q)
             kind, answered, text, sources = "rag", res.answered, res.text, res.sources
+            if res.answered:
+                cache.put(q, text, sources)
         except Exception:
             log.exception("RAG yanıtı üretilemedi")
             kind, answered = "hata", False
@@ -82,4 +88,4 @@ def ask(req: AskRequest):
 
     latency = int((time.perf_counter() - start) * 1000)
     stats.log_event(kind=kind, latency_ms=latency, answered=answered, user=stats.anon_user(req.user_id))
-    return AskResponse(answer=text, sources=sources, answered=answered, kind=kind, latency_ms=latency)
+    return AskResponse(answer=text, sources=sources, answered=answered, kind=kind, latency_ms=latency, cached=cached)

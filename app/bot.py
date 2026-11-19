@@ -57,7 +57,8 @@ async def handle_question(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> Non
 
     text = data["answer"]
     if data.get("sources"):
-        text += "\n\n📄 *Kaynak:* " + "; ".join(data["sources"])
+        # Dosya adlarındaki _ işaretleri Telegram'da eğik yazıya dönüşmesin diye kaçırılır.
+        text += "\n\n📄 *Kaynak:* " + "; ".join(src.replace("_", "\\_") for src in data["sources"])
     try:
         await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
     except Exception:  # model çıktısında bozuk Markdown olursa düz metin gönder
