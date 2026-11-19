@@ -13,6 +13,7 @@ import pymupdf as fitz
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+from app import cache
 from app.config import get_settings
 from app.rag.store import get_vectorstore
 
@@ -71,6 +72,7 @@ def main() -> None:
     store = get_vectorstore()
     ids = [f"{c.metadata['source']}-{c.metadata['page']}-{i}" for i, c in enumerate(all_chunks)]
     store.add_documents(all_chunks, ids=ids)
+    cache.clear()  # belgeler değişti: eski cevaplar geçersiz
     print(f"Toplam {len(all_chunks)} parça indekslendi -> {s.chroma_dir}")
 
 

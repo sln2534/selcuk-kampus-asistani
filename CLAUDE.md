@@ -11,6 +11,7 @@ Selçuk Üniversitesi öğrencileri için Telegram tabanlı RAG botu. Topluma Hi
 - `app/rag/ingest.py` → `data/pdfs/*.pdf` → temizle → parçala → ChromaDB (`data/chroma/`).
 - `app/rag/answer.py` → `answer_question(q, retriever, llm)`; retriever ve llm enjekte edilebilir (testlerde sahte).
 - Ayarlar yalnızca `app/config.py` (pydantic-settings, `.env`).
+- `app/cache.py` → belgeden verilmiş cevapları `data/cevap_onbellek.json`'da saklar; ingest önbelleği siler, SYSTEM_PROMPT değişince eski kayıtlar geçersiz olur. `CACHE_ENABLED=false` ile kapanır.
 
 ## Kesin kurallar
 1. **Uydurma yok.** Model yalnızca bağlamdaki belgelere göre yanıt verir; yoksa `BILGI_YOK` → birim yönlendirme. Bu davranışı zayıflatan değişiklik yapma.

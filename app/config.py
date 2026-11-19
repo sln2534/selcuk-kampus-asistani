@@ -37,6 +37,8 @@ class Settings(BaseSettings):
     calendar_file: Path = ROOT / "data" / "takvim.json"
     units_file: Path = ROOT / "data" / "birimler.json"
     stats_file: Path = ROOT / "data" / "stats.jsonl"
+    cache_file: Path = ROOT / "data" / "cevap_onbellek.json"
+    cache_enabled: bool = True  # .env: CACHE_ENABLED=false ile kapatılır
 
     max_question_len: int = 500
 

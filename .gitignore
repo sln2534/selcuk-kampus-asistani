@@ -6,6 +6,7 @@ venv/
 .pytest_cache/
 data/chroma/
 data/stats.jsonl
+data/cevap_onbellek.json
 eval/sonuclar.csv
 .vscode/
 .DS_Store
