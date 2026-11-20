@@ -1,5 +1,5 @@
 {
-  "_not": "Zehra Nur: iletişim bilgilerini YALNIZCA selcuk.edu.tr üzerindeki resmî sayfalardan doldur. Boş alanlar botta gösterilmez. TODO işaretli alanları doğrulamadan yayına alma.",
+  "_not": "İletişim bilgileri ilgili kurumların resmî web sayfalarından doğrulanmalıdır (Selçuk Üniversitesi, Konya Büyükşehir Belediyesi, GSB). Boş alanlar botta gösterilmez; doğrulanmamış alanları yayına alma.",
   "birimler": [
     {
       "ad": "Öğrenci İşleri Daire Başkanlığı",
@@ -66,9 +66,9 @@
         "ulaşım",
         "sefer"
       ],
-      "telefon": "",
+      "telefon": "444 55 42",
       "eposta": "",
-      "web": "",
+      "web": "https://atus.konya.bel.tr/",
       "konum": ""
     },
     {
@@ -78,9 +78,9 @@
         "kyk",
         "barınma"
       ],
-      "telefon": "",
+      "telefon": "444 0 472",
       "eposta": "",
-      "web": "",
+      "web": "https://kygm.gsb.gov.tr/",
       "konum": ""
     },
     {
@@ -129,6 +129,19 @@
       "eposta": "bim@selcuk.edu.tr",
       "web": "https://selcuk.edu.tr/birim/icerik/5354/bilgi-islem-daire-baskanligi-destek-talep-olusturma-sistemi-67210",
       "konum": "Alaeddin Keykubat Kampüsü, Akademi Mah. Yeni İstanbul Cad. No:335/3, Selçuklu/Konya"
+    },
+    {
+      "ad": "Selçuk Üniversitesi Araştırma Dekanlığı (ARDEK)",
+      "anahtar_kelimeler": [
+        "teknofest",
+        "yarışma",
+        "proje",
+        "2209"
+      ],
+      "telefon": "0332 223 26 09",
+      "eposta": "ardek@selcuk.edu.tr",
+      "web": "https://ardek.selcuk.edu.tr/iletisim",
+      "konum": "Alaeddin Keykubat Kampüsü, Akademi Mah., Yahya Kemal Beyatlı Cd. No:367, Selçuklu/Konya"
     }
   ]
 }
