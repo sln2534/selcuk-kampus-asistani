@@ -39,6 +39,13 @@ async def takvim_komutu(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
 
 
+def client_error_message(status_code: int, detail: object) -> str:
+    """API'nin 4xx cevabını öğrencinin anlayacağı bir mesaja çevirir."""
+    if status_code == 400 and isinstance(detail, str) and "karakter" in detail:
+        return f"✂️ Mesajın çok uzun. {detail} Sorunu kısaltıp tekrar yazar mısın?"
+    return "Sorunu tam anlayamadım. Biraz daha açık yazar mısın? 🙂"
+
+
 async def handle_question(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     question = update.message.text
     await ctx.bot.send_chat_action(update.effective_chat.id, ChatAction.TYPING)  # "yazıyor…"
@@ -48,6 +55,9 @@ async def handle_question(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> Non
                 f"{get_settings().api_url}/ask",
                 json={"question": question, "user_id": str(update.effective_user.id)},
             )
+            if 400 <= r.status_code < 500:
+                await update.message.reply_text(client_error_message(r.status_code, r.json().get("detail")))
+                return
             r.raise_for_status()
             data = r.json()
     except Exception:

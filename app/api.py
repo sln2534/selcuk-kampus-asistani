@@ -9,7 +9,7 @@ import time
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from app import cache, stats, takvim
+from app import cache, privacy, stats, takvim
 from app.config import get_settings
 from app.rag.answer import answer_question
 
@@ -68,7 +68,10 @@ def ask(req: AskRequest):
     start = time.perf_counter()
     sources: list[str] = []
     cached = False
-    if looks_like_injection(q):
+    if found := privacy.find_personal_data(q):
+        kind, answered = "kisisel_veri", False
+        text = privacy.warning(found)
+    elif looks_like_injection(q):
         kind, answered = "guvenlik", False
         text = "Bu isteğe yardımcı olamam. Üniversiteyle ilgili bir soru sorabilirsin. 😊"
     elif (cal := takvim.answer_date_question(q)) is not None:

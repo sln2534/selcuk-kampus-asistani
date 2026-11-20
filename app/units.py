@@ -20,13 +20,29 @@ def load_units() -> list[dict]:
         return json.load(f)["birimler"]
 
 
+_SOFTEN = {"k": "ğ", "t": "d", "p": "b", "ç": "c"}
+
+
+def _matches(question: str, keyword: str) -> bool:
+    """Anahtar kelime soruda geçiyor mu? Türkçe ünsüz yumuşamasını da hesaba katar
+    (topluluk -> topluluğuna, kitap -> kitabı)."""
+    if keyword in question:
+        return True
+    last = keyword[-1:]
+    return last in _SOFTEN and len(keyword) >= 4 and (keyword[:-1] + _SOFTEN[last]) in question
+
+
 def route(question: str) -> dict:
-    """Soruyla en çok anahtar kelime eşleşen birimi döndürür; yoksa varsayılanı."""
+    """Soruyla en iyi eşleşen birimi döndürür; hiçbiri eşleşmezse varsayılanı.
+
+    Puan = eşleşen anahtar kelimelerin toplam uzunluğu. Böylece özel bir ifade ("erasmus")
+    genel bir kelimeden ("not") daha ağır basar.
+    """
     q = _norm(question)
     units = load_units()
     best, best_score = None, 0
     for u in units:
-        score = sum(1 for kw in u.get("anahtar_kelimeler", []) if _norm(kw) in q)
+        score = sum(len(kw) for kw in map(_norm, u.get("anahtar_kelimeler", [])) if _matches(q, kw))
         if score > best_score:
             best, best_score = u, score
     if best is None:
@@ -35,8 +51,11 @@ def route(question: str) -> dict:
 
 
 def format_unit(unit: dict) -> str:
-    lines = [f"*{unit['ad']}* ile iletişime geçebilirsin:"]
-    for key, label in (("telefon", "☎️"), ("eposta", "✉️"), ("web", "🌐"), ("konum", "📍")):
-        if unit.get(key):
-            lines.append(f"{label} {unit[key]}")
-    return "\n".join(lines)
+    contacts = [
+        f"{label} {unit[key]}"
+        for key, label in (("telefon", "☎️"), ("eposta", "✉️"), ("web", "🌐"), ("konum", "📍"))
+        if unit.get(key)
+    ]
+    if not contacts:  # iletişim bilgisi henüz doğrulanmamış birim: boş liste gösterme
+        return f"*{unit['ad']}* ile iletişime geçebilirsin. Güncel iletişim bilgilerine kurumun resmî web sitesinden ulaşabilirsin."
+    return "\n".join([f"*{unit['ad']}* ile iletişime geçebilirsin:", *contacts])
