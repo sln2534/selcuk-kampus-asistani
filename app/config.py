@@ -27,11 +27,11 @@ class Settings(BaseSettings):
     pdf_dir: Path = ROOT / "data" / "pdfs"
     chroma_dir: Path = ROOT / "data" / "chroma"
     collection_name: str = "selcuk_belgeler"
-    chunk_size: int = 1000
-    chunk_overlap: int = 150
-    top_k: int = 4
+    chunk_size: int = 1200
+    chunk_overlap: int = 200
+    top_k: int = 5
     # Chroma mesafe skoru (düşük = daha benzer). Bu eşiğin üstündeki parçalar alakasız sayılır.
-    max_distance: float = 0.9
+    max_distance: float = 0.72
 
     # Veri dosyaları
     calendar_file: Path = ROOT / "data" / "takvim.json"
