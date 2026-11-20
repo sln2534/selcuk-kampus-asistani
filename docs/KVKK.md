@@ -43,7 +43,7 @@ Hukuki Sebep: KVKK m. 5/2-f – İlgili kişinin temel hak ve özgürlüklerine 
 
 ## 4. Kişisel Verilerin Aktarılması ve Aktarım Amaçları
 
-**Yapay Zekâ Hizmet Sağlayıcısı (yurt dışı):** Kullanıcı tarafından iletilen soru metni, cevap üretilmesi amacıyla yurt dışında bulunan Google LLC'ye ait Gemini yapay zekâ hizmetine aktarılmaktadır. Asistanda Gemini hizmetinin ücretsiz sürümü kullanılmakta olup, ilgili hizmet koşulları uyarınca iletilen sorular ve üretilen cevaplar Google tarafından kendi ürünlerinin geliştirilmesi amacıyla kullanılabilmekte ve Google çalışanlarınca incelenebilmektedir.
+**Yapay Zekâ Hizmet Sağlayıcısı (yurt dışı):** Kullanıcı tarafından iletilen soru metni, cevap üretilmesi amacıyla yurt dışında bulunan Google LLC'ye ait Gemini yapay zekâ hizmetine aktarılmaktadır. Kişisel veri içerdiği tespit edilen mesajlar yapay zekâ hizmetine gönderilmemektedir. Asistanda Gemini hizmetinin ücretsiz sürümü kullanılmakta olup, ilgili hizmet koşulları uyarınca iletilen sorular ve üretilen cevaplar Google tarafından kendi ürünlerinin geliştirilmesi amacıyla kullanılabilmekte ve Google çalışanlarınca incelenebilmektedir.
 
 **Mesajlaşma Altyapısı Sağlayıcısı:** Asistan ile yapılan yazışmalar Telegram altyapısı üzerinden gerçekleştirildiğinden Telegram sunucularında bulunmaktadır. Söz konusu kayıtlar proje ekibinin kontrolünde değildir ve Telegram'ın gizlilik politikasına tabidir.
 
@@ -90,4 +90,4 @@ Proje ekibi tarafından kullanıcıların kimliğini belirlemeye yarayan bilgile
 **İletişim:** Proje Koordinatörü Seval Özgür
 **E-posta:** 233311019@ogr.selcuk.edu.tr
 
-Son Güncelleme Tarihi: 19.11.2026
+Son Güncelleme Tarihi: 20.11.2026
