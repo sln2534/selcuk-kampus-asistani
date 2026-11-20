@@ -289,3 +289,61 @@ def test_cache_cleared_by_clear():
     cache.put("soru", "cevap", [])
     cache.clear()
     assert cache.get("soru") is None and not get_settings().cache_file.exists()
+
+
+# --- kişisel veri filtresi (Melek'in T14 bulgusu) --------------------------
+from app import privacy
+
+
+@pytest.mark.parametrize("text,kind", [
+    ("T.C. kimlik numaram 12345678901, bunu kaydet", "T.C. kimlik numarası"),
+    ("Numaram 0532 123 45 67, beni arar mısınız?", "telefon numarası"),
+    ("+90 532 1234567 numarasından ulaşın", "telefon numarası"),
+    ("ogrenci@ogr.selcuk.edu.tr adresime yazın", "e-posta adresi"),
+    ("IBAN'ım TR12 0006 1005 1978 6457 8413 26", "IBAN"),
+    ("Öğrenci numaram 233311019, notlarım ne?", "öğrenci numarası"),
+])
+def test_personal_data_detected(text, kind):
+    assert kind in privacy.find_personal_data(text)
+
+
+@pytest.mark.parametrize("text", [
+    "Mazeret sınavına nasıl başvururum?",
+    "Ders kaydı 07.09.2026 mı başlıyor?",
+    "Çift ana dal için 2,75 ortalama yeterli mi?",
+    "Devamsızlık sınırı %30 mu?",
+    "2026-2027 akademik takviminde final ne zaman?",
+    "Yaz okulunda en fazla 16 kredi alabilir miyim?",
+])
+def test_normal_questions_not_flagged(text):
+    assert privacy.find_personal_data(text) == []
+
+
+def test_ask_blocks_personal_data_before_gemini(monkeypatch):
+    monkeypatch.setattr(api, "answer_question", lambda q: pytest.fail("Gemini'ye gitmemeli"))
+    r = client.post("/ask", json={"question": "Benim T.C. kimlik numaram 12345678901, bunu kaydet"}).json()
+    assert r["kind"] == "kisisel_veri" and not r["answered"] and "göndermedim" in r["answer"]
+    assert cache.get("Benim T.C. kimlik numaram 12345678901, bunu kaydet") is None
+
+
+# --- bot: API'nin 4xx cevapları (Melek'in T30 bulgusu) ---------------------
+def test_bot_long_message_explained():
+    from app.bot import client_error_message
+
+    msg = client_error_message(400, "Soru en fazla 500 karakter olabilir.")
+    assert "çok uzun" in msg and "500" in msg
+    assert "anlayamadım" in client_error_message(422, [{"msg": "too short"}])
+
+
+# --- birim yönlendirme (Melek'in ölçüm raporu bulguları) -------------------
+def test_route_prefers_specific_keyword():
+    assert "Erasmus" in units.route("Erasmus'a başvurmak için not ortalamam en az kaç olmalı?")["ad"]
+
+
+def test_route_handles_turkish_consonant_softening():
+    assert "Sağlık, Kültür" in units.route("Öğrenci topluluğuna nasıl üye olurum?")["ad"]
+
+
+def test_unit_without_contacts_not_left_empty():
+    text = units.format_unit({"ad": "Test Birimi"})
+    assert text.endswith("resmî web sitesinden ulaşabilirsin.") and ":" not in text.split("*")[-1][:3]
