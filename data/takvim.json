@@ -37,7 +37,8 @@
       "anahtar_kelimeler": [
         "güz ders kaydı",
         "kayıt yenileme",
-        "ders seçimi"
+        "ders seçimi",
+        "ders kaydı"
       ]
     },
     {
@@ -55,7 +56,9 @@
       "bitis": "2026-09-15",
       "anahtar_kelimeler": [
         "ders ekle bırak",
-        "güz ders ekleme"
+        "güz ders ekleme",
+        "ders ekleme",
+        "ekleme bırakma"
       ]
     },
     {
@@ -235,7 +238,8 @@
       "anahtar_kelimeler": [
         "bahar ders kaydı",
         "kayıt yenileme",
-        "ders seçimi"
+        "ders seçimi",
+        "ders kaydı"
       ]
     },
     {
@@ -251,7 +255,9 @@
       "baslangic": "2027-01-25",
       "bitis": "2027-01-26",
       "anahtar_kelimeler": [
-        "bahar ekle bırak"
+        "bahar ekle bırak",
+        "ders ekleme",
+        "ekleme bırakma"
       ]
     },
     {
@@ -317,7 +323,8 @@
       "bitis": "2027-03-28",
       "anahtar_kelimeler": [
         "bahar vize",
-        "ara sınav"
+        "ara sınav",
+        "vize"
       ]
     },
     {
