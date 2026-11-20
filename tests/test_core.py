@@ -66,6 +66,23 @@ def test_no_docs_goes_to_fallback():
     assert not res.answered and "Yurt" in res.text
 
 
+def test_unmatched_question_gets_no_unit():
+    res = answer.answer_question("Yarın Konya'da hava nasıl olacak?", retriever=lambda q: [], llm=lambda q, c: "")
+    assert not res.answered
+    assert "bulamadım" in res.text and "iletişime geçebilirsin" not in res.text
+    assert "Öğrenci İşleri" not in res.text
+
+
+def test_match_returns_none_without_keyword():
+    assert units.match("En yakın ATM nerede?") is None
+    assert units.match("kütüphane kaçta açılıyor") is not None
+
+
+def test_academic_questions_still_reach_student_affairs():
+    for q in ("Ders kaydı ne zaman?", "Çift ana dala ne zaman başvurabilirim?", "Yaz okulunda kaç ders alabilirim?"):
+        assert units.match(q)["varsayilan"], q
+
+
 def test_llm_says_no_info_goes_to_fallback():
     res = answer.answer_question("x", retriever=lambda q: [DOC], llm=lambda q, c: answer.NO_ANSWER)
     assert not res.answered

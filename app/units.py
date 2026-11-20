@@ -32,22 +32,24 @@ def _matches(question: str, keyword: str) -> bool:
     return last in _SOFTEN and len(keyword) >= 4 and (keyword[:-1] + _SOFTEN[last]) in question
 
 
-def route(question: str) -> dict:
-    """Soruyla en iyi eşleşen birimi döndürür; hiçbiri eşleşmezse varsayılanı.
+def match(question: str) -> dict | None:
+    """Soruyla en iyi eşleşen birimi döndürür; hiçbir anahtar kelime eşleşmezse None.
 
     Puan = eşleşen anahtar kelimelerin toplam uzunluğu. Böylece özel bir ifade ("erasmus")
     genel bir kelimeden ("not") daha ağır basar.
     """
     q = _norm(question)
-    units = load_units()
     best, best_score = None, 0
-    for u in units:
+    for u in load_units():
         score = sum(len(kw) for kw in map(_norm, u.get("anahtar_kelimeler", [])) if _matches(q, kw))
         if score > best_score:
             best, best_score = u, score
-    if best is None:
-        best = next(u for u in units if u.get("varsayilan"))
     return best
+
+
+def route(question: str) -> dict:
+    """match() ile aynı; eşleşme yoksa varsayılan birimi (Öğrenci İşleri) döndürür."""
+    return match(question) or next(u for u in load_units() if u.get("varsayilan"))
 
 
 def format_unit(unit: dict) -> str:
