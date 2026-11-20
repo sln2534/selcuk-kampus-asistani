@@ -22,10 +22,14 @@ DISCLAIMER = "ℹ️ Öğrenci projesidir, resmî değildir. Kesin bilgi için �
 # Basit prompt-injection ön filtresi. Asıl koruma sistem prompt'undadır; bu yalnızca bariz denemeleri keser.
 INJECTION_PATTERNS = [
     r"(önceki|yukarıdaki|tüm)\s+(talimat|kural)\w*\s+(unut|yok say|görmezden)",
-    r"ignore (all |the )?(previous|above) (instructions|rules)",
+    r"(ignore|forget)\s+(all\s+|the\s+|your\s+)?(previous\s+|above\s+)?(instructions|rules)",
     r"system prompt",
     r"sistem (prompt|talimat)\w*\s*(göster|yaz|ver)",
-    r"you are now|artık sen bir",
+    r"you are now|artık sen bir|\bsen artık\b",
+    r"\byeni\s+kural\s*:",
+    r"(yukarıdaki|önceki)\s+(ilk\s+)?mesaj\w*\s+(tekrar|yaz|göster)",
+    r"(api\s*(anahtar|key)|\.env|gizli\s+(talimat|kural|anahtar))\w*\s*(göster|yaz|ver|söyle)",
+    r"admin\s+modu|güvenlik\s+filtre\w*\s*(kapat|devre\s+dışı)",
 ]
 
 
