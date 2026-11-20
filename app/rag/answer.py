@@ -128,12 +128,20 @@ def call_llm(question: str, context: str, call=call_model) -> str:
     raise last_error  # type: ignore[misc]
 
 
+NOT_FOUND = "Bu soruya elimdeki resmî belgelerde net bir yanıt bulamadım, yanlış bilgi vermek istemem. 🙏"
+
+
 def fallback(question: str) -> Answer:
-    unit = units.route(question)
-    text = (
-        "Bu soruya elimdeki resmî belgelerde net bir yanıt bulamadım, yanlış bilgi vermek istemem. 🙏\n\n"
-        f"Bunun için {units.format_unit(unit)}"
-    )
+    unit = units.match(question)
+    if unit is None:
+        # Hiçbir birimle eşleşmeyen (çoğu zaman konu dışı) soruya rastgele birim önermiyoruz.
+        text = (
+            f"{NOT_FOUND}\n\n"
+            "Selçuk Üniversitesi ile ilgili bir soruysa biraz daha ayrıntılı sorabilirsin "
+            "ya da üniversitenin resmî web sitesine göz atabilirsin."
+        )
+    else:
+        text = f"{NOT_FOUND}\n\nBunun için {units.format_unit(unit)}"
     return Answer(text=text, answered=False)
 
 
