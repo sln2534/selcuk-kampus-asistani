@@ -1,0 +1,96 @@
+{
+  "fakulte": "Hukuk Fakültesi",
+  "universite": "Selçuk Üniversitesi",
+  "akademik_yil": "2026-2027",
+  "kaynak": "SÜ Hukuk Fakültesi 2026-2027 Eğitim-Öğretim Yılı Akademik Takvimi",
+  "kaynak_url": "https://webadmin.selcuk.edu.tr/uploads/Contents/hemsirelik_fakultesi/icerik-serbest/33041/2026_2027_Akademik_Takvim_29072026133015.pdf",
+  "kaynak_pdf_sayfasi": 4,
+  "fakulte_anahtar_kelimeler": [
+    "hukuk",
+    "hukuk fakültesi",
+    "selçuk hukuk",
+    "selçuk üniversitesi hukuk",
+    "hukuk akademik takvim",
+    "hukuk sınav takvimi"
+  ],
+  "ders_turu_es_anlamlilari": {
+    "yillik": [
+      "yıllık",
+      "yıllık ders",
+      "sene boyunca olan ders",
+      "yıllık hukuk dersi"
+    ],
+    "donemlik": [
+      "dönemlik",
+      "dönemlik ders",
+      "güz dönemi dersi",
+      "bahar dönemi dersi",
+      "yarıyıllık ders"
+    ]
+  },
+  "notlar": [
+    "Hukuk Fakültesinde yıllık ve dönemlik derslerin sınav tarihleri farklı olabilir.",
+    "28 Aralık 2026–15 Ocak 2027 aralığı yıllık dersler için ara sınav, güz dönemlik dersler için final dönemidir.",
+    "Kaynakta tek tek derslerin sınav günü ve saati belirtilmemiştir; bunlar fakültenin sınav programından doğrulanmalıdır.",
+    "Kaynakta bahar ders ekleme/bırakma tarihi belirtilmemiştir; genel takvimden varsayılmamıştır.",
+    "Güz ara sınavları ve genel/bütünleme sınavları için PDF dipnotlarında gerekli hallerde takip eden hafta sonlarında sınav yapılabileceği belirtilmiştir."
+  ],
+  "etkinlikler": [
+    {
+      "ad": "E-Devlet üzerinden elektronik kayıt",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-26",
+      "anahtar_kelimeler": [
+        "e devlet kayıt",
+        "online kayıt",
+        "elektronik kayıt",
+        "ilk kayıt"
+      ],
+      "kategori": "kayit"
+    },
+    {
+      "ad": "Yüz yüze kayıt",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-28",
+      "anahtar_kelimeler": [
+        "yüz yüze kayıt",
+        "üniversite kayıt",
+        "ilk kayıt",
+        "kesin kayıt"
+      ],
+      "kategori": "kayit"
+    },
+    {
+      "ad": "Güz dersleri",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-12-25",
+      "anahtar_kelimeler": [
+        "güz ders başlangıcı",
+        "hukuk okul ne zaman açılıyor",
+        "güz ders bitişi",
+        "hukuk güz dönemi"
+      ],
+      "yariyil": "guz",
+      "kategori": "egitim"
+    },
+    {
+      "ad": "Bahar dersleri",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-05-14",
+      "anahtar_kelimeler": [
+        "bahar ders başlangıcı",
+        "hukuk ikinci dönem",
+        "hukuk bahar dönemi",
+        "bahar ders bitişi"
+      ],
+      "yariyil": "bahar",
+      "kategori": "egitim"
+    },
+    {
+      "ad": "Ders programlarının ilanı için son tarih",
+      "baslangic": "2026-08-31",
+      "bitis": "2026-08-31",
+      "anahtar_kelimeler": [
+        "ders programı",
+        "ders çizelgesi",
+        "haftalık ders programı",
