@@ -7,6 +7,7 @@ Kullanım:
 import argparse
 import re
 import shutil
+import time
 from pathlib import Path
 
 import pymupdf as fitz
@@ -49,6 +50,37 @@ def split_documents(docs: list[Document]) -> list[Document]:
     return splitter.split_documents(docs)
 
 
+# Ücretsiz katman: embedding modeli dakikada en fazla 100 parça kabul ediyor.
+BATCH_SIZE = 80      # bir seferde gönderilen parça (sınırın biraz altında)
+BATCH_WAIT = 65.0    # iki grup arasında beklenen saniye (bir dakikalık pencere dolsun)
+
+
+def _is_rate_limit(e: Exception) -> bool:
+    msg = str(e)
+    return "429" in msg or "RESOURCE_EXHAUSTED" in msg
+
+
+def add_in_batches(store, chunks, ids, batch_size=BATCH_SIZE, wait=BATCH_WAIT, sleep=time.sleep, attempts=3):
+    """Parçaları gruplar hâlinde yazar; gruplar arasında bekleyerek hız sınırına takılmaz.
+    Yine de 429 gelirse bekleyip aynı grubu tekrar dener."""
+    total = len(chunks)
+    for start in range(0, total, batch_size):
+        if start:
+            print(f"  Hız sınırı için {wait:.0f} sn bekleniyor...")
+            sleep(wait)
+        part, part_ids = chunks[start:start + batch_size], ids[start:start + batch_size]
+        for attempt in range(attempts):
+            try:
+                store.add_documents(part, ids=part_ids)
+                break
+            except Exception as e:
+                if not _is_rate_limit(e) or attempt == attempts - 1:
+                    raise
+                print(f"  Google hız sınırı (429); {wait:.0f} sn sonra tekrar denenecek...")
+                sleep(wait)
+        print(f"  {min(start + batch_size, total)}/{total} parça yazıldı")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--reset", action="store_true", help="mevcut indeksi sil")
@@ -71,7 +103,7 @@ def main() -> None:
 
     store = get_vectorstore()
     ids = [f"{c.metadata['source']}-{c.metadata['page']}-{i}" for i, c in enumerate(all_chunks)]
-    store.add_documents(all_chunks, ids=ids)
+    add_in_batches(store, all_chunks, ids)
     cache.clear()  # belgeler değişti: eski cevaplar geçersiz
     print(f"Toplam {len(all_chunks)} parça indekslendi -> {s.chroma_dir}")
 
