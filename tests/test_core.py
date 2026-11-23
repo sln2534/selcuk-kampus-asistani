@@ -89,6 +89,39 @@ def test_llm_says_no_info_goes_to_fallback():
 
 
 # --- ingest --------------------------------------------------------------
+class _FakeStore:
+    def __init__(self, fail_first=0):
+        self.batches, self.fail_first = [], fail_first
+
+    def add_documents(self, docs, ids):
+        if self.fail_first:
+            self.fail_first -= 1
+            raise RuntimeError("429 RESOURCE_EXHAUSTED")
+        self.batches.append(list(ids))
+
+
+def test_ingest_batches_respect_rate_limit():
+    store, waits = _FakeStore(), []
+    ids = [str(i) for i in range(238)]
+    ingest.add_in_batches(store, ids, ids, sleep=waits.append)
+    assert [len(b) for b in store.batches] == [80, 80, 78]
+    assert len(waits) == 2  # gruplar arasında bekleme var, ilk gruptan önce yok
+
+
+def test_ingest_retries_after_429():
+    store, waits = _FakeStore(fail_first=1), []
+    ingest.add_in_batches(store, ["a"], ["a"], sleep=waits.append)
+    assert store.batches == [["a"]] and len(waits) == 1
+
+
+def test_ingest_does_not_retry_other_errors():
+    class Broken:
+        def add_documents(self, docs, ids):
+            raise ValueError("bozuk")
+    with pytest.raises(ValueError):
+        ingest.add_in_batches(Broken(), ["a"], ["a"], sleep=lambda s: pytest.fail("beklememeli"))
+
+
 def test_clean_text():
     assert ingest.clean_text("öğren-\nci   işleri\n\n\n\n12\n") == "öğrenci işleri"
 
