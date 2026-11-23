@@ -1,0 +1,44 @@
+
+{
+  "program": "Yabancı Diller Hazırlık",
+  "akademik_yil": "2026-2027",
+  "kaynak": "Selçuk Üniversitesi 2026-2027 Hazırlık Programları Akademik Takvimi",
+  "etkinlikler": [
+    {
+      "ad": "Hazırlık yeterlik sınavı",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-09",
+      "anahtar_kelimeler": ["hazırlık yeterlik", "hazırlık muafiyet", "proficiency"]
+    },
+    {
+      "ad": "Hazırlık 1. ara sınav",
+      "baslangic": "2026-11-02",
+      "bitis": "2026-11-06",
+      "anahtar_kelimeler": ["hazırlık 1. vize", "hazırlık birinci ara sınav"]
+    },
+    {
+      "ad": "Hazırlık 2. ara sınav",
+      "baslangic": "2026-12-28",
+      "bitis": "2026-12-31",
+      "anahtar_kelimeler": ["hazırlık 2. vize", "hazırlık ikinci ara sınav"]
+    },
+    {
+      "ad": "Hazırlık 3. ara sınav",
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-26",
+      "anahtar_kelimeler": ["hazırlık 3. vize", "hazırlık üçüncü ara sınav"]
+    },
+    {
+      "ad": "Hazırlık 4. ara sınav",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-28",
+      "anahtar_kelimeler": ["hazırlık 4. vize", "hazırlık dördüncü ara sınav"]
+    },
+    {
+      "ad": "Hazırlık yıl sonu sınavı",
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-11",
+      "anahtar_kelimeler": ["hazırlık yıl sonu", "hazırlık final"]
+    }
+  ]
+}
