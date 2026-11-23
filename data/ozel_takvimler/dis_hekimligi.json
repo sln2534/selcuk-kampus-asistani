@@ -1,0 +1,147 @@
+      "yariyil": "bahar",
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-07",
+      "anahtar_kelimeler": [
+        "diş ortak zorunlu büt",
+        "türk dili bütünleme"
+      ]
+    },
+    {
+      "etkinlik": "Bütünleme sınavları",
+      "yariyil": "güz",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-15",
+      "anahtar_kelimeler": [
+        "diş büt",
+        "diş bütler",
+        "diş bütünleme",
+        "diş güz bütünleme",
+        "diş 1 büt",
+        "diş 2 büt",
+        "diş 3 büt",
+        "diş 4 büt",
+        "diş 5 büt"
+      ]
+    },
+    {
+      "etkinlik": "Bütünleme sınavları",
+      "yariyil": "bahar",
+      "baslangic": "2027-07-05",
+      "bitis": "2027-07-09",
+      "anahtar_kelimeler": [
+        "diş büt",
+        "diş bahar büt",
+        "diş bütünlemeler",
+        "diş 1 büt",
+        "diş 2 büt",
+        "diş 3 büt",
+        "diş 4 büt",
+        "diş 5 büt"
+      ]
+    },
+    {
+      "etkinlik": "Bütünleme not giriş son tarihi",
+      "yariyil": "güz",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-02-01",
+      "anahtar_kelimeler": [
+        "diş bütünleme notları",
+        "büt notları"
+      ]
+    },
+    {
+      "etkinlik": "Bütünleme not giriş son tarihi",
+      "yariyil": "bahar",
+      "baslangic": "2027-07-16",
+      "bitis": "2027-07-16",
+      "anahtar_kelimeler": [
+        "diş bahar büt notları"
+      ]
+    },
+    {
+      "etkinlik": "3. sınıf ara tatil",
+      "yariyil": "güz",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-22",
+      "anahtar_kelimeler": [
+        "diş 3 tatil",
+        "diş üçüncü sınıf tatil",
+        "3 sınıf ara tatil"
+      ],
+      "aciklama": "Fantom laboratuvarlarında dersler 25 Ocak 2027 tarihinden itibaren başlayacaktır.",
+      "siniflar": [
+        3
+      ]
+    },
+    {
+      "etkinlik": "3. sınıf fantom laboratuvarı derslerinin başlaması",
+      "yariyil": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-25",
+      "anahtar_kelimeler": [
+        "diş fantom",
+        "fantom laboratuvarı",
+        "3 sınıf fantom"
+      ],
+      "siniflar": [
+        3
+      ]
+    },
+    {
+      "etkinlik": "4. sınıf staj programı",
+      "yariyil": "yıllık",
+      "baslangic": "2026-08-31",
+      "bitis": "2027-06-29",
+      "anahtar_kelimeler": [
+        "diş 4 staj",
+        "diş dördüncü sınıf staj",
+        "4 sınıf klinik"
+      ],
+      "aciklama": "18-22 Ocak 2027 ara tatil; toplam 202 yarım gün.",
+      "siniflar": [
+        4
+      ]
+    },
+    {
+      "etkinlik": "4. sınıf staj ara tatili",
+      "yariyil": "güz",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-22",
+      "anahtar_kelimeler": [
+        "diş 4 staj tatili",
+        "4 sınıf ara tatil"
+      ],
+      "siniflar": [
+        4
+      ]
+    },
+    {
+      "etkinlik": "5. sınıf staj programı",
+      "yariyil": "yıllık",
+      "baslangic": "2026-08-31",
+      "bitis": "2027-07-02",
+      "anahtar_kelimeler": [
+        "diş 5 staj",
+        "diş beşinci sınıf staj",
+        "5 sınıf klinik"
+      ],
+      "aciklama": "25-29 Ocak 2027 ara tatil; toplam 205 yarım gün.",
+      "siniflar": [
+        5
+      ]
+    },
+    {
+      "etkinlik": "5. sınıf staj ara tatili",
+      "yariyil": "güz",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-29",
+      "anahtar_kelimeler": [
+        "diş 5 staj tatili",
+        "5 sınıf ara tatil"
+      ],
+      "siniflar": [
+        5
+      ]
+    }
+  ]
+}
