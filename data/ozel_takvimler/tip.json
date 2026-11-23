@@ -1,0 +1,910 @@
+{
+  "fakulte": "Tıp Fakültesi",
+  "akademik_yil": "2026-2027",
+  "kaynak": {
+    "belge": "SÜ Tıp Fakültesi 2026-2027 Eğitim-Öğretim Yılı Akademik Takvimi",
+    "url": "https://webadmin.selcuk.edu.tr/uploads/Contents/hemsirelik_fakultesi/icerik-serbest/33041/2026_2027_Akademik_Takvim_29072026133015.pdf",
+    "pdf_sayfa": 2
+  },
+  "fakulte_anahtar_kelimeler": [
+    "tıp",
+    "tıp fakültesi",
+    "selçuk tıp",
+    "selçuk üniversitesi tıp",
+    "tıp akademik takvim"
+  ],
+  "donem_es_anlamlilari": {
+    "I": [
+      "dönem 1",
+      "dönem i",
+      "1. sınıf",
+      "birinci sınıf",
+      "tıp 1"
+    ],
+    "II": [
+      "dönem 2",
+      "dönem ii",
+      "2. sınıf",
+      "ikinci sınıf",
+      "tıp 2"
+    ],
+    "III": [
+      "dönem 3",
+      "dönem iii",
+      "3. sınıf",
+      "üçüncü sınıf",
+      "tıp 3"
+    ],
+    "IV": [
+      "dönem 4",
+      "dönem iv",
+      "4. sınıf",
+      "dördüncü sınıf",
+      "tıp 4"
+    ],
+    "V": [
+      "dönem 5",
+      "dönem v",
+      "5. sınıf",
+      "beşinci sınıf",
+      "tıp 5"
+    ],
+    "VI": [
+      "dönem 6",
+      "dönem vi",
+      "6. sınıf",
+      "altıncı sınıf",
+      "tıp 6",
+      "intörn",
+      "intern"
+    ]
+  },
+  "etkinlikler": [
+    {
+      "ad": "E-Devlet üzerinden elektronik ilk kayıt",
+      "donemler": [
+        "I"
+      ],
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-26",
+      "anahtar_kelimeler": [
+        "tıp e devlet kayıt",
+        "tıp ilk kayıt",
+        "tıp elektronik kayıt",
+        "tıp üniversite kaydı"
+      ]
+    },
+    {
+      "ad": "Yüz yüze ilk kayıt",
+      "donemler": [
+        "I"
+      ],
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-28",
+      "anahtar_kelimeler": [
+        "tıp yüz yüze kayıt",
+        "tıp kesin kayıt",
+        "tıp ilk kayıt"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "I"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-14",
+      "bitis": "2027-01-15",
+      "anahtar_kelimeler": [
+        "tıp dönem I guz ders başlangıcı",
+        "tıp I dersler ne zaman başlıyor",
+        "tıp dönem I guz ders bitişi",
+        "tıp I okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "I"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-05-28",
+      "anahtar_kelimeler": [
+        "tıp dönem I bahar ders başlangıcı",
+        "tıp I dersler ne zaman başlıyor",
+        "tıp dönem I bahar ders bitişi",
+        "tıp I okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "I"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-12",
+      "anahtar_kelimeler": [
+        "tıp dönem I guz kayıt yenileme",
+        "tıp I ders kaydı",
+        "tıp I ders seçimi",
+        "tıp dönem I kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "I"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-30",
+      "anahtar_kelimeler": [
+        "tıp dönem I bahar kayıt yenileme",
+        "tıp I ders kaydı",
+        "tıp I ders seçimi",
+        "tıp dönem I kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "I"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "tıp dönem I guz geç kayıt",
+        "tıp I mazeretli kayıt",
+        "tıp I kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "I"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-12",
+      "bitis": "2027-02-12",
+      "anahtar_kelimeler": [
+        "tıp dönem I bahar geç kayıt",
+        "tıp I mazeretli kayıt",
+        "tıp I kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "II"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-07",
+      "bitis": "2027-01-15",
+      "anahtar_kelimeler": [
+        "tıp dönem II guz ders başlangıcı",
+        "tıp II dersler ne zaman başlıyor",
+        "tıp dönem II guz ders bitişi",
+        "tıp II okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "II"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-05-28",
+      "anahtar_kelimeler": [
+        "tıp dönem II bahar ders başlangıcı",
+        "tıp II dersler ne zaman başlıyor",
+        "tıp dönem II bahar ders bitişi",
+        "tıp II okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "II"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-08-31",
+      "bitis": "2026-09-05",
+      "anahtar_kelimeler": [
+        "tıp dönem II guz kayıt yenileme",
+        "tıp II ders kaydı",
+        "tıp II ders seçimi",
+        "tıp dönem II kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "II"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-30",
+      "anahtar_kelimeler": [
+        "tıp dönem II bahar kayıt yenileme",
+        "tıp II ders kaydı",
+        "tıp II ders seçimi",
+        "tıp dönem II kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "II"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-18",
+      "bitis": "2026-09-18",
+      "anahtar_kelimeler": [
+        "tıp dönem II guz geç kayıt",
+        "tıp II mazeretli kayıt",
+        "tıp II kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "II"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-12",
+      "bitis": "2027-02-12",
+      "anahtar_kelimeler": [
+        "tıp dönem II bahar geç kayıt",
+        "tıp II mazeretli kayıt",
+        "tıp II kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "III"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-07",
+      "bitis": "2027-01-15",
+      "anahtar_kelimeler": [
+        "tıp dönem III guz ders başlangıcı",
+        "tıp III dersler ne zaman başlıyor",
+        "tıp dönem III guz ders bitişi",
+        "tıp III okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "III"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-05-28",
+      "anahtar_kelimeler": [
+        "tıp dönem III bahar ders başlangıcı",
+        "tıp III dersler ne zaman başlıyor",
+        "tıp dönem III bahar ders bitişi",
+        "tıp III okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "III"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-08-31",
+      "bitis": "2026-09-05",
+      "anahtar_kelimeler": [
+        "tıp dönem III guz kayıt yenileme",
+        "tıp III ders kaydı",
+        "tıp III ders seçimi",
+        "tıp dönem III kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "III"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-30",
+      "anahtar_kelimeler": [
+        "tıp dönem III bahar kayıt yenileme",
+        "tıp III ders kaydı",
+        "tıp III ders seçimi",
+        "tıp dönem III kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "III"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-18",
+      "bitis": "2026-09-18",
+      "anahtar_kelimeler": [
+        "tıp dönem III guz geç kayıt",
+        "tıp III mazeretli kayıt",
+        "tıp III kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "III"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-12",
+      "bitis": "2027-02-12",
+      "anahtar_kelimeler": [
+        "tıp dönem III bahar geç kayıt",
+        "tıp III mazeretli kayıt",
+        "tıp III kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "IV"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-08-31",
+      "bitis": "2027-01-15",
+      "anahtar_kelimeler": [
+        "tıp dönem IV guz ders başlangıcı",
+        "tıp IV dersler ne zaman başlıyor",
+        "tıp dönem IV guz ders bitişi",
+        "tıp IV okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "IV"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-06-18",
+      "anahtar_kelimeler": [
+        "tıp dönem IV bahar ders başlangıcı",
+        "tıp IV dersler ne zaman başlıyor",
+        "tıp dönem IV bahar ders bitişi",
+        "tıp IV okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "IV"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-29",
+      "anahtar_kelimeler": [
+        "tıp dönem IV guz kayıt yenileme",
+        "tıp IV ders kaydı",
+        "tıp IV ders seçimi",
+        "tıp dönem IV kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "IV"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-23",
+      "anahtar_kelimeler": [
+        "tıp dönem IV bahar kayıt yenileme",
+        "tıp IV ders kaydı",
+        "tıp IV ders seçimi",
+        "tıp dönem IV kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "IV"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-11",
+      "bitis": "2026-09-11",
+      "anahtar_kelimeler": [
+        "tıp dönem IV guz geç kayıt",
+        "tıp IV mazeretli kayıt",
+        "tıp IV kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "IV"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-05",
+      "bitis": "2027-02-05",
+      "anahtar_kelimeler": [
+        "tıp dönem IV bahar geç kayıt",
+        "tıp IV mazeretli kayıt",
+        "tıp IV kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "V"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-08-24",
+      "bitis": "2027-01-15",
+      "anahtar_kelimeler": [
+        "tıp dönem V guz ders başlangıcı",
+        "tıp V dersler ne zaman başlıyor",
+        "tıp dönem V guz ders bitişi",
+        "tıp V okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "V"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-05-24",
+      "anahtar_kelimeler": [
+        "tıp dönem V bahar ders başlangıcı",
+        "tıp V dersler ne zaman başlıyor",
+        "tıp dönem V bahar ders bitişi",
+        "tıp V okul ne zaman açılıyor"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "V"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-08-17",
+      "bitis": "2026-08-22",
+      "anahtar_kelimeler": [
+        "tıp dönem V guz kayıt yenileme",
+        "tıp V ders kaydı",
+        "tıp V ders seçimi",
+        "tıp dönem V kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Kayıt yenileme",
+      "donemler": [
+        "V"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-23",
+      "anahtar_kelimeler": [
+        "tıp dönem V bahar kayıt yenileme",
+        "tıp V ders kaydı",
+        "tıp V ders seçimi",
+        "tıp dönem V kayıt tarihleri"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "V"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-09-04",
+      "bitis": "2026-09-04",
+      "anahtar_kelimeler": [
+        "tıp dönem V guz geç kayıt",
+        "tıp V mazeretli kayıt",
+        "tıp V kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "V"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-05",
+      "bitis": "2027-02-05",
+      "anahtar_kelimeler": [
+        "tıp dönem V bahar geç kayıt",
+        "tıp V mazeretli kayıt",
+        "tıp V kayıt son gün"
+      ]
+    },
+    {
+      "ad": "Dönem VI intörnlük eğitimi",
+      "donemler": [
+        "VI"
+      ],
+      "baslangic": "2026-07-01",
+      "bitis": "2027-06-30",
+      "anahtar_kelimeler": [
+        "tıp intörnlük başlangıcı",
+        "tıp intörn bitiş",
+        "tıp dönem 6 eğitim tarihleri",
+        "tıp 6. sınıf"
+      ]
+    },
+    {
+      "ad": "Dönem VI kayıt yenileme",
+      "donemler": [
+        "VI"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-06-25",
+      "bitis": "2026-06-30",
+      "anahtar_kelimeler": [
+        "tıp intörn guz kayıt yenileme",
+        "tıp dönem 6 guz ders kaydı"
+      ]
+    },
+    {
+      "ad": "Dönem VI kayıt yenileme",
+      "donemler": [
+        "VI"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-30",
+      "anahtar_kelimeler": [
+        "tıp intörn bahar kayıt yenileme",
+        "tıp dönem 6 bahar ders kaydı"
+      ]
+    },
+    {
+      "ad": "Dönem VI mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "VI"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-07-14",
+      "bitis": "2026-07-14",
+      "anahtar_kelimeler": [
+        "tıp intörn guz geç kayıt",
+        "tıp dönem 6 guz mazeretli kayıt"
+      ]
+    },
+    {
+      "ad": "Dönem VI mazeretli geç kayıt son başvuru tarihi",
+      "donemler": [
+        "VI"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-05",
+      "bitis": "2027-02-05",
+      "anahtar_kelimeler": [
+        "tıp intörn bahar geç kayıt",
+        "tıp dönem 6 bahar mazeretli kayıt"
+      ]
+    },
+    {
+      "ad": "Zorunlu yabancı dil muafiyet sınavı",
+      "donemler": [
+        "I"
+      ],
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "tıp yabancı dil muafiyet",
+        "tıp ingilizce muafiyet",
+        "tıp dil muafiyet sınavı"
+      ]
+    },
+    {
+      "ad": "Seçmeli derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "I",
+        "II",
+        "III"
+      ],
+      "yariyil": "guz",
+      "baslangic": "2026-10-05",
+      "bitis": "2027-01-08",
+      "anahtar_kelimeler": [
+        "tıp seçmeli ders başlangıcı",
+        "tıp guz seçmeli dersler",
+        "tıp seçmeli ders bitişi"
+      ]
+    },
+    {
+      "ad": "Seçmeli derslerin başlangıcı ve bitişi",
+      "donemler": [
+        "I",
+        "II",
+        "III"
+      ],
+      "yariyil": "bahar",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-05-14",
+      "anahtar_kelimeler": [
+        "tıp seçmeli ders başlangıcı",
+        "tıp bahar seçmeli dersler",
+        "tıp seçmeli ders bitişi"
+      ]
+    },
+    {
+      "ad": "Kurul mazeret sınavı",
+      "donemler": [
+        "I",
+        "II",
+        "III"
+      ],
+      "baslangic": "2027-06-01",
+      "bitis": "2027-06-01",
+      "anahtar_kelimeler": [
+        "tıp kurul mazeret",
+        "komite mazeret sınavı",
+        "tıp mazeret komitesi",
+        "tıp dönem 1 kurul mazeret",
+        "tıp dönem 2 kurul mazeret",
+        "tıp dönem 3 kurul mazeret"
+      ]
+    },
+    {
+      "ad": "Entegre dersler final sınavı",
+      "donemler": [
+        "I",
+        "II",
+        "III"
+      ],
+      "baslangic": "2027-06-14",
+      "bitis": "2027-06-18",
+      "anahtar_kelimeler": [
+        "tıp final",
+        "tıp finaller",
+        "tıp entegre final",
+        "tıp 1 final",
+        "tıp 2 final",
+        "tıp 3 final",
+        "dönem 1 final",
+        "dönem 2 final",
+        "dönem 3 final",
+        "tıp final haftası"
+      ]
+    },
+    {
+      "ad": "Entegre dersler bütünleme sınavı",
+      "donemler": [
+        "I",
+        "II",
+        "III"
+      ],
+      "baslangic": "2027-07-05",
+      "bitis": "2027-07-09",
+      "anahtar_kelimeler": [
+        "tıp bütünleme",
+        "tıp büt",
+        "tıp bütler",
+        "tıp entegre büt",
+        "tıp 1 büt",
+        "tıp 2 büt",
+        "tıp 3 büt",
+        "dönem 1 bütünleme",
+        "dönem 2 bütünleme",
+        "dönem 3 bütünleme"
+      ]
+    },
+    {
+      "ad": "Staj sonu sınavı",
+      "donemler": [
+        "IV",
+        "V"
+      ],
+      "anahtar_kelimeler": [
+        "tıp staj sonu sınavı",
+        "tıp 4 staj sınavı",
+        "tıp 5 staj sınavı",
+        "tıp klinik staj finali"
+      ],
+      "aciklama": "Her stajın son iki günü; staja göre kesin tarih değişir."
+    },
+    {
+      "ad": "Staj bütünleme sınavı",
+      "donemler": [
+        "IV"
+      ],
+      "baslangic": "2027-07-05",
+      "bitis": "2027-07-13",
+      "anahtar_kelimeler": [
+        "tıp 4 büt",
+        "tıp 4. sınıf bütünleme",
+        "dönem 4 staj büt",
+        "tıp dönem iv bütünleme"
+      ]
+    },
+    {
+      "ad": "Staj bütünleme sınavı",
+      "donemler": [
+        "V"
+      ],
+      "baslangic": "2027-06-09",
+      "bitis": "2027-06-17",
+      "anahtar_kelimeler": [
+        "tıp 5 büt",
+        "tıp 5. sınıf bütünleme",
+        "dönem 5 staj büt",
+        "tıp dönem v bütünleme"
+      ]
+    },
+    {
+      "ad": "Ortak zorunlu dersler ara sınavı",
+      "donemler": [],
+      "yariyil": "guz",
+      "baslangic": "2026-11-02",
+      "bitis": "2026-11-02",
+      "anahtar_kelimeler": [
+        "tıp guz ortak zorunlu vize",
+        "tıp türk dili vize",
+        "tıp atatürk ilkeleri ara sınavı",
+        "tıp ortak ders vize"
+      ],
+      "aciklama": "Dönem bazında hangi öğrencilerin bu dersleri aldığı takvimde belirtilmemiştir."
+    },
+    {
+      "ad": "Seçmeli ders ara sınavı",
+      "donemler": [],
+      "yariyil": "guz",
+      "baslangic": "2026-11-09",
+      "bitis": "2026-11-15",
+      "anahtar_kelimeler": [
+        "tıp guz seçmeli vize",
+        "tıp seçmeli ders ara sınav",
+        "tıp seçmeli sınav tarihleri"
+      ],
+      "aciklama": "Seçmeli ders sınavı için dönem bazında kapsam takvimde açıkça belirtilmemiştir."
+    },
+    {
+      "ad": "Ortak zorunlu dersler final sınavı",
+      "donemler": [],
+      "yariyil": "guz",
+      "baslangic": "2026-12-28",
+      "bitis": "2026-12-28",
+      "anahtar_kelimeler": [
+        "tıp guz ortak zorunlu final",
+        "tıp türk dili final",
+        "tıp atatürk ilkeleri final"
+      ],
+      "aciklama": "Dönem bazında hangi öğrencilerin bu dersleri aldığı takvimde belirtilmemiştir."
+    },
+    {
+      "ad": "Seçmeli ders final sınavı",
+      "donemler": [],
+      "yariyil": "guz",
+      "baslangic": "2027-01-04",
+      "bitis": "2027-01-10",
+      "anahtar_kelimeler": [
+        "tıp guz seçmeli final",
+        "tıp seçmeli ders finali",
+        "tıp seçmeli finaller"
+      ],
+      "aciklama": "Seçmeli ders sınavı için dönem bazında kapsam takvimde açıkça belirtilmemiştir."
+    },
+    {
+      "ad": "Ortak zorunlu dersler bütünleme sınavı",
+      "donemler": [],
+      "yariyil": "guz",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-11",
+      "anahtar_kelimeler": [
+        "tıp guz ortak zorunlu büt",
+        "tıp türk dili bütünleme",
+        "tıp ortak ders bütünleme"
+      ],
+      "aciklama": "Dönem bazında hangi öğrencilerin bu dersleri aldığı takvimde belirtilmemiştir."
+    },
+    {
+      "ad": "Seçmeli ders bütünleme sınavı",
+      "donemler": [],
+      "yariyil": "guz",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-29",
+      "anahtar_kelimeler": [
+        "tıp guz seçmeli büt",
+        "tıp seçmeli ders bütünleme",
+        "tıp seçmeli bütler"
+      ],
+      "aciklama": "Seçmeli ders sınavı için dönem bazında kapsam takvimde açıkça belirtilmemiştir."
+    },
+    {
+      "ad": "Ortak zorunlu dersler ara sınavı",
+      "donemler": [],
+      "yariyil": "bahar",
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-22",
+      "anahtar_kelimeler": [
+        "tıp bahar ortak zorunlu vize",
+        "tıp türk dili vize",
+        "tıp atatürk ilkeleri ara sınavı",
+        "tıp ortak ders vize"
+      ],
+      "aciklama": "Dönem bazında hangi öğrencilerin bu dersleri aldığı takvimde belirtilmemiştir."
+    },
+    {
+      "ad": "Seçmeli ders ara sınavı",
+      "donemler": [],
+      "yariyil": "bahar",
+      "baslangic": "2027-03-29",
+      "bitis": "2027-04-04",
+      "anahtar_kelimeler": [
+        "tıp bahar seçmeli vize",
+        "tıp seçmeli ders ara sınav",
+        "tıp seçmeli sınav tarihleri"
+      ],
+      "aciklama": "Seçmeli ders sınavı için dönem bazında kapsam takvimde açıkça belirtilmemiştir."
+    },
+    {
+      "ad": "Ortak zorunlu dersler final sınavı",
+      "donemler": [],
+      "yariyil": "bahar",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-24",
+      "anahtar_kelimeler": [
+        "tıp bahar ortak zorunlu final",
+        "tıp türk dili final",
+        "tıp atatürk ilkeleri final"
+      ],
+      "aciklama": "Dönem bazında hangi öğrencilerin bu dersleri aldığı takvimde belirtilmemiştir."
+    },
+    {
+      "ad": "Seçmeli ders final sınavı",
+      "donemler": [],
+      "yariyil": "bahar",
+      "baslangic": "2027-05-31",
+      "bitis": "2027-06-06",
+      "anahtar_kelimeler": [
+        "tıp bahar seçmeli final",
+        "tıp seçmeli ders finali",
+        "tıp seçmeli finaller"
+      ],
+      "aciklama": "Seçmeli ders sınavı için dönem bazında kapsam takvimde açıkça belirtilmemiştir."
+    },
+    {
+      "ad": "Ortak zorunlu dersler bütünleme sınavı",
+      "donemler": [],
+      "yariyil": "bahar",
+      "baslangic": "2027-06-07",
+      "bitis": "2027-06-07",
+      "anahtar_kelimeler": [
+        "tıp bahar ortak zorunlu büt",
+        "tıp türk dili bütünleme",
+        "tıp ortak ders bütünleme"
+      ],
+      "aciklama": "Dönem bazında hangi öğrencilerin bu dersleri aldığı takvimde belirtilmemiştir."
+    },
+    {
+      "ad": "Seçmeli ders bütünleme sınavı",
+      "donemler": [],
+      "yariyil": "bahar",
+      "baslangic": "2027-06-21",
+      "bitis": "2027-06-25",
+      "anahtar_kelimeler": [
+        "tıp bahar seçmeli büt",
+        "tıp seçmeli ders bütünleme",
+        "tıp seçmeli bütler"
+      ],
+      "aciklama": "Seçmeli ders sınavı için dönem bazında kapsam takvimde açıkça belirtilmemiştir."
+    }
+  ],
+  "notlar": [
+    "Dönem I-III entegre dersler sınavları ile seçmeli ders ve ortak zorunlu ders sınavları birbirinden farklıdır.",
+    "Dönem IV-V staj sonu sınavları her stajın son iki günündedir; sabit tarih yayımlanmamıştır.",
+    "Kurul/komite sınavlarının tek tek tarihleri bu akademik takvimde bulunmamaktadır.",
+    "Bu JSON dosyasının bot tarafından kullanılması için veri yükleyicinin ozel_takvimler klasörünü okuması gerekir."
+  ]
+}
