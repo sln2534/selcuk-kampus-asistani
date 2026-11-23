@@ -1,0 +1,96 @@
+{
+  "fakulte": "Veteriner Fakültesi",
+  "akademik_yil": "2026-2027",
+  "kaynak": "Selçuk Üniversitesi 2026-2027 Akademik Takvimi, Veteriner Fakültesi bölümü (PDF sayfa 5)",
+  "kaynak_url": "https://webadmin.selcuk.edu.tr/uploads/Contents/hemsirelik_fakultesi/icerik-serbest/33041/2026_2027_Akademik_Takvim_29072026133015.pdf",
+  "fakulte_anahtar_kelimeler": [
+    "veteriner",
+    "veterinerlik",
+    "veteriner fakültesi",
+    "vet fak",
+    "selçuk veteriner",
+    "selçuk veterinerlik",
+    "veteriner akademik takvim"
+  ],
+  "aciklamalar": [
+    "Ortak zorunlu dersler: Türk Dili, Atatürk İlkeleri ve İnkılap Tarihi, Yabancı Dil.",
+    "Birinci sınıf öğrencileri için ortak zorunlu ders sınavı gününe başka ders sınavı konulmaz.",
+    "Ara sınav günü yeterli gelmeyen birimler güz döneminde 14-15 Kasım 2026, bahar döneminde 3-4 Nisan 2027 tarihlerinde de sınav yapabilir.",
+    "VEHİP programı tarihleri akademik takvimde belirtilmiştir; ayrıntılı uygulama ve sınav programları için fakülte duyuruları kontrol edilmelidir."
+  ],
+  "etkinlikler": [
+    {
+      "id": "vet_01",
+      "ad": "E-Devlet üzerinden elektronik kayıt",
+      "donem": "genel",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-26",
+      "anahtar_kelimeler": [
+        "veteriner e-devlet üzerinden elektronik kayıt",
+        "veterinerlik e-devlet üzerinden elektronik kayıt",
+        "genel e-devlet üzerinden elektronik kayıt",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri"
+      ]
+    },
+    {
+      "id": "vet_02",
+      "ad": "Yüz yüze kayıt",
+      "donem": "genel",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-28",
+      "anahtar_kelimeler": [
+        "veteriner yüz yüze kayıt",
+        "veterinerlik yüz yüze kayıt",
+        "genel yüz yüze kayıt",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri"
+      ]
+    },
+    {
+      "id": "vet_03",
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donem": "güz",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-12-25",
+      "anahtar_kelimeler": [
+        "veteriner derslerin başlangıcı ve bitişi",
+        "veterinerlik derslerin başlangıcı ve bitişi",
+        "güz derslerin başlangıcı ve bitişi",
+        "ders başlangıcı",
+        "okul ne zaman açılıyor",
+        "dersler ne zaman bitiyor"
+      ]
+    },
+    {
+      "id": "vet_04",
+      "ad": "Derslerin başlangıcı ve bitişi",
+      "donem": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-05-14",
+      "anahtar_kelimeler": [
+        "veteriner derslerin başlangıcı ve bitişi",
+        "veterinerlik derslerin başlangıcı ve bitişi",
+        "bahar derslerin başlangıcı ve bitişi",
+        "ders başlangıcı",
+        "okul ne zaman açılıyor",
+        "dersler ne zaman bitiyor"
+      ]
+    },
+    {
+      "id": "vet_05",
+      "ad": "Ders programlarının ilanı için son tarih",
+      "donem": "güz",
+      "baslangic": "2026-08-31",
+      "bitis": "2026-08-31",
+      "anahtar_kelimeler": [
+        "veteriner ders programlarının ilanı için son tarih",
+        "veterinerlik ders programlarının ilanı için son tarih",
+        "güz ders programlarının ilanı için son tarih",
+        "ders programı",
+        "ders çizelgesi",
+        "ders saatleri"
