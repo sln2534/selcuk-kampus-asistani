@@ -1,0 +1,8 @@
+{
+  "fakulte": "Hukuk Fakültesi",
+  "kaynak": "Test hukuk takvimi",
+  "etkinlikler": [
+    {"ad": "Yıllık dersler final sınavları", "baslangic": "2027-05-24", "bitis": "2027-06-04", "anahtar_kelimeler": ["hukuk final", "hukuk yıllık final"]},
+    {"ad": "Güz dönemlik dersler final sınavları", "yariyil": "guz", "baslangic": "2026-12-28", "bitis": "2027-01-15", "anahtar_kelimeler": ["hukuk dönemlik final"]}
+  ]
+}

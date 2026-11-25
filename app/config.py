@@ -35,6 +35,7 @@ class Settings(BaseSettings):
 
     # Veri dosyaları
     calendar_file: Path = ROOT / "data" / "takvim.json"
+    special_calendar_dir: Path = ROOT / "data" / "ozel_takvimler"  # Tıp, Hukuk vb. farklı takvimler
     units_file: Path = ROOT / "data" / "birimler.json"
     stats_file: Path = ROOT / "data" / "stats.jsonl"
     cache_file: Path = ROOT / "data" / "cevap_onbellek.json"
