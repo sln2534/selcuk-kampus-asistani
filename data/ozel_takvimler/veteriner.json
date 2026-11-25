@@ -94,3 +94,716 @@
         "ders programı",
         "ders çizelgesi",
         "ders saatleri"
+      ]
+    },
+    {
+      "id": "vet_06",
+      "ad": "Ders programlarının ilanı için son tarih",
+      "donem": "bahar",
+      "baslangic": "2027-01-11",
+      "bitis": "2027-01-11",
+      "anahtar_kelimeler": [
+        "veteriner ders programlarının ilanı için son tarih",
+        "veterinerlik ders programlarının ilanı için son tarih",
+        "bahar ders programlarının ilanı için son tarih",
+        "ders programı",
+        "ders çizelgesi",
+        "ders saatleri"
+      ]
+    },
+    {
+      "id": "vet_07",
+      "ad": "Kayıt yenileme",
+      "donem": "güz",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-12",
+      "anahtar_kelimeler": [
+        "veteriner kayıt yenileme",
+        "veterinerlik kayıt yenileme",
+        "güz kayıt yenileme",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "ders seçimi",
+        "güz ders kaydı"
+      ]
+    },
+    {
+      "id": "vet_08",
+      "ad": "Kayıt yenileme",
+      "donem": "bahar",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-23",
+      "anahtar_kelimeler": [
+        "veteriner kayıt yenileme",
+        "veterinerlik kayıt yenileme",
+        "bahar kayıt yenileme",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "ders seçimi",
+        "bahar ders kaydı"
+      ]
+    },
+    {
+      "id": "vet_09",
+      "ad": "Danışman onayı",
+      "donem": "güz",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-13",
+      "anahtar_kelimeler": [
+        "veteriner danışman onayı",
+        "veterinerlik danışman onayı",
+        "güz danışman onayı",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "danışman onay",
+        "ders onayı"
+      ]
+    },
+    {
+      "id": "vet_10",
+      "ad": "Danışman onayı",
+      "donem": "bahar",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-24",
+      "anahtar_kelimeler": [
+        "veteriner danışman onayı",
+        "veterinerlik danışman onayı",
+        "bahar danışman onayı",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "danışman onay",
+        "ders onayı"
+      ]
+    },
+    {
+      "id": "vet_11",
+      "ad": "Ders ekleme ve bırakma",
+      "donem": "güz",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-15",
+      "anahtar_kelimeler": [
+        "veteriner ders ekleme ve bırakma",
+        "veterinerlik ders ekleme ve bırakma",
+        "güz ders ekleme ve bırakma",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "ders ekleme",
+        "ekleme bırakma",
+        "ekle bırak"
+      ]
+    },
+    {
+      "id": "vet_12",
+      "ad": "Ders ekleme ve bırakma",
+      "donem": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-26",
+      "anahtar_kelimeler": [
+        "veteriner ders ekleme ve bırakma",
+        "veterinerlik ders ekleme ve bırakma",
+        "bahar ders ekleme ve bırakma",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "ders ekleme",
+        "ekleme bırakma",
+        "ekle bırak"
+      ]
+    },
+    {
+      "id": "vet_13",
+      "ad": "Zorunlu yabancı dil muafiyet sınavı",
+      "donem": "güz",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "veteriner zorunlu yabancı dil muafiyet sınavı",
+        "veterinerlik zorunlu yabancı dil muafiyet sınavı",
+        "güz zorunlu yabancı dil muafiyet sınavı",
+        "sınav takvimi",
+        "sınav tarihleri"
+      ]
+    },
+    {
+      "id": "vet_14",
+      "ad": "Mazeretli geç kayıt son başvuru",
+      "donem": "güz",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "veteriner mazeretli geç kayıt son başvuru",
+        "veterinerlik mazeretli geç kayıt son başvuru",
+        "güz mazeretli geç kayıt son başvuru",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "geç kayıt",
+        "mazeretli kayıt"
+      ]
+    },
+    {
+      "id": "vet_15",
+      "ad": "Mazeretli geç kayıt son başvuru",
+      "donem": "bahar",
+      "baslangic": "2027-02-05",
+      "bitis": "2027-02-05",
+      "anahtar_kelimeler": [
+        "veteriner mazeretli geç kayıt son başvuru",
+        "veterinerlik mazeretli geç kayıt son başvuru",
+        "bahar mazeretli geç kayıt son başvuru",
+        "kayıt",
+        "ders kaydı",
+        "kayıt yenileme",
+        "öğrenci işleri",
+        "geç kayıt",
+        "mazeretli kayıt"
+      ]
+    },
+    {
+      "id": "vet_16",
+      "ad": "Hazırlık sınıfları yabancı dil yeterlik sınavı",
+      "donem": "güz",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-09",
+      "anahtar_kelimeler": [
+        "veteriner hazırlık sınıfları yabancı dil yeterlik sınavı",
+        "veterinerlik hazırlık sınıfları yabancı dil yeterlik sınavı",
+        "güz hazırlık sınıfları yabancı dil yeterlik sınavı",
+        "sınav takvimi",
+        "sınav tarihleri"
+      ]
+    },
+    {
+      "id": "vet_17",
+      "ad": "Ek sınav final sınavı",
+      "donem": "güz",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-18",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav final sınavı",
+        "veterinerlik ek sınav final sınavı",
+        "güz ek sınav final sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ek sınav"
+      ]
+    },
+    {
+      "id": "vet_18",
+      "ad": "Ek sınav final sınavı",
+      "donem": "bahar",
+      "baslangic": "2027-01-25",
+      "bitis": "2027-01-29",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav final sınavı",
+        "veterinerlik ek sınav final sınavı",
+        "bahar ek sınav final sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ek sınav"
+      ]
+    },
+    {
+      "id": "vet_19",
+      "ad": "Ek sınav final not girişi son tarihi",
+      "donem": "güz",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav final not girişi son tarihi",
+        "veterinerlik ek sınav final not girişi son tarihi",
+        "güz ek sınav final not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_20",
+      "ad": "Ek sınav final not girişi son tarihi",
+      "donem": "bahar",
+      "baslangic": "2027-02-04",
+      "bitis": "2027-02-04",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav final not girişi son tarihi",
+        "veterinerlik ek sınav final not girişi son tarihi",
+        "bahar ek sınav final not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_21",
+      "ad": "Ek sınav bütünleme sınavı",
+      "donem": "güz",
+      "baslangic": "2026-09-28",
+      "bitis": "2026-10-02",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav bütünleme sınavı",
+        "veterinerlik ek sınav bütünleme sınavı",
+        "güz ek sınav bütünleme sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ek sınav"
+      ]
+    },
+    {
+      "id": "vet_22",
+      "ad": "Ek sınav bütünleme sınavı",
+      "donem": "bahar",
+      "baslangic": "2027-02-08",
+      "bitis": "2027-02-12",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav bütünleme sınavı",
+        "veterinerlik ek sınav bütünleme sınavı",
+        "bahar ek sınav bütünleme sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ek sınav"
+      ]
+    },
+    {
+      "id": "vet_23",
+      "ad": "Ek sınav bütünleme not girişi son tarihi",
+      "donem": "güz",
+      "baslangic": "2026-10-09",
+      "bitis": "2026-10-09",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav bütünleme not girişi son tarihi",
+        "veterinerlik ek sınav bütünleme not girişi son tarihi",
+        "güz ek sınav bütünleme not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_24",
+      "ad": "Ek sınav bütünleme not girişi son tarihi",
+      "donem": "bahar",
+      "baslangic": "2027-02-19",
+      "bitis": "2027-02-19",
+      "anahtar_kelimeler": [
+        "veteriner ek sınav bütünleme not girişi son tarihi",
+        "veterinerlik ek sınav bütünleme not girişi son tarihi",
+        "bahar ek sınav bütünleme not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_25",
+      "ad": "Ortak zorunlu dersler ara sınavı",
+      "donem": "güz",
+      "baslangic": "2026-11-02",
+      "bitis": "2026-11-02",
+      "anahtar_kelimeler": [
+        "veteriner ortak zorunlu dersler ara sınavı",
+        "veterinerlik ortak zorunlu dersler ara sınavı",
+        "güz ortak zorunlu dersler ara sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ortak zorunlu",
+        "türk dili",
+        "atatürk ilkeleri",
+        "yabancı dil",
+        "ortak zorunlu dersler"
+      ]
+    },
+    {
+      "id": "vet_26",
+      "ad": "Ortak zorunlu dersler ara sınavı",
+      "donem": "bahar",
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-22",
+      "anahtar_kelimeler": [
+        "veteriner ortak zorunlu dersler ara sınavı",
+        "veterinerlik ortak zorunlu dersler ara sınavı",
+        "bahar ortak zorunlu dersler ara sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ortak zorunlu",
+        "türk dili",
+        "atatürk ilkeleri",
+        "yabancı dil",
+        "ortak zorunlu dersler"
+      ]
+    },
+    {
+      "id": "vet_27",
+      "ad": "Ara sınavlar",
+      "donem": "güz",
+      "baslangic": "2026-10-31",
+      "bitis": "2026-11-08",
+      "anahtar_kelimeler": [
+        "veteriner ara sınavlar",
+        "veterinerlik ara sınavlar",
+        "güz ara sınavlar",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "vize",
+        "vizeler",
+        "ara sınav",
+        "vize haftası",
+        "güz vize",
+        "veteriner güz vizeleri"
+      ]
+    },
+    {
+      "id": "vet_28",
+      "ad": "Ara sınavlar",
+      "donem": "bahar",
+      "baslangic": "2027-03-20",
+      "bitis": "2027-03-28",
+      "anahtar_kelimeler": [
+        "veteriner ara sınavlar",
+        "veterinerlik ara sınavlar",
+        "bahar ara sınavlar",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "vize",
+        "vizeler",
+        "ara sınav",
+        "vize haftası",
+        "bahar vize",
+        "veteriner bahar vizeleri"
+      ]
+    },
+    {
+      "id": "vet_29",
+      "ad": "Ara sınav not girişi son tarihi",
+      "donem": "güz",
+      "baslangic": "2026-12-11",
+      "bitis": "2026-12-11",
+      "anahtar_kelimeler": [
+        "veteriner ara sınav not girişi son tarihi",
+        "veterinerlik ara sınav not girişi son tarihi",
+        "güz ara sınav not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_30",
+      "ad": "Ara sınav not girişi son tarihi",
+      "donem": "bahar",
+      "baslangic": "2027-04-30",
+      "bitis": "2027-04-30",
+      "anahtar_kelimeler": [
+        "veteriner ara sınav not girişi son tarihi",
+        "veterinerlik ara sınav not girişi son tarihi",
+        "bahar ara sınav not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_31",
+      "ad": "Ortak zorunlu dersler final sınavı",
+      "donem": "güz",
+      "baslangic": "2026-12-28",
+      "bitis": "2026-12-28",
+      "anahtar_kelimeler": [
+        "veteriner ortak zorunlu dersler final sınavı",
+        "veterinerlik ortak zorunlu dersler final sınavı",
+        "güz ortak zorunlu dersler final sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ortak zorunlu",
+        "türk dili",
+        "atatürk ilkeleri",
+        "yabancı dil",
+        "ortak zorunlu dersler"
+      ]
+    },
+    {
+      "id": "vet_32",
+      "ad": "Ortak zorunlu dersler final sınavı",
+      "donem": "bahar",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-24",
+      "anahtar_kelimeler": [
+        "veteriner ortak zorunlu dersler final sınavı",
+        "veterinerlik ortak zorunlu dersler final sınavı",
+        "bahar ortak zorunlu dersler final sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ortak zorunlu",
+        "türk dili",
+        "atatürk ilkeleri",
+        "yabancı dil",
+        "ortak zorunlu dersler"
+      ]
+    },
+    {
+      "id": "vet_33",
+      "ad": "Final sınavları",
+      "donem": "güz",
+      "baslangic": "2026-12-28",
+      "bitis": "2027-01-10",
+      "anahtar_kelimeler": [
+        "veteriner final sınavları",
+        "veterinerlik final sınavları",
+        "güz final sınavları",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "final",
+        "finaller",
+        "final haftası",
+        "güz final",
+        "veteriner güz finalleri"
+      ]
+    },
+    {
+      "id": "vet_34",
+      "ad": "Final sınavları",
+      "donem": "bahar",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-06-06",
+      "anahtar_kelimeler": [
+        "veteriner final sınavları",
+        "veterinerlik final sınavları",
+        "bahar final sınavları",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "final",
+        "finaller",
+        "final haftası",
+        "bahar final",
+        "veteriner bahar finalleri"
+      ]
+    },
+    {
+      "id": "vet_35",
+      "ad": "Final not girişi son tarihi",
+      "donem": "güz",
+      "baslangic": "2027-01-13",
+      "bitis": "2027-01-13",
+      "anahtar_kelimeler": [
+        "veteriner final not girişi son tarihi",
+        "veterinerlik final not girişi son tarihi",
+        "güz final not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_36",
+      "ad": "Final not girişi son tarihi",
+      "donem": "bahar",
+      "baslangic": "2027-06-09",
+      "bitis": "2027-06-09",
+      "anahtar_kelimeler": [
+        "veteriner final not girişi son tarihi",
+        "veterinerlik final not girişi son tarihi",
+        "bahar final not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_37",
+      "ad": "Ortak zorunlu dersler bütünleme sınavı",
+      "donem": "güz",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-18",
+      "anahtar_kelimeler": [
+        "veteriner ortak zorunlu dersler bütünleme sınavı",
+        "veterinerlik ortak zorunlu dersler bütünleme sınavı",
+        "güz ortak zorunlu dersler bütünleme sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ortak zorunlu",
+        "türk dili",
+        "atatürk ilkeleri",
+        "yabancı dil",
+        "ortak zorunlu dersler"
+      ]
+    },
+    {
+      "id": "vet_38",
+      "ad": "Ortak zorunlu dersler bütünleme sınavı",
+      "donem": "bahar",
+      "baslangic": "2027-06-14",
+      "bitis": "2027-06-14",
+      "anahtar_kelimeler": [
+        "veteriner ortak zorunlu dersler bütünleme sınavı",
+        "veterinerlik ortak zorunlu dersler bütünleme sınavı",
+        "bahar ortak zorunlu dersler bütünleme sınavı",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "ortak zorunlu",
+        "türk dili",
+        "atatürk ilkeleri",
+        "yabancı dil",
+        "ortak zorunlu dersler"
+      ]
+    },
+    {
+      "id": "vet_39",
+      "ad": "Bütünleme sınavları",
+      "donem": "güz",
+      "baslangic": "2027-01-16",
+      "bitis": "2027-01-22",
+      "anahtar_kelimeler": [
+        "veteriner bütünleme sınavları",
+        "veterinerlik bütünleme sınavları",
+        "güz bütünleme sınavları",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "büt",
+        "bütler",
+        "bütünleme",
+        "güz büt",
+        "veteriner güz bütünlemeleri"
+      ]
+    },
+    {
+      "id": "vet_40",
+      "ad": "Bütünleme sınavları",
+      "donem": "bahar",
+      "baslangic": "2027-06-12",
+      "bitis": "2027-06-18",
+      "anahtar_kelimeler": [
+        "veteriner bütünleme sınavları",
+        "veterinerlik bütünleme sınavları",
+        "bahar bütünleme sınavları",
+        "sınav takvimi",
+        "sınav tarihleri",
+        "büt",
+        "bütler",
+        "bütünleme",
+        "bahar büt",
+        "veteriner bahar bütünlemeleri"
+      ]
+    },
+    {
+      "id": "vet_41",
+      "ad": "Bütünleme not girişi son tarihi",
+      "donem": "güz",
+      "baslangic": "2027-01-24",
+      "bitis": "2027-01-24",
+      "anahtar_kelimeler": [
+        "veteriner bütünleme not girişi son tarihi",
+        "veterinerlik bütünleme not girişi son tarihi",
+        "güz bütünleme not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_42",
+      "ad": "Bütünleme not girişi son tarihi",
+      "donem": "bahar",
+      "baslangic": "2027-06-24",
+      "bitis": "2027-06-24",
+      "anahtar_kelimeler": [
+        "veteriner bütünleme not girişi son tarihi",
+        "veterinerlik bütünleme not girişi son tarihi",
+        "bahar bütünleme not girişi son tarihi",
+        "not girişi",
+        "notların sisteme girilmesi",
+        "not son tarihi"
+      ]
+    },
+    {
+      "id": "vet_43",
+      "ad": "VEHİP-I (intörn) programı",
+      "donem": "güz",
+      "baslangic": "2026-08-10",
+      "bitis": "2026-12-31",
+      "anahtar_kelimeler": [
+        "veteriner vehi̇p-i (intörn) programı",
+        "veterinerlik vehi̇p-i (intörn) programı",
+        "güz vehi̇p-i (intörn) programı",
+        "vehip",
+        "vehip 1",
+        "vehip 2",
+        "intörn",
+        "intern",
+        "intörnlük",
+        "tamamlama programı",
+        "vehi̇p-i"
+      ]
+    },
+    {
+      "id": "vet_44",
+      "ad": "VEHİP-II (intörn) programı",
+      "donem": "bahar",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-06-11",
+      "anahtar_kelimeler": [
+        "veteriner vehi̇p-ii (intörn) programı",
+        "veterinerlik vehi̇p-ii (intörn) programı",
+        "bahar vehi̇p-ii (intörn) programı",
+        "vehip",
+        "vehip 1",
+        "vehip 2",
+        "intörn",
+        "intern",
+        "intörnlük",
+        "tamamlama programı",
+        "vehi̇p-ii"
+      ]
+    },
+    {
+      "id": "vet_45",
+      "ad": "VEHİP-I (intörn) tamamlama programı",
+      "donem": "güz",
+      "baslangic": "2027-01-04",
+      "bitis": "2027-01-29",
+      "anahtar_kelimeler": [
+        "veteriner vehi̇p-i (intörn) tamamlama programı",
+        "veterinerlik vehi̇p-i (intörn) tamamlama programı",
+        "güz vehi̇p-i (intörn) tamamlama programı",
+        "vehip",
+        "vehip 1",
+        "vehip 2",
+        "intörn",
+        "intern",
+        "intörnlük",
+        "tamamlama programı",
+        "vehi̇p-i"
+      ]
+    },
+    {
+      "id": "vet_46",
+      "ad": "VEHİP-II (intörn) tamamlama programı",
+      "donem": "bahar",
+      "baslangic": "2027-06-14",
+      "bitis": "2027-07-09",
+      "anahtar_kelimeler": [
+        "veteriner vehi̇p-ii (intörn) tamamlama programı",
+        "veterinerlik vehi̇p-ii (intörn) tamamlama programı",
+        "bahar vehi̇p-ii (intörn) tamamlama programı",
+        "vehip",
+        "vehip 1",
+        "vehip 2",
+        "intörn",
+        "intern",
+        "intörnlük",
+        "tamamlama programı",
+        "vehi̇p-ii"
+      ]
+    }
+  ]
+}
