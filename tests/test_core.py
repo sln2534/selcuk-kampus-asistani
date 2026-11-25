@@ -20,11 +20,14 @@ def tmp_stats(tmp_path, monkeypatch):
     # Testler gerçek takvim verisine değil, sabit test takvimine bakar; böylece
     # data/takvim.json güncellendiğinde testler bozulmaz.
     monkeypatch.setattr(get_settings(), "calendar_file", FIXTURES / "takvim.json")
+    monkeypatch.setattr(get_settings(), "special_calendar_dir", FIXTURES / "ozel_takvimler")
     monkeypatch.setattr(get_settings(), "cache_file", tmp_path / "cevap_onbellek.json")
     monkeypatch.setattr(cache, "_data", None)
     takvim.load_calendar.cache_clear()
+    takvim.load_special.cache_clear()
     yield
     takvim.load_calendar.cache_clear()
+    takvim.load_special.cache_clear()
     monkeypatch.setattr(answer.time, "sleep", lambda s: None)
 
 
@@ -267,6 +270,57 @@ def test_call_llm_raises_when_all_models_fail():
 
     with pytest.raises(RuntimeError):
         answer.call_llm("soru", "bağlam", call=always_busy)
+
+
+# --- fakülteye özel takvimler -------------------------------------------
+def test_faculty_question_uses_faculty_calendar_not_general():
+    out = takvim.answer_date_question("Hukuk fakültesi finalleri ne zaman?")
+    assert "Yıllık dersler final" in out and "24.05.2027" in out
+    assert "11.01.2027" not in out  # genel takvimin final tarihi gelmemeli
+    assert "Test hukuk takvimi" in out
+
+
+def test_broken_faculty_calendar_does_not_fall_back_to_general():
+    out = takvim.answer_date_question("Veteriner fakültesi finalleri ne zaman?")
+    assert "Veteriner Fakültesi" in out and "bulamadım" in out
+    assert "11.01.2027" not in out
+
+
+def test_missing_faculty_calendar_does_not_fall_back_to_general():
+    out = takvim.answer_date_question("Tıp bütünleme ne zaman?")  # fixture'da tip.json yok
+    assert "Tıp Fakültesi" in out and "📅" not in out
+
+
+def test_detect_program_word_boundaries():
+    assert takvim.detect_program("Hukuk fakültesi finalleri ne zaman") == "hukuk"
+    assert takvim.detect_program("Diş hekimliği bütünleme ne zaman") == "dis_hekimligi"
+    assert takvim.detect_program("Yurt dışı başvurusu ne zaman") is None  # "dış" != "diş"
+    assert takvim.detect_program("Tıpkı geçen yıl gibi mi") is None
+    assert takvim.detect_program("Final sınavları ne zaman") is None
+
+
+def test_general_answer_mentions_special_calendars():
+    assert "Hukuk" in takvim.answer_date_question("Final ne zaman?")
+
+
+@pytest.mark.xfail(reason="#43: dis_hekimligi, hukuk ve veteriner yarım yüklendi; Zehra düzeltince bu satırı sil", strict=False)
+def test_real_special_calendars_are_valid():
+    """data/ozel_takvimler/*.json geçerli JSON olmalı; tarihler YYYY-AA-GG."""
+    import json
+
+    from app.config import ROOT
+
+    broken = []
+    for path in sorted((ROOT / "data" / "ozel_takvimler").glob("*.json")):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            for ev in data["etkinlikler"]:
+                assert (ev.get("ad") or ev.get("etkinlik")) and ev["anahtar_kelimeler"]
+                if ev.get("baslangic"):
+                    assert date.fromisoformat(ev["baslangic"]) <= date.fromisoformat(ev.get("bitis") or ev["baslangic"])
+        except Exception as e:
+            broken.append(f"{path.name}: {e}")
+    assert not broken, "Bozuk özel takvim dosyaları: " + "; ".join(broken)
 
 
 def test_real_calendar_file_is_valid():
