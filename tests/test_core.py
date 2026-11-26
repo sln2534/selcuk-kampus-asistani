@@ -382,11 +382,16 @@ def test_detect_program_word_boundaries():
     assert takvim.detect_program("Final sınavları ne zaman") is None
 
 
+def test_event_label_shows_semester_from_any_field():
+    assert "(bahar)" in takvim.format_event({"ad": "Final", "donem": "bahar", "baslangic": "2027-05-24"})
+    assert "(güz)" in takvim.format_event({"ad": "Final", "yariyil": "guz", "baslangic": "2026-12-28"})
+    assert "(" not in takvim.format_event({"ad": "Kayıt", "donem": "genel", "baslangic": "2026-08-24"})
+
+
 def test_general_answer_mentions_special_calendars():
     assert "Hukuk" in takvim.answer_date_question("Final ne zaman?")
 
 
-@pytest.mark.xfail(reason="#43: dis_hekimligi, hukuk ve veteriner yarım yüklendi; Zehra düzeltince bu satırı sil", strict=False)
 def test_real_special_calendars_are_valid():
     """data/ozel_takvimler/*.json geçerli JSON olmalı; tarihler YYYY-AA-GG."""
     import json
