@@ -1,3 +1,355 @@
+{
+  "fakulte": "Selçuk Üniversitesi Diş Hekimliği Fakültesi",
+  "akademik_yil": "2026-2027",
+  "kaynak": "SÜ Diş Hekimliği Fakültesi 2026-2027 Eğitim-Öğretim Yılı Akademik Takvimi, PDF sayfa 3 (basılı sayfa 4)",
+  "kaynak_url": "https://webadmin.selcuk.edu.tr/uploads/Contents/hemsirelik_fakultesi/icerik-serbest/33041/2026_2027_Akademik_Takvim_29072026133015.pdf",
+  "fakulte_anahtar_kelimeler": [
+    "diş",
+    "diş hekimliği",
+    "diş hekimliği fakültesi",
+    "selçuk diş",
+    "diş fak",
+    "diş fakültesi",
+    "dişçilik"
+  ],
+  "sinif_es_anlamlilari": {
+    "1": [
+      "1. sınıf",
+      "1 sınıf",
+      "diş 1",
+      "diş 1. sınıf"
+    ],
+    "2": [
+      "2. sınıf",
+      "2 sınıf",
+      "diş 2",
+      "diş 2. sınıf"
+    ],
+    "3": [
+      "3. sınıf",
+      "3 sınıf",
+      "diş 3",
+      "diş 3. sınıf"
+    ],
+    "4": [
+      "4. sınıf",
+      "4 sınıf",
+      "diş 4",
+      "diş 4. sınıf"
+    ],
+    "5": [
+      "5. sınıf",
+      "5 sınıf",
+      "diş 5",
+      "diş 5. sınıf"
+    ]
+  },
+  "notlar": [
+    "Sınav haftasında teorik ve pratik dersler yapılmaz, stajlar devam eder.",
+    "Ortak zorunlu dersler: Türk Dili, Atatürk İlkeleri ve İnkılap Tarihi, Yabancı Dil.",
+    "Birinci sınıflar için ortak zorunlu derslerin sınav gününe başka sınav konulmaz.",
+    "Resmî tabloda bahar yarıyılı için belirtilmeyen kayıt/ek sınav tarihleri tahmin edilmemiştir.",
+    "Ara sınav/final/bütünleme aralıkları sınıflar için ortak fakülte aralıklarıdır; sınıf bazında tekil sınav günleri belirtilmemiştir."
+  ],
+  "etkinlikler": [
+    {
+      "etkinlik": "E-Devlet elektronik ilk kayıt",
+      "yariyil": "güz",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-26",
+      "anahtar_kelimeler": [
+        "e devlet kayıt",
+        "elektronik kayıt",
+        "diş ilk kayıt"
+      ]
+    },
+    {
+      "etkinlik": "Yüz yüze ilk kayıt",
+      "yariyil": "güz",
+      "baslangic": "2026-08-24",
+      "bitis": "2026-08-28",
+      "anahtar_kelimeler": [
+        "yüz yüze kayıt",
+        "diş kayıt",
+        "ilk kayıt"
+      ]
+    },
+    {
+      "etkinlik": "Derslerin başlangıcı ve bitişi",
+      "yariyil": "güz",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-12-31",
+      "anahtar_kelimeler": [
+        "diş ders başlangıcı",
+        "diş okul ne zaman açılıyor",
+        "güz dersleri",
+        "diş güz dönemi"
+      ]
+    },
+    {
+      "etkinlik": "Derslerin başlangıcı ve bitişi",
+      "yariyil": "bahar",
+      "baslangic": "2027-02-01",
+      "bitis": "2027-06-11",
+      "anahtar_kelimeler": [
+        "diş bahar başlangıcı",
+        "diş bahar dönemi",
+        "diş dersler ne zaman bitiyor"
+      ]
+    },
+    {
+      "etkinlik": "Ders programlarının ilanı için son tarih",
+      "yariyil": "güz",
+      "baslangic": "2026-08-31",
+      "bitis": "2026-08-31",
+      "anahtar_kelimeler": [
+        "diş ders programı",
+        "ders programı ne zaman açıklanacak"
+      ]
+    },
+    {
+      "etkinlik": "Kayıt yenileme",
+      "yariyil": "güz",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-12",
+      "anahtar_kelimeler": [
+        "diş ders kaydı",
+        "diş kayıt yenileme",
+        "diş ders seçimi"
+      ]
+    },
+    {
+      "etkinlik": "Danışman onayı",
+      "yariyil": "güz",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-13",
+      "anahtar_kelimeler": [
+        "diş danışman onayı",
+        "danışman onay tarihi"
+      ]
+    },
+    {
+      "etkinlik": "Ders ekleme ve bırakma",
+      "yariyil": "güz",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-15",
+      "anahtar_kelimeler": [
+        "diş ders ekleme",
+        "diş ekle bırak",
+        "diş ders bırakma",
+        "ekleme bırakma"
+      ]
+    },
+    {
+      "etkinlik": "Zorunlu yabancı dil muafiyet sınavı",
+      "yariyil": "güz",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "diş yabancı dil muafiyet",
+        "ingilizce muafiyet sınavı"
+      ]
+    },
+    {
+      "etkinlik": "Mazeretli geç kayıt son başvuru",
+      "yariyil": "güz",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "diş geç kayıt",
+        "mazeretli kayıt"
+      ]
+    },
+    {
+      "etkinlik": "Hazırlık sınıfları yabancı dil yeterlik sınavı",
+      "yariyil": "güz",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-09",
+      "anahtar_kelimeler": [
+        "hazırlık yeterlik",
+        "proficiency",
+        "diş hazırlık sınavı"
+      ]
+    },
+    {
+      "etkinlik": "Ek sınav final sınavı",
+      "yariyil": "güz",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-18",
+      "anahtar_kelimeler": [
+        "diş ek sınav final",
+        "azami süre ek sınav"
+      ]
+    },
+    {
+      "etkinlik": "Ek sınav final not giriş son tarihi",
+      "yariyil": "güz",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "ek sınav final notları",
+        "ek sınav not giriş"
+      ]
+    },
+    {
+      "etkinlik": "Ek sınav bütünleme sınavı",
+      "yariyil": "güz",
+      "baslangic": "2026-09-28",
+      "bitis": "2026-10-02",
+      "anahtar_kelimeler": [
+        "diş ek sınav büt",
+        "ek sınav bütünleme"
+      ]
+    },
+    {
+      "etkinlik": "Ek sınav bütünleme not giriş son tarihi",
+      "yariyil": "güz",
+      "baslangic": "2026-10-09",
+      "bitis": "2026-10-09",
+      "anahtar_kelimeler": [
+        "ek sınav büt notları"
+      ]
+    },
+    {
+      "etkinlik": "Ortak zorunlu dersler ara sınavı",
+      "yariyil": "güz",
+      "baslangic": "2026-12-28",
+      "bitis": "2026-12-28",
+      "anahtar_kelimeler": [
+        "diş ortak zorunlu vize",
+        "türk dili vize",
+        "atatürk ilkeleri vize",
+        "ortak ders ara sınav"
+      ]
+    },
+    {
+      "etkinlik": "Ortak zorunlu dersler ara sınavı",
+      "yariyil": "bahar",
+      "baslangic": "2027-03-22",
+      "bitis": "2027-03-22",
+      "anahtar_kelimeler": [
+        "diş ortak zorunlu vize",
+        "bahar ortak ders vize"
+      ]
+    },
+    {
+      "etkinlik": "Ara sınavlar",
+      "yariyil": "güz",
+      "baslangic": "2026-11-23",
+      "bitis": "2026-12-04",
+      "anahtar_kelimeler": [
+        "diş vize",
+        "diş vizeler",
+        "diş güz vize",
+        "diş ara sınav",
+        "diş hekimliği vize tarihleri",
+        "diş 1 vize",
+        "diş 2 vize",
+        "diş 3 vize",
+        "diş 4 vize",
+        "diş 5 vize"
+      ]
+    },
+    {
+      "etkinlik": "Ara sınavlar",
+      "yariyil": "bahar",
+      "baslangic": "2027-04-26",
+      "bitis": "2027-05-07",
+      "anahtar_kelimeler": [
+        "diş vize",
+        "diş bahar vize",
+        "diş bahar ara sınav",
+        "diş 1 vize",
+        "diş 2 vize",
+        "diş 3 vize",
+        "diş 4 vize",
+        "diş 5 vize"
+      ]
+    },
+    {
+      "etkinlik": "Ara sınav not giriş son tarihi",
+      "yariyil": "güz",
+      "baslangic": "2026-12-11",
+      "bitis": "2026-12-11",
+      "anahtar_kelimeler": [
+        "diş vize notları",
+        "güz ara sınav not girişi"
+      ]
+    },
+    {
+      "etkinlik": "Ara sınav not giriş son tarihi",
+      "yariyil": "bahar",
+      "baslangic": "2027-05-14",
+      "bitis": "2027-05-14",
+      "anahtar_kelimeler": [
+        "diş bahar vize notları"
+      ]
+    },
+    {
+      "etkinlik": "Ortak zorunlu dersler final sınavı",
+      "yariyil": "bahar",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-24",
+      "anahtar_kelimeler": [
+        "diş ortak zorunlu final",
+        "türk dili final",
+        "atatürk ilkeleri final"
+      ]
+    },
+    {
+      "etkinlik": "Final sınavları",
+      "yariyil": "güz",
+      "baslangic": "2027-01-04",
+      "bitis": "2027-01-08",
+      "anahtar_kelimeler": [
+        "diş final",
+        "diş finaller",
+        "diş güz final",
+        "diş final haftası",
+        "diş 1 final",
+        "diş 2 final",
+        "diş 3 final",
+        "diş 4 final",
+        "diş 5 final"
+      ]
+    },
+    {
+      "etkinlik": "Final sınavları",
+      "yariyil": "bahar",
+      "baslangic": "2027-06-14",
+      "bitis": "2027-06-25",
+      "anahtar_kelimeler": [
+        "diş final",
+        "diş bahar final",
+        "diş finaller ne zaman",
+        "diş 1 final",
+        "diş 2 final",
+        "diş 3 final",
+        "diş 4 final",
+        "diş 5 final"
+      ]
+    },
+    {
+      "etkinlik": "Final not giriş son tarihi",
+      "yariyil": "güz",
+      "baslangic": "2027-01-10",
+      "bitis": "2027-01-10",
+      "anahtar_kelimeler": [
+        "diş final notları",
+        "final not giriş"
+      ]
+    },
+    {
+      "etkinlik": "Final not giriş son tarihi",
+      "yariyil": "bahar",
+      "baslangic": "2027-07-02",
+      "bitis": "2027-07-02",
+      "anahtar_kelimeler": [
+        "diş bahar final notları"
+      ]
+    },
+    {
+      "etkinlik": "Ortak zorunlu dersler bütünleme sınavı",
       "yariyil": "bahar",
       "baslangic": "2027-06-07",
       "bitis": "2027-06-07",

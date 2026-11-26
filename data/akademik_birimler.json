@@ -1,3 +1,259 @@
+{
+  "_not": "Mevcut data/birimler.json korunur. Bu dosya akademik birimler içindir. Bos iletisim alanlari dogrulanmamistir; bot bunlari gostermemelidir. Telefonlar resmî 2026 kayit duyurularindan, birim adlari resmî akademik birimler listesinden derlenmistir. Yeni dosyanin bot tarafindan okunmasi kod entegrasyonu gerektirir. Harita URL alanları otomatik oluşturulmuş arama bağlantılarıdır; konum pini doğrulanmamıştır. Önceki telefonlar korunmuştur. Yeni iletişim bilgileri kaynak_iletisim alanındaki sayfadan alınmıştır.",
+  "kaynaklar": [
+    "https://selcuk.edu.tr/anasayfa/akademik",
+    "https://selcuk.edu.tr/icerik/telefon-rehberi",
+    "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-dgs-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-82738",
+    "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388"
+  ],
+  "birimler": [
+    {
+      "ad": "Akşehir İktisadi ve İdari Bilimler Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "akşehir i̇ktisadi ve i̇dari bilimler fakültesi",
+        "akşehir i̇ktisadi ve i̇dari bilimler"
+      ],
+      "telefon": "0332 812 85 89",
+      "eposta": "aksehiriibf@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/aksehir_iktisadi_ve_idari_bilimler_fakultesi-fakulte/5350",
+      "konum": "Kozağaç Mah. Kozağaç Cad. No:132/1 42550 Akşehir/Konya",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/aksehir_iktisadi_ve_idari_bilimler_fakultesi-fakulte/5350",
+      "kaynak_iletisim": "https://selcuk.edu.tr/birim/aksehir_iktisadi_ve_idari_bilimler_fakultesi-fakulte/5350",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ak%C5%9Fehir+%C4%B0ktisadi+ve+%C4%B0dari+Bilimler+Fak%C3%BCltesi+Koza%C4%9Fa%C3%A7+Mah.+Koza%C4%9Fa%C3%A7+Cad.+No%3A132%2F1+42550+Ak%C5%9Fehir%2FKonya",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Akşehir Mühendislik ve Mimarlık Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "akşehir mühendislik ve mimarlık fakültesi",
+        "akşehir mühendislik ve mimarlık"
+      ],
+      "telefon": "0332 814 01 34",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/aksehir_muhendislik_ve_mimarlik_fakultesi/5331",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/aksehir_muhendislik_ve_mimarlik_fakultesi/5331",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ak%C5%9Fehir+M%C3%BChendislik+ve+Mimarl%C4%B1k+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Beyşehir Ali Akkanat İşletme Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "beyşehir ali akkanat i̇şletme fakültesi",
+        "beyşehir ali akkanat i̇şletme"
+      ],
+      "telefon": "0332 512 05 15",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_isletme/5329",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_isletme/5329",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Bey%C5%9Fehir+Ali+Akkanat+%C4%B0%C5%9Fletme+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Beyşehir Ali Akkanat Turizm Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "beyşehir ali akkanat turizm fakültesi",
+        "beyşehir ali akkanat turizm"
+      ],
+      "telefon": "0332 512 05 45",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_turizm/5330",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_turizm/5330",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Bey%C5%9Fehir+Ali+Akkanat+Turizm+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Eczacılık Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "eczacılık fakültesi",
+        "eczacılık"
+      ],
+      "telefon": "",
+      "eposta": "eczacilik@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/eczacilik/5335",
+      "konum": "Alaeddin Keykubat Yerleşkesi, Akademi Mah. Yeni İstanbul Cad. No:343, 42130",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/eczacilik/5335",
+      "kaynak_iletisim": "https://selcuk.edu.tr/birim/eczacilik/5335",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Eczac%C4%B1l%C4%B1k+Fak%C3%BCltesi+Alaeddin+Keykubat+Yerle%C5%9Fkesi%2C+Akademi+Mah.+Yeni+%C4%B0stanbul+Cad.+No%3A343%2C+42130",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Edebiyat Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "edebiyat fakültesi",
+        "edebiyat"
+      ],
+      "telefon": "0332 223 14 01",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/edebiyat/5337",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/edebiyat/5337",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Edebiyat+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Eğitim Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "eğitim fakültesi",
+        "eğitim"
+      ],
+      "telefon": "",
+      "eposta": "egitimfakultesi@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/egitim_fakultesi/5352",
+      "konum": "Akademi Mah. Yeni İstanbul Cad. No:345 PK 42130",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/egitim_fakultesi/5352",
+      "kaynak_iletisim": "https://selcuk.edu.tr/birim/egitim_fakultesi/5352",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+E%C4%9Fitim+Fak%C3%BCltesi+Akademi+Mah.+Yeni+%C4%B0stanbul+Cad.+No%3A345+PK+42130",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Fen Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "fen fakültesi",
+        "fen"
+      ],
+      "telefon": "0332 223 39 36",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/fen/5341",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/fen/5341",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Fen+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Güzel Sanatlar Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "güzel sanatlar fakültesi",
+        "güzel sanatlar"
+      ],
+      "telefon": "0332 223 45 66",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/guzel_sanatlar/5351",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/guzel_sanatlar/5351",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+G%C3%BCzel+Sanatlar+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Hemşirelik Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "hemşirelik fakültesi",
+        "hemşirelik"
+      ],
+      "telefon": "0332 223 07 58",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/hemsirelik_fakultesi/5339",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/hemsirelik_fakultesi/5339",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Hem%C5%9Firelik+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Hukuk Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "hukuk fakültesi",
+        "hukuk"
+      ],
+      "telefon": "0332 223 32 32",
+      "eposta": "hukuk@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/hukuk/5338",
+      "konum": "Alaeddin Keykubat Yerleşkesi, Akademi Mah. Yeni İstanbul Cad. 42130 Selçuklu/Konya",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/hukuk/5338",
+      "kaynak_iletisim": "https://selcuk.edu.tr/birim/hukuk/5338",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Hukuk+Fak%C3%BCltesi+Alaeddin+Keykubat+Yerle%C5%9Fkesi%2C+Akademi+Mah.+Yeni+%C4%B0stanbul+Cad.+42130+Sel%C3%A7uklu%2FKonya",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "İktisadi ve İdari Bilimler Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "i̇ktisadi ve i̇dari bilimler fakültesi",
+        "i̇ktisadi ve i̇dari bilimler"
+      ],
+      "telefon": "0332 223 20 20",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/iktisadi_ve_idari_bilimler/5347",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/iktisadi_ve_idari_bilimler/5347",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+%C4%B0ktisadi+ve+%C4%B0dari+Bilimler+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "İlahiyat Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "i̇lahiyat fakültesi",
+        "i̇lahiyat"
+      ],
+      "telefon": "0332 223 43 64",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/ilahiyat_fakultesi-fakulte/5342",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/ilahiyat_fakultesi-fakulte/5342",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+%C4%B0lahiyat+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "İletişim Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
+        "i̇letişim fakültesi",
+        "i̇letişim"
+      ],
+      "telefon": "0332 223 36 45",
+      "eposta": "iletisimdekanlik@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/iletisim/5336",
+      "konum": "Alaeddin Keykubat Yerleşkesi, Akademi Mah. Yeni İstanbul Cad. No:311, 42130 Selçuklu/Konya",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/iletisim/5336",
+      "kaynak_iletisim": "https://selcuk.edu.tr/birim/iletisim/5336",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+%C4%B0leti%C5%9Fim+Fak%C3%BCltesi+Alaeddin+Keykubat+Yerle%C5%9Fkesi%2C+Akademi+Mah.+Yeni+%C4%B0stanbul+Cad.+No%3A311%2C+42130+Sel%C3%A7uklu%2FKonya",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Kulu Sağlık Bilimleri Fakültesi",
+      "tur": "fakulte",
+      "anahtar_kelimeler": [
         "kulu sağlık bilimleri fakültesi",
         "kulu sağlık bilimleri"
       ],
@@ -158,3 +414,633 @@
       "anahtar_kelimeler": [
         "ziraat fakültesi",
         "ziraat"
+      ],
+      "telefon": "0332 223 28 82",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/ziraat_fakultesi/5340",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/ziraat_fakultesi/5340",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ziraat+Fak%C3%BCltesi+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Eğitim Bilimleri Enstitüsü",
+      "tur": "enstitu",
+      "anahtar_kelimeler": [
+        "eğitim bilimleri enstitüsü",
+        "eğitim bilimleri"
+      ],
+      "telefon": "0332 241 16 53",
+      "eposta": "ebil@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/egitim_bilimleri_enstitusu-enstitu/5324",
+      "konum": "Akademi Mah. Yeni İstanbul Cad. Alaeddin Keykubat Kampüsü No:335 Kat:4 Selçuklu/Konya",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/egitim_bilimleri_enstitusu-enstitu/5324",
+      "kaynak_web": "https://selcuk.edu.tr/birim/egitim_bilimleri_enstitusu-enstitu/5324",
+      "kaynak_iletisim": "https://selcuk.edu.tr/birim/egitim_bilimleri_enstitusu-enstitu/5324",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+E%C4%9Fitim+Bilimleri+Enstit%C3%BCs%C3%BC+Akademi+Mah.+Yeni+%C4%B0stanbul+Cad.+Alaeddin+Keykubat+Kamp%C3%BCs%C3%BC+No%3A335+Kat%3A4+Sel%C3%A7uklu%2FKonya",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Fen Bilimleri Enstitüsü",
+      "tur": "enstitu",
+      "anahtar_kelimeler": [
+        "fen bilimleri enstitüsü",
+        "fen bilimleri"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/fen_bilimleri_enstitusu/5323",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/fen_bilimleri_enstitusu/5323",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Fen+Bilimleri+Enstit%C3%BCs%C3%BC+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Mevlana Araştırmaları Enstitüsü",
+      "tur": "enstitu",
+      "anahtar_kelimeler": [
+        "mevlana araştırmaları enstitüsü",
+        "mevlana araştırmaları"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/mevlana_arastirma_ens/5328",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/mevlana_arastirma_ens/5328",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Mevlana+Ara%C5%9Ft%C4%B1rmalar%C4%B1+Enstit%C3%BCs%C3%BC+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Sağlık Bilimleri Enstitüsü",
+      "tur": "enstitu",
+      "anahtar_kelimeler": [
+        "sağlık bilimleri enstitüsü",
+        "sağlık bilimleri"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/saglik_bilimler_ens/5326",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/saglik_bilimler_ens/5326",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Sa%C4%9Fl%C4%B1k+Bilimleri+Enstit%C3%BCs%C3%BC+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Selçuklu Araştırmaları Enstitüsü",
+      "tur": "enstitu",
+      "anahtar_kelimeler": [
+        "selçuklu araştırmaları enstitüsü",
+        "selçuklu araştırmaları"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/selcuklu_arastirmalari_enstitusu-enstitu/5325",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/selcuklu_arastirmalari_enstitusu-enstitu/5325",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Sel%C3%A7uklu+Ara%C5%9Ft%C4%B1rmalar%C4%B1+Enstit%C3%BCs%C3%BC+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Sosyal Bilimler Enstitüsü",
+      "tur": "enstitu",
+      "anahtar_kelimeler": [
+        "sosyal bilimler enstitüsü",
+        "sosyal bilimler"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/sosyal_bilimler_ens/5327",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/sosyal_bilimler_ens/5327",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Sosyal+Bilimler+Enstit%C3%BCs%C3%BC+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Türkiyat Araştırmaları Enstitüsü",
+      "tur": "enstitu",
+      "anahtar_kelimeler": [
+        "türkiyat araştırmaları enstitüsü",
+        "türkiyat araştırmaları"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/turkiyat_arastirmalari/5322",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/turkiyat_arastirmalari/5322",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+T%C3%BCrkiyat+Ara%C5%9Ft%C4%B1rmalar%C4%B1+Enstit%C3%BCs%C3%BC+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Akşehir Kadir Yallagöz Sağlık Yüksekokulu",
+      "tur": "yuksekokul",
+      "anahtar_kelimeler": [
+        "akşehir kadir yallagöz sağlık yüksekokulu",
+        "akşehir kadir yallagöz sağlık yo"
+      ],
+      "telefon": "0332 813 05 72",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/aksehir_kadir_yallagoz_saglik_yo/5361",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/aksehir_kadir_yallagoz_saglik_yo/5361",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ak%C5%9Fehir+Kadir+Yallag%C3%B6z+Sa%C4%9Fl%C4%B1k+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Beyşehir Ali Akkanat Uygulamalı Bilimler Yüksekokulu",
+      "tur": "yuksekokul",
+      "anahtar_kelimeler": [
+        "beyşehir ali akkanat uygulamalı bilimler yüksekokulu",
+        "beyşehir ali akkanat uygulamalı bilimler yo"
+      ],
+      "telefon": "0332 512 18 81",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_uygulamali_bilimler_yo/5364",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_uygulamali_bilimler_yo/5364",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Bey%C5%9Fehir+Ali+Akkanat+Uygulamal%C4%B1+Bilimler+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Çumra Uygulamalı Bilimler Yüksekokulu",
+      "tur": "yuksekokul",
+      "anahtar_kelimeler": [
+        "çumra uygulamalı bilimler yüksekokulu",
+        "çumra uygulamalı bilimler yo"
+      ],
+      "telefon": "0332 447 36 69",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/cumra_uygulamali_bilimler_yo/5362",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/cumra_uygulamali_bilimler_yo/5362",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+%C3%87umra+Uygulamal%C4%B1+Bilimler+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Sivil Havacılık Yüksekokulu",
+      "tur": "yuksekokul",
+      "anahtar_kelimeler": [
+        "sivil havacılık yüksekokulu",
+        "sivil havacılık yo"
+      ],
+      "telefon": "0332 223 10 52",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/sivil_havacilik_yo/5363",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/sivil_havacilik_yo/5363",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Sivil+Havac%C4%B1l%C4%B1k+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Yabancı Diller Yüksekokulu",
+      "tur": "yuksekokul",
+      "anahtar_kelimeler": [
+        "yabancı diller yüksekokulu",
+        "yabancı diller yo",
+        "hazırlık",
+        "hazırlık okulu",
+        "ydyo"
+      ],
+      "telefon": "0332 241 36 56",
+      "eposta": "ydyo@selcuk.edu.tr",
+      "web": "https://selcuk.edu.tr/birim/yabanci_diller_yo/5365",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/yabanci_diller_yo/5365",
+      "kaynak_web": "https://selcuk.edu.tr/birim/yabanci_diller_yo/5365",
+      "kaynak_iletisim": "https://selcuk.edu.tr/birim/yabanci_diller_yo/5365",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Yabanc%C4%B1+Diller+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Akören Ali Rıza Ercan Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "akören ali rıza ercan meslek yüksekokulu",
+        "akören ali rıza ercan myo"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/akoren_myo/5375",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/akoren_myo/5375",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ak%C3%B6ren+Ali+R%C4%B1za+Ercan+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Akşehir Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "akşehir meslek yüksekokulu",
+        "akşehir myo"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/aksehir_myo/5376",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/aksehir_myo/5376",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ak%C5%9Fehir+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Beyşehir Ali Akkanat Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "beyşehir ali akkanat meslek yüksekokulu",
+        "beyşehir ali akkanat myo"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_myo/5378",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/beysehir_ali_akkanat_myo/5378",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Bey%C5%9Fehir+Ali+Akkanat+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Bozkır Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "bozkır meslek yüksekokulu",
+        "bozkır myo"
+      ],
+      "telefon": "0332 426 14 44",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/bozkir_myo/5374",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/bozkir_myo/5374",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Bozk%C4%B1r+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Cihanbeyli Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "cihanbeyli meslek yüksekokulu",
+        "cihanbeyli myo"
+      ],
+      "telefon": "0332 673 40 91",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/cihanbeyli_myo/5369",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/cihanbeyli_myo/5369",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Cihanbeyli+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Çumra Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "çumra meslek yüksekokulu",
+        "çumra myo"
+      ],
+      "telefon": "0332 447 56 21",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/cumra_myo/5382",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/cumra_myo/5382",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+%C3%87umra+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Doğanhisar Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "doğanhisar meslek yüksekokulu",
+        "doğanhisar myo"
+      ],
+      "telefon": "0332 556 10 01",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/doganhisar_myo/5386",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/doganhisar_myo/5386",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Do%C4%9Fanhisar+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Güneysınır Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "güneysınır meslek yüksekokulu",
+        "güneysınır myo"
+      ],
+      "telefon": "0332 471 25 72",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/guneysinir_myo/5367",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/guneysinir_myo/5367",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+G%C3%BCneys%C4%B1n%C4%B1r+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Hadim Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "hadim meslek yüksekokulu",
+        "hadim myo"
+      ],
+      "telefon": "0332 418 18 41",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/hadim_myo/5368",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/hadim_myo/5368",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Hadim+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Huğlu Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "huğlu meslek yüksekokulu",
+        "huğlu myo"
+      ],
+      "telefon": "0332 516 16 67",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/huglu_myo/5370",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/huglu_myo/5370",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Hu%C4%9Flu+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Hukuk Fakültesi Adalet Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "hukuk fakültesi adalet meslek yüksekokulu",
+        "hukuk adalet myo",
+        "hukuk fakültesi adalet myo"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://eski.selcuk.edu.tr/Birim/meslek-yuksekokullari/adalet_myo/1861",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://eski.selcuk.edu.tr/Birim/meslek-yuksekokullari/adalet_myo/1861",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Hukuk+Fak%C3%BCltesi+Adalet+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Ilgın Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "ilgın meslek yüksekokulu",
+        "ilgın myo"
+      ],
+      "telefon": "0332 885 72 62",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/ilgin_myo/5379",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/ilgin_myo/5379",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ilg%C4%B1n+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Kadınhanı Faik İçil Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "kadınhanı faik i̇çil meslek yüksekokulu",
+        "kadınhanı faik i̇çil myo"
+      ],
+      "telefon": "0332 834 03 06",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/kadinhani_faik_icil_myo/5387",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/kadinhani_faik_icil_myo/5387",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Kad%C4%B1nhan%C4%B1+Faik+%C4%B0%C3%A7il+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Karapınar Aydoğanlar Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "karapınar aydoğanlar meslek yüksekokulu",
+        "karapınar aydoğanlar myo"
+      ],
+      "telefon": "0332 755 68 96",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/karapinar_myo/5385",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/karapinar_myo/5385",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Karap%C4%B1nar+Aydo%C4%9Fanlar+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Kulu Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "kulu meslek yüksekokulu",
+        "kulu myo"
+      ],
+      "telefon": "0332 641 41 59",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/kulu_myo/5381",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/kulu_myo/5381",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Kulu+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Sağlık Hizmetleri Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "sağlık hizmetleri meslek yüksekokulu",
+        "sağlık hizmetleri myo"
+      ],
+      "telefon": "0332 223 10 82",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/saglik_hizmetleri_myo/5383",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/saglik_hizmetleri_myo/5383",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Sa%C4%9Fl%C4%B1k+Hizmetleri+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Sarayönü Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "sarayönü meslek yüksekokulu",
+        "sarayönü myo"
+      ],
+      "telefon": "0332 617 28 00",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/sarayonu_myo/5371",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/sarayonu_myo/5371",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Saray%C3%B6n%C3%BC+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Siber Güvenlik Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "siber güvenlik meslek yüksekokulu",
+        "siber güvenlik myo"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/siber_guvenlik_meslek_yuksekokulu-myo/6738",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/siber_guvenlik_meslek_yuksekokulu-myo/6738",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Siber+G%C3%BCvenlik+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Silifke Taşucu Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "silifke taşucu meslek yüksekokulu",
+        "silifke taşucu myo"
+      ],
+      "telefon": "0324 741 27 34",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/silifke_tasucu_myo/5380",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/silifke_tasucu_myo/5380",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Silifke+Ta%C5%9Fucu+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Sosyal Bilimler Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "sosyal bilimler meslek yüksekokulu",
+        "sosyal bilimler myo"
+      ],
+      "telefon": "0332 223 22 67",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/sosyal_bilimler_myo/5373",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/sosyal_bilimler_myo/5373",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Sosyal+Bilimler+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Tasarım Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "tasarım meslek yüksekokulu",
+        "tasarım myo"
+      ],
+      "telefon": "",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/tasarim_meslek_yuksekokulu/5388",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "",
+      "kaynak_web": "https://selcuk.edu.tr/birim/tasarim_meslek_yuksekokulu/5388",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Tasar%C4%B1m+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Taşkent Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "taşkent meslek yüksekokulu",
+        "taşkent myo"
+      ],
+      "telefon": "0332 497 14 94",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/taskent_myo/5377",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/taskent_myo/5377",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Ta%C5%9Fkent+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Yunak Meslek Yüksekokulu",
+      "tur": "meslek_yuksekokulu",
+      "anahtar_kelimeler": [
+        "yunak meslek yüksekokulu",
+        "yunak myo"
+      ],
+      "telefon": "0332 851 28 00",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/yunak_myo/5372",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/yunak_myo/5372",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Yunak+Meslek+Y%C3%BCksekokulu+",
+      "harita_turu": "arama"
+    },
+    {
+      "ad": "Dilek Sabancı Devlet Konservatuvarı",
+      "tur": "konservatuvar",
+      "anahtar_kelimeler": [
+        "dilek sabancı devlet konservatuvarı"
+      ],
+      "telefon": "0332 223 48 80",
+      "eposta": "",
+      "web": "https://selcuk.edu.tr/birim/dilek_sabanci_devlet_kons/5366",
+      "konum": "",
+      "kaynak_birim_listesi": "https://selcuk.edu.tr/anasayfa/akademik",
+      "kaynak_telefon": "https://selcuk.edu.tr/birim/icerik/5360/20262027-egitim-ogretim-yilinda-selcuk-universitesine-yks-ek-yerlestirme-ile-yerlesen-aday-ogrencilerin-kayit-duyurusu-83388",
+      "kaynak_web": "https://selcuk.edu.tr/birim/dilek_sabanci_devlet_kons/5366",
+      "harita_url": "https://www.google.com/maps/search/?api=1&query=Sel%C3%A7uk+%C3%9Cniversitesi+Dilek+Sabanc%C4%B1+Devlet+Konservatuvar%C4%B1+",
+      "harita_turu": "arama"
+    }
+  ]
+}

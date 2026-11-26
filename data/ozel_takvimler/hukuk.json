@@ -94,3 +94,320 @@
         "ders programı",
         "ders çizelgesi",
         "haftalık ders programı",
+        "ders saatleri"
+      ],
+      "kategori": "duyuru"
+    },
+    {
+      "ad": "Güz kayıt yenileme",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-12",
+      "anahtar_kelimeler": [
+        "ders kaydı",
+        "güz ders kaydı",
+        "kayıt yenileme",
+        "hukuk ders seçimi",
+        "harç yatırma"
+      ],
+      "yariyil": "guz",
+      "kategori": "kayit"
+    },
+    {
+      "ad": "Bahar kayıt yenileme / yıllık derslerin harç yatırma dönemi",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-23",
+      "anahtar_kelimeler": [
+        "bahar kayıt yenileme",
+        "bahar ders kaydı",
+        "yıllık ders harç yatırma",
+        "dönemlik ders kaydı",
+        "hukuk harç ödeme"
+      ],
+      "yariyil": "bahar",
+      "kategori": "kayit",
+      "aciklama": "Yıllık dersler için harç yatırma, dönemlik dersler için kayıt yenileme dönemi."
+    },
+    {
+      "ad": "Güz danışman onayı",
+      "baslangic": "2026-09-07",
+      "bitis": "2026-09-13",
+      "anahtar_kelimeler": [
+        "danışman onayı",
+        "güz danışman onayı",
+        "ders onayı"
+      ],
+      "yariyil": "guz",
+      "kategori": "kayit"
+    },
+    {
+      "ad": "Bahar danışman onayı (dönemlik dersler)",
+      "baslangic": "2027-01-18",
+      "bitis": "2027-01-24",
+      "anahtar_kelimeler": [
+        "bahar danışman onayı",
+        "dönemlik ders danışman onayı",
+        "ders onayı"
+      ],
+      "yariyil": "bahar",
+      "kategori": "kayit",
+      "ders_turu": "donemlik"
+    },
+    {
+      "ad": "Güz ders ekleme ve bırakma",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-15",
+      "anahtar_kelimeler": [
+        "ders ekleme",
+        "ekle bırak",
+        "ekleme bırakma",
+        "ders silme",
+        "ders bırakma"
+      ],
+      "yariyil": "guz",
+      "kategori": "kayit"
+    },
+    {
+      "ad": "Zorunlu yabancı dil muafiyet sınavı",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "yabancı dil muafiyet",
+        "ingilizce muafiyet",
+        "zorunlu dil sınavı"
+      ],
+      "kategori": "sinav"
+    },
+    {
+      "ad": "Güz mazeretli geç kayıt son başvuru",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "geç kayıt",
+        "mazeretli kayıt",
+        "kayıt kaçırdım",
+        "son kayıt tarihi"
+      ],
+      "yariyil": "guz",
+      "kategori": "kayit"
+    },
+    {
+      "ad": "Ek sınav final sınavı",
+      "baslangic": "2026-09-14",
+      "bitis": "2026-09-18",
+      "anahtar_kelimeler": [
+        "ek sınav final",
+        "azami süre ek sınav",
+        "ek final"
+      ],
+      "yariyil": "guz",
+      "kategori": "sinav"
+    },
+    {
+      "ad": "Ek sınav final not giriş son tarihi",
+      "baslangic": "2026-09-25",
+      "bitis": "2026-09-25",
+      "anahtar_kelimeler": [
+        "ek sınav final notları",
+        "ek final not girişi"
+      ],
+      "kategori": "not"
+    },
+    {
+      "ad": "Ek sınav bütünleme sınavı",
+      "baslangic": "2026-09-28",
+      "bitis": "2026-10-02",
+      "anahtar_kelimeler": [
+        "ek sınav bütünleme",
+        "ek sınav büt",
+        "azami süre büt"
+      ],
+      "yariyil": "guz",
+      "kategori": "sinav"
+    },
+    {
+      "ad": "Ek sınav bütünleme not giriş son tarihi",
+      "baslangic": "2026-10-09",
+      "bitis": "2026-10-09",
+      "anahtar_kelimeler": [
+        "ek sınav büt notları",
+        "ek bütünleme not girişi"
+      ],
+      "kategori": "not"
+    },
+    {
+      "ad": "Güz dönemlik dersler ara sınavları",
+      "baslangic": "2026-10-31",
+      "bitis": "2026-11-08",
+      "anahtar_kelimeler": [
+        "hukuk güz vize",
+        "hukuk 1. dönem vize",
+        "dönemlik ders vize",
+        "güz ara sınav",
+        "hukuk vize tarihleri"
+      ],
+      "yariyil": "guz",
+      "kategori": "sinav",
+      "ders_turu": "donemlik"
+    },
+    {
+      "ad": "Bahar dönemlik dersler ara sınavları",
+      "baslangic": "2027-03-20",
+      "bitis": "2027-03-28",
+      "anahtar_kelimeler": [
+        "hukuk bahar vize",
+        "hukuk 2. dönem vize",
+        "dönemlik ders vize",
+        "bahar ara sınav",
+        "hukuk vize tarihleri"
+      ],
+      "yariyil": "bahar",
+      "kategori": "sinav",
+      "ders_turu": "donemlik"
+    },
+    {
+      "ad": "Güz dönemlik dersler ara sınav not giriş son tarihi",
+      "baslangic": "2026-12-08",
+      "bitis": "2026-12-08",
+      "anahtar_kelimeler": [
+        "güz vize notları",
+        "dönemlik ara sınav not giriş"
+      ],
+      "yariyil": "guz",
+      "kategori": "not",
+      "ders_turu": "donemlik"
+    },
+    {
+      "ad": "Bahar dönemlik dersler ara sınav not giriş son tarihi",
+      "baslangic": "2027-04-15",
+      "bitis": "2027-04-15",
+      "anahtar_kelimeler": [
+        "bahar vize notları",
+        "dönemlik ara sınav not giriş"
+      ],
+      "yariyil": "bahar",
+      "kategori": "not",
+      "ders_turu": "donemlik"
+    },
+    {
+      "ad": "Güz ortak zorunlu dersler ara sınavı",
+      "baslangic": "2026-12-28",
+      "bitis": "2026-12-28",
+      "anahtar_kelimeler": [
+        "ortak zorunlu vize",
+        "türk dili vize",
+        "atatürk ilkeleri vize",
+        "yabancı dil vize"
+      ],
+      "yariyil": "guz",
+      "kategori": "sinav"
+    },
+    {
+      "ad": "Yıllık dersler ara sınavı ve güz dönemlik dersler final sınavı",
+      "baslangic": "2026-12-28",
+      "bitis": "2027-01-15",
+      "anahtar_kelimeler": [
+        "hukuk yıllık ders vize",
+        "yıllık ders ara sınav",
+        "güz dönemlik final",
+        "hukuk güz final",
+        "hukuk ocak sınavları",
+        "hukuk ocak finalleri"
+      ],
+      "yariyil": "guz",
+      "kategori": "sinav",
+      "ders_turu": "yillik_ve_donemlik",
+      "aciklama": "Aynı tarih aralığı yıllık derslerin ara sınavı ve dönemlik derslerin güz finali için geçerlidir."
+    },
+    {
+      "ad": "Yıllık dersler ara sınavı ve güz dönemlik dersler final not giriş son tarihi",
+      "baslangic": "2027-02-15",
+      "bitis": "2027-02-15",
+      "anahtar_kelimeler": [
+        "yıllık vize not giriş",
+        "güz dönemlik final notları"
+      ],
+      "kategori": "not",
+      "ders_turu": "yillik_ve_donemlik"
+    },
+    {
+      "ad": "Bahar ortak zorunlu dersler final sınavı",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-05-24",
+      "anahtar_kelimeler": [
+        "ortak zorunlu final",
+        "türk dili final",
+        "atatürk ilkeleri final",
+        "yabancı dil final"
+      ],
+      "yariyil": "bahar",
+      "kategori": "sinav"
+    },
+    {
+      "ad": "Yıllık ve dönemlik derslerin final sınavları",
+      "baslangic": "2027-05-24",
+      "bitis": "2027-06-13",
+      "anahtar_kelimeler": [
+        "hukuk final",
+        "hukuk finaller",
+        "hukuk final haftası",
+        "yıllık ders final",
+        "dönemlik ders final",
+        "hukuk bahar final",
+        "hukuk haziran finalleri"
+      ],
+      "yariyil": "bahar",
+      "kategori": "sinav",
+      "ders_turu": "yillik_ve_donemlik"
+    },
+    {
+      "ad": "Yıllık ve dönemlik final not giriş son tarihi",
+      "baslangic": "2027-06-20",
+      "bitis": "2027-06-20",
+      "anahtar_kelimeler": [
+        "hukuk final notları",
+        "final not giriş",
+        "final not açıklama"
+      ],
+      "kategori": "not",
+      "ders_turu": "yillik_ve_donemlik"
+    },
+    {
+      "ad": "Ortak zorunlu derslerin bütünleme sınavı",
+      "baslangic": "2027-06-28",
+      "bitis": "2027-06-28",
+      "anahtar_kelimeler": [
+        "ortak zorunlu büt",
+        "türk dili bütünleme",
+        "atatürk ilkeleri bütünleme",
+        "yabancı dil bütünleme"
+      ],
+      "kategori": "sinav"
+    },
+    {
+      "ad": "Bütünleme sınavları",
+      "baslangic": "2027-06-28",
+      "bitis": "2027-07-16",
+      "anahtar_kelimeler": [
+        "hukuk bütünleme",
+        "hukuk büt",
+        "hukuk bütler",
+        "hukuk bütünleme tarihleri",
+        "hukuk temmuz büt",
+        "yıllık ders büt",
+        "dönemlik ders büt"
+      ],
+      "kategori": "sinav"
+    },
+    {
+      "ad": "Bütünleme not giriş son tarihi",
+      "baslangic": "2027-07-24",
+      "bitis": "2027-07-24",
+      "anahtar_kelimeler": [
+        "hukuk büt notları",
+        "bütünleme not giriş",
+        "büt sonuçları"
+      ],
+      "kategori": "not"
+    }
+  ]
+}
