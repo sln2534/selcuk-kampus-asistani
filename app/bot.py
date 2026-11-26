@@ -28,7 +28,7 @@ WELCOME = (
     "Akademik takvim, sınav ve mazeret kuralları, burs, yurt, yemekhane gibi konularda "
     "sorularını doğal dille yazabilirsin. Yanıtlarımı resmî belgelere dayandırır ve kaynağını gösteririm.\n\n"
     "Örnek: _Mazeret sınavına nasıl başvururum?_\n\n"
-    "Komutlar: /takvim · /yardim\n\n" + DISCLAIMER
+    "Komutlar: /takvim · /gizlilik · /yardim\n\n" + DISCLAIMER
 )
 
 
@@ -85,6 +85,15 @@ async def consent_given(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     await query.answer("Teşekkürler!")
     await query.edit_message_reply_markup(reply_markup=None)  # düğme tekrar basılmasın
     await query.message.reply_text(WELCOME, parse_mode=ParseMode.MARKDOWN)
+
+
+async def gizlilik(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
+    """KVKK özetini ve tam metnin bağlantısını gösterir; onay gerektirmez (okumadan onay istenemez)."""
+    markup = None if has_consent(ctx) else CONSENT_BUTTON
+    await update.message.reply_text(
+        CONSENT_TEXT, parse_mode=ParseMode.MARKDOWN, reply_markup=markup,
+        link_preview_options=LinkPreviewOptions(is_disabled=True),
+    )
 
 
 async def revoke_consent(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
@@ -150,6 +159,7 @@ def main() -> None:
     app.add_handler(CommandHandler(["yardim", "help"], start))
     app.add_handler(CommandHandler("takvim", takvim_komutu))
     app.add_handler(CommandHandler("onayiptal", revoke_consent))
+    app.add_handler(CommandHandler("gizlilik", gizlilik))
     app.add_handler(CallbackQueryHandler(consent_given, pattern=f"^{CONSENT_CALLBACK}$"))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_question))
     log.info("Bot çalışıyor…")
