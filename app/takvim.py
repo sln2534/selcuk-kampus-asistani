@@ -134,8 +134,9 @@ def format_event(ev: dict) -> str:
     if ev.get("bitis") and ev["bitis"] != ev["baslangic"]:
         when += f" – {_fmt(ev['bitis'])}"
     extra = []
-    if ev.get("yariyil"):
-        extra.append(str(ev["yariyil"]).replace("guz", "güz"))
+    semester = ev.get("yariyil") or ev.get("donem")  # dosyalar farklı alan adı kullanıyor
+    if semester and str(semester).lower() in ("guz", "güz", "bahar", "yaz"):
+        extra.append(str(semester).lower().replace("guz", "güz"))
     if ev.get("donemler"):
         extra.append("Dönem " + ", ".join(ev["donemler"]))
     suffix = f" ({'; '.join(extra)})" if extra else ""
