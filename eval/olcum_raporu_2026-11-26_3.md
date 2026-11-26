@@ -10,7 +10,7 @@
 
 ## Nasıl ölçüldü?
 
-1. **Otomatik:** `python eval/run_eval.py --csv golden_set_yeni.csv --out sonuclar_3.csv` (Melek'in bilgisayarı, indeks yenilendi: 238 parça, `CACHE_ENABLED=false`)
+1. **Otomatik:** `python eval/run_eval.py` (`eval/golden_set.csv`, 54 soru) (Melek'in bilgisayarı, indeks yenilendi: 238 parça, `CACHE_ENABLED=false`)
 2. **Elle kontrol:** 54 cevabın hepsi tek tek okundu ve belgeyle karşılaştırıldı. Otomatik test yalnızca kelimeye baktığı için anlamca doğru ama kelimesi farklı cevapları ✗, kelimesi geçen ama yanıltıcı cevapları ✓ sayabiliyor.
 3. **Elle tekrar deneme:** Şüpheli ve belge bekleyen 11 soru tekrar soruldu: 8, 11, 16, 17, 18, 19, 20, 24 Şilan'ın çalıştırdığı bot üzerinden Telegram'da; 47, 48, 52 yerel API'de (Swagger, /ask). Sonuçların hepsi otomatik testle aynı çıktı.
 
