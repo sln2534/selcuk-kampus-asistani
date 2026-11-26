@@ -26,6 +26,8 @@ Asistan kapsamında kullanıcıların adı, soyadı, Telegram kullanıcı adı, 
 - Sorunun iletildiği zaman, cevap süresi, sorunun cevaplanıp cevaplanmadığı ve soru türü (takvim, belge, güvenlik, hata) bilgileri
 - Aktif kullanıcı sayısının belirlenmesi amacıyla Telegram kullanıcı kimliğinden üretilen, her gün değişen ve geri döndürülemeyen kod
 
+Aktif kullanıcı sayısının belirlenmesinde kullanılan kod, her gün rastgele üretilen, hiçbir yere kaydedilmeyen ve ertesi gün silinen bir anahtar ile oluşturulmaktadır. Böylece söz konusu kod, Kişisel Verilerin Silinmesi, Yok Edilmesi veya Anonim Hale Getirilmesi Hakkında Yönetmelik'in 10. maddesi uyarınca, proje ekibi tarafından dahi kimliği belirli veya belirlenebilir bir gerçek kişiyle ilişkilendirilemeyecek şekilde anonim hale getirilmektedir.
+
 ## 3. Kişisel Verilerin İşlenme Amaçları ve Hukuki Sebepleri
 
 **Müşteri İşlem Bilgisi**, aşağıdaki amaçlarla işlenmektedir:
@@ -79,7 +81,13 @@ Başvurularınız, talebin niteliğine göre en kısa sürede ve en geç otuz (3
 
 Proje ekibi tarafından kullanıcıların kimliğini belirlemeye yarayan bilgiler tutulmadığından, saklanan kayıtların başvuru sahibine ait olup olmadığının tespit edilmesi her durumda mümkün olmayabilir. Google ve Telegram nezdinde bulunan verilerinize ilişkin talepleriniz için ilgili şirketlere ayrıca başvurabilirsiniz.
 
-## 8. Aydınlatma Metnindeki Değişiklikler
+## 8. Kullanıcı Onayı
+
+Asistanın kullanımından önce kullanıcıya işbu aydınlatma metninin özeti ve tam metnin bağlantısı sunulmakta, kullanıcıdan "Okudum, onaylıyorum" düğmesi ile metni okuduğunu onaylaması istenmektedir. Onay vermeyen kullanıcıların soruları işleme alınmamakta ve yapay zekâ hizmetine gönderilmemektedir.
+
+Onay bilgisi kalıcı olarak kaydedilmemekte, yalnızca Asistan çalıştığı süre boyunca geçici olarak tutulmaktadır. Bu nedenle Asistan yeniden başlatıldığında onay kullanıcıdan tekrar istenmektedir. Kullanıcı, onayını /onayiptal komutu ile her zaman geri alabilir.
+
+## 9. Aydınlatma Metnindeki Değişiklikler
 
 İşbu aydınlatma metni, gerekli hâllerde proje ekibi tarafından güncellenebilir. Güncel metne Asistan üzerinden /gizlilik komutu ile her zaman ulaşabilirsiniz.
 
@@ -90,4 +98,4 @@ Proje ekibi tarafından kullanıcıların kimliğini belirlemeye yarayan bilgile
 **İletişim:** Proje Koordinatörü Seval Özgür
 **E-posta:** 233311019@ogr.selcuk.edu.tr
 
-Son Güncelleme Tarihi: 20.11.2026
+Son Güncelleme Tarihi: 26.11.2026
