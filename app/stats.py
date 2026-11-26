@@ -2,24 +2,39 @@
 
 KVKK: Kullanıcı kimliği, adı, kullanıcı adı veya konumu KAYDEDİLMEZ.
 Yalnızca zaman, yanıt süresi, yanıtlanıp yanıtlanmadığı ve kaba kategori tutulur.
-Aktif kullanıcı sayımı için Telegram ID'si günlük tuzla tek yönlü özetlenir (geri çözülemez).
+Aktif kullanıcı sayımı için Telegram ID'si günlük tuzla tek yönlü özetlenir.
+
+Tuz her gün bellekte rastgele üretilir; dosyaya, .env'ye ya da loga YAZILMAZ ve gün değişince
+atılır. Böylece ekip dahil hiç kimse bilinen bir ID'nin özetini yeniden hesaplayıp kayıtlarla
+eşleştiremez (Silme, Yok Etme veya Anonim Hale Getirme Yönetmeliği m.10). Bedeli: Program aynı gün
+yeniden başlatılırsa o günün kullanıcıları bir kez daha sayılabilir.
 """
 import hashlib
+import hmac
 import json
-import os
+import secrets
+import threading
 import time
 from datetime import date
 
 from app.config import get_settings
 
-_SALT = os.environ.get("STATS_SALT", "degistir-beni")
+_salt_lock = threading.Lock()
+_salt: dict = {"day": None, "value": b""}
 
 
-def anon_user(user_id: int | str | None) -> str | None:
+def _daily_salt(today: date | None = None) -> bytes:
+    today = today or date.today()
+    with _salt_lock:
+        if _salt["day"] != today:
+            _salt["day"], _salt["value"] = today, secrets.token_bytes(32)  # eski tuz unutulur
+        return _salt["value"]
+
+
+def anon_user(user_id: int | str | None, today: date | None = None) -> str | None:
     if user_id is None:
         return None
-    raw = f"{_SALT}:{date.today().isoformat()}:{user_id}".encode()
-    return hashlib.sha256(raw).hexdigest()[:16]
+    return hmac.new(_daily_salt(today), str(user_id).encode(), hashlib.sha256).hexdigest()[:16]
 
 
 def log_event(*, kind: str, latency_ms: int, answered: bool, user: str | None = None) -> None:
