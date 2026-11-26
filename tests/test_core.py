@@ -568,3 +568,19 @@ def test_normal_questions_not_blocked_by_injection_filter(text):
 def test_llm_says_off_topic_returns_refusal_without_unit():
     res = answer.answer_question("Bana Python ödev kodu yaz", retriever=lambda q: [DOC], llm=lambda q, c: answer.OFF_TOPIC)
     assert not res.answered and "yardımcı olamam" in res.text.lower() and "Öğrenci İşleri" not in res.text
+
+
+def test_gizlilik_works_without_consent_and_links_full_text():
+    import asyncio
+
+    from app import bot
+
+    upd, ctx = _fake_update("/gizlilik"), _fake_ctx()
+    asyncio.run(bot.gizlilik(upd, ctx))
+    args, kwargs = upd.message.reply_text.call_args
+    assert bot.KVKK_URL in args[0] and kwargs["reply_markup"] is bot.CONSENT_BUTTON
+    assert len(args[0]) < 4096  # Telegram tek mesaj sınırı
+
+    upd2 = _fake_update("/gizlilik")
+    asyncio.run(bot.gizlilik(upd2, _fake_ctx({bot.CONSENT_KEY: True})))
+    assert upd2.message.reply_text.call_args.kwargs["reply_markup"] is None  # onaylıya düğme yok
