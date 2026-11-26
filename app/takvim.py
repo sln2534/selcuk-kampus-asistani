@@ -105,12 +105,21 @@ def _special_answer(question: str, key: str) -> str:
     name = SPECIAL_PROGRAMS[key][0]
     cal = load_special(key)
     if cal:
-        ignore = {t for m in SPECIAL_PROGRAMS[key][1] for t in _tokens(m)} | {"fakultesi", "fakulte"}
+        # Program adı ve "tarihleri", "ne zaman" gibi soru kalıpları anahtar kelimede zorunlu değil:
+        # "hukuk vize tarihleri" anahtarı "Hukukta vize ne zaman?" sorusuyla da eşleşsin.
+        ignore = {t for m in SPECIAL_PROGRAMS[key][1] for t in _tokens(m)} | {
+            "fakultesi", "fakulte", "tarih", "tarihi", "tarihleri", "takvim", "takvimi", "ne", "zaman",
+        }
         words = _tokens(question)
         hits = [
             ev for ev in cal["etkinlikler"]
             if ev.get("baslangic") and any(_keyword_matches(words, kw, ignore) for kw in ev.get("anahtar_kelimeler", []))
         ]
+        # "Tıp 5. sınıf" / "dönem 5" gibi bir sınıf numarası varsa yalnızca o dönemin etkinlikleri
+        roman = {"1": "I", "2": "II", "3": "III", "4": "IV", "5": "V", "6": "VI"}
+        wanted = {roman[w] for w in words if w in roman}
+        if wanted and any(set(e.get("donemler") or []) & wanted for e in hits):
+            hits = [e for e in hits if set(e.get("donemler") or []) & wanted]
         if hits:
             source = cal.get("kaynak")
             if isinstance(source, dict):

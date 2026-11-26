@@ -584,3 +584,44 @@ def test_gizlilik_works_without_consent_and_links_full_text():
     upd2 = _fake_update("/gizlilik")
     asyncio.run(bot.gizlilik(upd2, _fake_ctx({bot.CONSENT_KEY: True})))
     assert upd2.message.reply_text.call_args.kwargs["reply_markup"] is None  # onaylıya düğme yok
+
+
+def test_faculty_keyword_date_words_optional():
+    """Anahtar "hukuk vize tarihleri" iken soru "vize ne zaman" diye sorulsa da bulunmalı (altın set 52)."""
+    out = takvim.answer_date_question("Hukuk fakültesinde vize ne zaman?")
+    assert "31.10.2026" in out and "bulamadım" not in out
+
+
+def _run_eval_module():
+    import importlib.util
+
+    from app.config import ROOT
+
+    spec = importlib.util.spec_from_file_location("run_eval", ROOT / "eval" / "run_eval.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def test_run_eval_empty_expected_is_not_counted_correct():
+    ev = _run_eval_module()
+    row = {"beklenen_anahtar_ifadeler": "", "beklenen_tur": "rag"}
+    assert ev.grade(row, "rag", "Barınma bursu şöyledir…") is None  # 24. soru: eskiden ✓ sayılıyordu
+    assert ev.grade({"beklenen_anahtar_ifadeler": "15", "beklenen_tur": "rag"}, "rag", "en çok 15 saat") == 1
+    assert ev.grade({"beklenen_anahtar_ifadeler": "15", "beklenen_tur": "rag"}, "rag", "bilmiyorum") == 0
+    # güvenlik / bilgi_yok sorularında ifade boşsa tür eşleşmesi yeterli
+    assert ev.grade({"beklenen_anahtar_ifadeler": "", "beklenen_tur": "guvenlik"}, "guvenlik", "…") == 1
+
+
+def test_faculty_class_number_filters_terms(tmp_path, monkeypatch):
+    import json
+
+    (tmp_path / "tip.json").write_text(json.dumps({"kaynak": "Test tıp", "etkinlikler": [
+        {"ad": "Entegre büt", "donemler": ["I", "II", "III"], "baslangic": "2027-07-05", "anahtar_kelimeler": ["tıp bütünleme"]},
+        {"ad": "Staj büt", "donemler": ["V"], "baslangic": "2027-06-09", "anahtar_kelimeler": ["tıp 5. sınıf bütünleme"]},
+    ]}, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(get_settings(), "special_calendar_dir", tmp_path)
+    takvim.load_special.cache_clear()
+    out = takvim.answer_date_question("Tıp 5. sınıf bütünleme ne zaman?")
+    assert "Staj büt" in out and "Entegre büt" not in out
+    assert "Entegre büt" in takvim.answer_date_question("Tıp bütünleme ne zaman?")  # numara yoksa hepsi
