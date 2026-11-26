@@ -1,13 +1,19 @@
 """Telegram botu (python-telegram-bot v21). FastAPI'deki /ask uç noktasını çağırır.
 
     python -m app.bot
+
+KVKK: Kullanıcı aydınlatma metnini "Okudum, onaylıyorum" düğmesiyle onaylamadan hiçbir sorusu
+işlenmez (API'ye ve Gemini'ye gitmez). Onay yalnızca botun belleğinde (user_data) tutulur, diske
+yazılmaz; bot yeniden başlatılınca kullanıcıdan onay tekrar istenir. /onayiptal ile geri alınır.
 """
 import logging
 
 import httpx
-from telegram import Update
+from functools import wraps
+
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, LinkPreviewOptions, Update
 from telegram.constants import ChatAction, ParseMode
-from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
+from telegram.ext import Application, CallbackQueryHandler, CommandHandler, ContextTypes, MessageHandler, filters
 
 from app import takvim
 from app.api import DISCLAIMER
@@ -26,10 +32,69 @@ WELCOME = (
 )
 
 
+CONSENT_KEY = "kvkk_onay"
+CONSENT_CALLBACK = "kvkk_onay"
+KVKK_URL = "https://github.com/sln2534/selcuk-kampus-asistani/blob/main/docs/KVKK.md"
+CONSENT_TEXT = (
+    "🔒 *Kişisel verilerin korunması*\n\n"
+    "Asistanı kullanmadan önce aydınlatma metnini okuyup onaylaman gerekiyor. Kısaca:\n"
+    "• Adın, kullanıcı adın, telefonun ve konumun kaydedilmez.\n"
+    "• Soruların cevap üretmek için Google Gemini'ye (yurt dışındaki sunuculara) gönderilir. "
+    "Kişisel bilgi (TC kimlik, telefon, e-posta vb.) içeren mesajlar gönderilmez.\n"
+    "• Kullanım istatistikleri anonim tutulur.\n\n"
+    f"Metnin tamamı: {KVKK_URL}\n\n"
+    "Onayını istediğin zaman /onayiptal ile geri alabilirsin."
+)
+CONSENT_BUTTON = InlineKeyboardMarkup([[InlineKeyboardButton("✅ Okudum, onaylıyorum", callback_data=CONSENT_CALLBACK)]])
+
+
+def has_consent(ctx: ContextTypes.DEFAULT_TYPE) -> bool:
+    return bool(ctx.user_data.get(CONSENT_KEY))
+
+
+async def ask_consent(update: Update) -> None:
+    await update.effective_message.reply_text(
+        CONSENT_TEXT, parse_mode=ParseMode.MARKDOWN, reply_markup=CONSENT_BUTTON,
+        link_preview_options=LinkPreviewOptions(is_disabled=True),
+    )
+
+
+def requires_consent(handler):
+    """Onay verilmemişse soruyu işlemez, onay ister."""
+
+    @wraps(handler)
+    async def wrapper(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
+        if not has_consent(ctx):
+            await ask_consent(update)
+            return
+        await handler(update, ctx)
+
+    return wrapper
+
+
 async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
+    if not has_consent(ctx):
+        await ask_consent(update)
+        return
     await update.message.reply_text(WELCOME, parse_mode=ParseMode.MARKDOWN)
 
 
+async def consent_given(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
+    query = update.callback_query
+    ctx.user_data[CONSENT_KEY] = True
+    await query.answer("Teşekkürler!")
+    await query.edit_message_reply_markup(reply_markup=None)  # düğme tekrar basılmasın
+    await query.message.reply_text(WELCOME, parse_mode=ParseMode.MARKDOWN)
+
+
+async def revoke_consent(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
+    ctx.user_data.pop(CONSENT_KEY, None)
+    await update.message.reply_text(
+        "Onayın geri alındı; artık sorularını işlemeyeceğim. Tekrar kullanmak istersen /start yazabilirsin."
+    )
+
+
+@requires_consent
 async def takvim_komutu(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     evs = takvim.upcoming()
     if not evs:
@@ -46,6 +111,7 @@ def client_error_message(status_code: int, detail: object) -> str:
     return "Sorunu tam anlayamadım. Biraz daha açık yazar mısın? 🙂"
 
 
+@requires_consent
 async def handle_question(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     question = update.message.text
     await ctx.bot.send_chat_action(update.effective_chat.id, ChatAction.TYPING)  # "yazıyor…"
@@ -83,6 +149,8 @@ def main() -> None:
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler(["yardim", "help"], start))
     app.add_handler(CommandHandler("takvim", takvim_komutu))
+    app.add_handler(CommandHandler("onayiptal", revoke_consent))
+    app.add_handler(CallbackQueryHandler(consent_given, pattern=f"^{CONSENT_CALLBACK}$"))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_question))
     log.info("Bot çalışıyor…")
     app.run_polling(allowed_updates=Update.ALL_TYPES)

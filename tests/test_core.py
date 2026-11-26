@@ -163,6 +163,89 @@ def test_user_id_not_stored_raw():
     assert stats.anon_user(123456) != "123456" and len(stats.anon_user(123456)) == 16
 
 
+def test_anon_user_same_day_stable_next_day_different():
+    d1, d2 = date(2026, 12, 1), date(2026, 12, 2)
+    a = stats.anon_user(42, today=d1)
+    assert stats.anon_user(42, today=d1) == a  # aynı gün aynı kişi bir kez sayılır
+    assert stats.anon_user(43, today=d1) != a
+    assert stats.anon_user(42, today=d2) != a  # ertesi gün eşleştirilemez
+
+
+def test_salt_is_random_and_not_configurable(monkeypatch):
+    """Tuz sabit bir metinden ya da .env'den gelmemeli; her yeni günde rastgele üretilmeli."""
+    import hashlib
+    import inspect
+
+    monkeypatch.setenv("STATS_SALT", "degistir-beni")
+    d = date(2027, 1, 5)
+    h = stats.anon_user(42, today=d)
+    guess = hashlib.sha256(f"degistir-beni:{d.isoformat()}:42".encode()).hexdigest()[:16]
+    assert h != guess
+    assert "STATS_SALT" not in inspect.getsource(stats)
+    stats._salt["day"] = None  # aynı günü "yeniden başlatma" gibi sıfırla
+    assert stats.anon_user(42, today=d) != h  # yeni rastgele tuz
+
+
+# --- KVKK onayı (bot) ------------------------------------------------------
+def _fake_update(text="Vize ne zaman?"):
+    from types import SimpleNamespace
+    from unittest.mock import AsyncMock
+
+    msg = SimpleNamespace(text=text, reply_text=AsyncMock())
+    return SimpleNamespace(
+        message=msg, effective_message=msg,
+        effective_chat=SimpleNamespace(id=1), effective_user=SimpleNamespace(id=99),
+    )
+
+
+def _fake_ctx(user_data=None):
+    from types import SimpleNamespace
+    from unittest.mock import AsyncMock
+
+    return SimpleNamespace(user_data={} if user_data is None else user_data, bot=SimpleNamespace(send_chat_action=AsyncMock()))
+
+
+def test_question_not_processed_without_consent(monkeypatch):
+    import asyncio
+
+    from app import bot
+
+    monkeypatch.setattr(bot.httpx, "AsyncClient", lambda **kw: pytest.fail("onaysız soru API'ye gitmemeli"))
+    upd, ctx = _fake_update(), _fake_ctx()
+    asyncio.run(bot.handle_question(upd, ctx))
+    args, kwargs = upd.message.reply_text.call_args
+    assert "onay" in args[0].lower() and kwargs["reply_markup"] is bot.CONSENT_BUTTON
+
+
+def test_takvim_command_requires_consent():
+    import asyncio
+
+    from app import bot
+
+    upd, ctx = _fake_update("/takvim"), _fake_ctx()
+    asyncio.run(bot.takvim_komutu(upd, ctx))
+    assert upd.message.reply_text.call_args.kwargs.get("reply_markup") is bot.CONSENT_BUTTON
+
+
+def test_consent_button_then_revoke():
+    import asyncio
+    from types import SimpleNamespace
+    from unittest.mock import AsyncMock
+
+    from app import bot
+
+    ctx = _fake_ctx()
+    query = SimpleNamespace(answer=AsyncMock(), edit_message_reply_markup=AsyncMock(),
+                            message=SimpleNamespace(reply_text=AsyncMock()))
+    asyncio.run(bot.consent_given(SimpleNamespace(callback_query=query), ctx))
+    assert bot.has_consent(ctx)
+    query.message.reply_text.assert_awaited()  # karşılama mesajı gönderildi
+
+    upd = _fake_update("/onayiptal")
+    asyncio.run(bot.revoke_consent(upd, ctx))
+    assert not bot.has_consent(ctx)
+
+
 def test_ingest_and_retrieve_end_to_end(tmp_path, monkeypatch):
     """Gerçek bir PDF üretip sahte embedding ile Chroma'ya yazar ve geri okur."""
     import pymupdf
