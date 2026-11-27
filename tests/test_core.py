@@ -828,3 +828,36 @@ def test_small_talk_respects_security_and_privacy():
 def test_empty_retriever_still_refuses_obvious_off_topic(q):
     res = answer.answer_question(q, retriever=lambda _q: [], llm=lambda _q, _c: pytest.fail("LLM çağrılmamalı"))
     assert not res.answered and "yardımcı olamam" in res.text.lower() and "Öğrenci İşleri" not in res.text
+
+
+# --- öğrenci deneyimi rehberi (resmî değil) ---------------------------------
+def _exp_doc():
+    from langchain_core.documents import Document
+
+    return Document(page_content="Kütüphane 08.00–23.00 açık.", metadata={"source": "ogrenci_deneyimi_ve_kampus_rehberi.pdf", "page": 3})
+
+
+def _official_doc():
+    from langchain_core.documents import Document
+
+    return Document(page_content="Ödünç süre 15 gündür.", metadata={"source": "kutuphane_yonergesi.pdf", "page": 2})
+
+
+def test_experience_answer_is_labeled_unofficial():
+    res = answer.answer_question("Kütüphane kaçta kapanıyor?", retriever=lambda q: [_exp_doc()], llm=lambda q, c: "23.00'te kapanıyor.")
+    assert "resmî değildir" in res.text
+    assert res.sources == ["Öğrenci deneyimi rehberi (resmî değil)"]
+
+
+def test_experience_chunks_tagged_in_context():
+    ctx = answer.format_context([_official_doc(), _exp_doc()])
+    assert ctx.count("RESMÎ DEĞİL") == 1 and "[1] (kutuphane_yonergesi.pdf" in ctx
+
+
+def test_official_answer_has_no_experience_note():
+    res = answer.answer_question("Ödünç süresi?", retriever=lambda q: [_official_doc()], llm=lambda q, c: "15 gün.")
+    assert "resmî değildir" not in res.text and res.sources == ["kutuphane_yonergesi.pdf (s. 2)"]
+
+
+def test_prompt_tells_model_to_mark_experience():
+    assert "öğrenci deneyimine göre" in answer.SYSTEM_PROMPT
