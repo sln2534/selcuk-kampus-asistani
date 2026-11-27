@@ -11,7 +11,11 @@ def get_embeddings():
     from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
     s = get_settings()
-    return GoogleGenerativeAIEmbeddings(model=s.embedding_model, google_api_key=s.gemini_api_key)
+    return GoogleGenerativeAIEmbeddings(
+        model=s.embedding_model,
+        google_api_key=s.gemini_api_key,
+        client_args={"timeout": s.embedding_timeout},
+    )
 
 
 @lru_cache

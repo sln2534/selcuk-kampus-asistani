@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 
 from app import cache, privacy, stats, takvim
 from app.config import get_settings
-from app.rag.answer import answer_question
+from app.rag.answer import answer_question, small_talk_reply
 
 log = logging.getLogger("api")
 
@@ -78,6 +78,8 @@ def ask(req: AskRequest):
     elif looks_like_injection(q):
         kind, answered = "guvenlik", False
         text = "Bu isteğe yardımcı olamam. Üniversiteyle ilgili bir soru sorabilirsin. 😊"
+    elif (chat := small_talk_reply(q)) is not None:
+        kind, answered, text = "sohbet", True, chat
     elif (cal := takvim.answer_date_question(q)) is not None:
         kind, answered, text = "takvim", True, cal
     elif (hit := cache.get(q)) is not None:
