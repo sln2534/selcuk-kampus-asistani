@@ -17,11 +17,12 @@ class Settings(BaseSettings):
     # LLM (Gemini). Gemini 1.5 Flash emekliye ayrıldı; güncel model adını
     # Google AI Studio'dan kontrol edip GEMINI_MODEL ile değiştirin.
     gemini_api_key: str = ""
-    gemini_model: str = "gemini-3.1-flash-lite"
+    gemini_model: str = "gemini-3.5-flash-lite"
     embedding_model: str = "models/gemini-embedding-001"
     # Ana model meşgulse (503/504) ya da kullanılamıyorsa sırayla denenecek yedek modeller
-    gemini_fallback_models: str = "gemini-3.5-flash-lite,gemini-3.8-flash"
-    llm_timeout: float = 20.0  # saniye; her model için en fazla bekleme
+    gemini_fallback_models: str = "gemini-3.1-flash-lite,gemini-3.5-flash"
+    llm_timeout: float = 10.0  # saniye; Gemini API en az 10 sn kabul eder
+    embedding_timeout: float = 10.0  # saniye; embedding sorgu zaman aşımı
 
     # RAG
     pdf_dir: Path = ROOT / "data" / "pdfs"
@@ -31,7 +32,7 @@ class Settings(BaseSettings):
     chunk_overlap: int = 200
     top_k: int = 5
     # Chroma mesafe skoru (düşük = daha benzer). Bu eşiğin üstündeki parçalar alakasız sayılır.
-    max_distance: float = 0.72
+    max_distance: float = 0.67
 
     # Veri dosyaları
     calendar_file: Path = ROOT / "data" / "takvim.json"
