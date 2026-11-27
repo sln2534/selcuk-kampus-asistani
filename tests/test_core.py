@@ -861,3 +861,9 @@ def test_official_answer_has_no_experience_note():
 
 def test_prompt_tells_model_to_mark_experience():
     assert "öğrenci deneyimine göre" in answer.SYSTEM_PROMPT
+
+
+def test_prompt_rules_4_and_7_do_not_conflict():
+    """4. kural 'elimdeki resmî belgeler' ifadesini öğrenci deneyimi için kullandırmamalı (altın set 48)."""
+    rule4 = answer.SYSTEM_PROMPT.split("4. ", 1)[1].split("\n5. ", 1)[0]
+    assert "YALNIZCA etiketsiz" in rule4 and "kural 7" in rule4
