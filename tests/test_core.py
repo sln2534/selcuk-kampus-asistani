@@ -975,3 +975,27 @@ def test_bot_markdown_tidy_and_plain_fallback():
     assert "• Yarıyıl içi" in tidy and "\n* " not in tidy
     plain = to_plain(tidy)
     assert "olcme_degerlendirme.pdf" in plain and "\\" not in plain and "*" not in plain
+
+
+# --- model "Bilgi verilmemiş." gibi kısa cümleyle geçiştirirse -------------------------
+@pytest.mark.parametrize("reply", ["Bilgi verilmemiş.", "Bu konuda belgelerde bilgi bulunmuyor.", "Ücret belirtilmemiş."])
+def test_short_no_info_reply_goes_to_fallback(reply):
+    res = answer.answer_question("Kampüs içindeki tramvay nasıl binilir paralı mı", retriever=lambda q: [_exp_doc()], llm=lambda q, c: reply)
+    assert not res.answered and "bulamadım" in res.text
+    assert "resmî değildir" not in res.text  # boş cevaba deneyim uyarısı eklenmez
+
+
+def test_partial_answer_with_missing_part_is_kept():
+    reply = ("Öğrenci deneyimine göre Alaaddin–Selçuk Üniversitesi yönündeki tramvaya binip kampüs içine devam eden "
+             "seferi seçebilirsin; güncel seferler ATUS'ta. Ücret konusunda elimdeki belgelerde bilgi yok.")
+    res = answer.answer_question("Kampüs tramvayı nasıl binilir, paralı mı?", retriever=lambda q: [_exp_doc()], llm=lambda q, c: reply)
+    assert res.answered and "ATUS" in res.text
+
+
+def test_prompt_has_multi_part_rule():
+    assert "birden fazla parçalıysa" in answer.SYSTEM_PROMPT
+
+
+def test_short_negative_answer_is_not_no_info():
+    assert not answer.looks_like_no_answer("Hayır, böyle bir hak bulunmamaktadır.")
+    assert answer.looks_like_no_answer("Bilgi verilmemiş.")

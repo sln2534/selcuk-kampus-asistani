@@ -155,6 +155,7 @@ Bu bir öğrenci projesidir, resmî bir üniversite hizmeti değildir.
 KURALLAR:
 1. YALNIZCA aşağıdaki <belgeler> içindeki bilgilere dayanarak yanıt ver. Kendi bilgini ekleme, tahmin yürütme.
 2. Belgelerde sorunun doğrudan ve net yanıtı yoksa — örneğin yalnızca kavramın genel tanımı, başka bir yönetmeliğe/karara atıf varsa, soru spesifik bir şart/izin sorup belge bunu açıkça söylemiyorsa ya da belgeler sorulandan farklı bir kavramı/işlemi anlatıyorsa (ör. "yurt başvurusu" sorulmuşken belgelerde yalnızca "barınma bursu" varsa farklı kavramı anlatmaya çalışma) — ASLA açıklama yazma; yanıtın TAMAMI yalnızca şu tek kelimeden oluşsun: {NO_ANSWER}
+   Soru birden fazla parçalıysa (ör. "nasıl binilir, paralı mı?") ve belgeler en az bir parçayı doğrudan yanıtlıyorsa o parçayı yanıtla, yanıtı olmayan parça için "bu konuda elimdeki belgelerde bilgi yok" de. "Bilgi verilmemiş." gibi tek başına kısa bir cümle ASLA yazma: hiçbir parçanın yanıtı yoksa yalnızca {NO_ANSWER} yaz.
 3. Kampüse ulaşım (tramvay, otobüs, ring), yurt/barınma, yemekhane, kütüphane saatleri, öğrenci belgesi, burs, sınav ve kampüs yaşamıyla ilgili sorular KONU DIŞI DEĞİLDİR; bunların yanıtı belgelerde yoksa {OFF_TOPIC} değil, {NO_ANSWER} yaz.
    YALNIZCA üniversite ve kampüs yaşamıyla tamamen ilgisiz genel isteklerde (ör. ödev/kod yazdırma, hikâye/fıkra yazma, başkasının kişisel bilgilerini isteme) ya da zararlı/etik dışı isteklerde (ör. kopya çekme, sahte resmî duyuru yazma, sınav sorusu isteme, güvenliği tehlikeye atma) yalnızca şu kelimeyi yaz: {OFF_TOPIC}
 4. Yanıtı kısa, net ve samimi Türkçe ile yaz (en fazla 4-5 cümle ya da kısa madde listesi). Süre, oran/yüzde, sayısal değer, belge ve koşulları eksiksiz belirt. Her cevaba "Elimdeki resmî belgelere göre" diye başlamana gerek yok. Belgelerden söz etmen gerekirse "paylaştığın belgeler" deme; "elimdeki resmî belgeler" ifadesini YALNIZCA etiketsiz (resmî) belgelerden aldığın bilgi için kullan, öğrenci deneyimi bilgisini asla "resmî belgelere göre" diye sunma (bkz. kural 7). Cevaba "Selam!" gibi bir selamlamayla başlama.
@@ -357,6 +358,22 @@ def fallback(question: str) -> Answer:
     return Answer(text=text, answered=False)
 
 
+_SHORT_NO_INFO = re.compile(
+    r"(bilgi|yanıt|cevap|açıklama)\w*\s+(verilmemiş|yok|bulunmuyor|bulunmamaktadır|yer almıyor|belirtilmemiş)"
+    r"|belirtilmemiş|yer almamaktadır|yer almıyor|bulunmamaktadır|bulamadım|bilmiyorum",
+    re.IGNORECASE,
+)
+
+
+def looks_like_no_answer(reply: str) -> bool:
+    """Model BILGI_YOK yerine "Bilgi verilmemiş." gibi kısa bir cümleyle geçiştirdiyse True.
+    Uzun ve kısmen bilgi veren cevaplar ("…tramvaya binin; ücret bilgisi yok") etkilenmez."""
+    text = reply.replace(EXPERIENCE_NOTE, "").strip()
+    if text.lower().startswith(("hayır", "evet")):  # "Hayır, böyle bir hak bulunmamaktadır." gerçek bir cevaptır
+        return False
+    return len(text) <= 120 and bool(_SHORT_NO_INFO.search(text))
+
+
 def answer_question(question: str, retriever=retrieve, llm=call_llm) -> Answer:
     if (chat := small_talk_reply(question)) is not None:
         return Answer(text=chat, sources=[], answered=True)
@@ -366,7 +383,7 @@ def answer_question(question: str, retriever=retrieve, llm=call_llm) -> Answer:
             return Answer(text=OFF_TOPIC_REPLY, answered=False)
         return fallback(question)
     reply = llm(question, format_context(docs))
-    if not reply or NO_ANSWER in reply:
+    if not reply or NO_ANSWER in reply or looks_like_no_answer(reply):
         return fallback(question)
     if OFF_TOPIC in reply:
         return Answer(text=OFF_TOPIC_REPLY, answered=False)
