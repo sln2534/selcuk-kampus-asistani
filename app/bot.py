@@ -7,6 +7,7 @@ işlenmez (API'ye ve Gemini'ye gitmez). Onay yalnızca botun belleğinde (user_d
 yazılmaz; bot yeniden başlatılınca kullanıcıdan onay tekrar istenir. /onayiptal ile geri alınır.
 """
 import logging
+import re
 
 import httpx
 from functools import wraps
@@ -113,6 +114,23 @@ async def takvim_komutu(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
 
 
+_BULLET = re.compile(r"^(\s*)[*-]\s+", re.MULTILINE)
+_ESCAPED = re.compile(r"\\([_*`\[])")
+
+
+def tidy_markdown(text: str) -> str:
+    """Gemini'nin satır başı "* madde" işaretlerini "• " yapar; yoksa Telegram onları kapanmamış
+    kalın yazı sanıp mesajı reddediyor ve kullanıcı ham işaretleri görüyordu."""
+    return _BULLET.sub(r"\1• ", text)
+
+
+def to_plain(text: str) -> str:
+    """Markdown yine de reddedilirse: kaçış ters eğik çizgilerini ve biçim işaretlerini temizle."""
+    text = _ESCAPED.sub(r"\1", text)
+    text = text.replace("*", "")
+    return re.sub(r"(?m)^_(.*)_$", r"\1", text)
+
+
 def client_error_message(status_code: int, detail: object) -> str:
     """API'nin 4xx cevabını öğrencinin anlayacağı bir mesaja çevirir."""
     if status_code == 400 and isinstance(detail, str) and "karakter" in detail:
@@ -140,14 +158,14 @@ async def handle_question(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> Non
         await update.message.reply_text("Şu an yanıt veremiyorum, birazdan tekrar dener misin? 🙏")
         return
 
-    text = data["answer"]
+    text = tidy_markdown(data["answer"])
     if data.get("sources"):
         # Dosya adlarındaki _ işaretleri Telegram'da eğik yazıya dönüşmesin diye kaçırılır.
         text += "\n\n📄 *Kaynak:* " + "; ".join(src.replace("_", "\\_") for src in data["sources"])
     try:
         await update.message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
     except Exception:  # model çıktısında bozuk Markdown olursa düz metin gönder
-        await update.message.reply_text(text)
+        await update.message.reply_text(to_plain(text))
 
 
 def main() -> None:
