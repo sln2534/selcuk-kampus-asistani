@@ -1,0 +1,12 @@
+{
+  "birimler": [
+    {"ad": "Hemşirelik Fakültesi", "tur": "fakulte", "anahtar_kelimeler": ["hemşirelik fakültesi", "hemşirelik"], "telefon": "0332 000 00 01", "eposta": "", "web": "https://example.edu.tr/birim/hemsirelik_fakultesi/1", "konum": "", "harita_url": "https://maps.example/?q=hemsirelik", "harita_turu": "arama"},
+    {"ad": "Hukuk Fakültesi", "tur": "fakulte", "anahtar_kelimeler": ["hukuk fakültesi", "hukuk"], "telefon": "0332 000 00 02", "eposta": "hukuk@example.edu.tr", "web": "https://example.edu.tr/hukuk", "konum": "Test Yerleşkesi", "harita_url": "", "harita_turu": "arama"},
+    {"ad": "İletişim Fakültesi", "tur": "fakulte", "anahtar_kelimeler": ["i̇letişim fakültesi", "i̇letişim"], "telefon": "0332 000 00 03", "eposta": "", "web": "https://example.edu.tr/iletisim", "konum": "", "harita_url": "", "harita_turu": "arama"},
+    {"ad": "Sağlık Bilimleri Fakültesi", "tur": "fakulte", "anahtar_kelimeler": ["sağlık bilimleri fakültesi", "sağlık bilimleri"], "telefon": "0332 000 00 04", "eposta": "", "web": "https://example.edu.tr/sbf", "konum": "", "harita_url": "", "harita_turu": "arama"},
+    {"ad": "Sağlık Bilimleri Enstitüsü", "tur": "enstitu", "anahtar_kelimeler": ["sağlık bilimleri enstitüsü", "sağlık bilimleri"], "telefon": "0332 000 00 05", "eposta": "", "web": "https://example.edu.tr/sbe", "konum": "", "harita_url": "", "harita_turu": "arama"},
+    {"ad": "Akşehir İktisadi ve İdari Bilimler Fakültesi", "tur": "fakulte", "anahtar_kelimeler": ["akşehir i̇ktisadi ve i̇dari bilimler fakültesi"], "telefon": "0332 000 00 06", "eposta": "", "web": "https://example.edu.tr/aiibf", "konum": "", "harita_url": "", "harita_turu": "arama"},
+    {"ad": "İktisadi ve İdari Bilimler Fakültesi", "tur": "fakulte", "anahtar_kelimeler": ["i̇ktisadi ve i̇dari bilimler fakültesi"], "telefon": "0332 000 00 07", "eposta": "", "web": "https://example.edu.tr/iibf", "konum": "", "harita_url": "", "harita_turu": "arama"},
+    {"ad": "Ilgın Meslek Yüksekokulu", "tur": "meslek_yuksekokulu", "anahtar_kelimeler": ["ilgın meslek yüksekokulu", "ilgın myo"], "telefon": "", "eposta": "", "web": "https://example.edu.tr/ilgin", "konum": "", "harita_url": "", "harita_turu": "arama"}
+  ]
+}

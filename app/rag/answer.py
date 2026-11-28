@@ -13,7 +13,7 @@ from functools import lru_cache
 
 from langchain_core.documents import Document
 
-from app import units
+from app import akademik, units
 from app.config import get_settings
 
 NO_ANSWER = "BILGI_YOK"
@@ -340,6 +340,11 @@ def is_obvious_off_topic(question: str) -> bool:
 
 def fallback(question: str) -> Answer:
     unit = units.match(question)
+    if unit is None and (found := akademik.match(question)) is not None:
+        # Soruda bir fakülte/MYO geçiyorsa onun resmî iletişim bilgilerine yönlendir.
+        body = akademik.format_unit(found[0])
+        text = f"{NOT_FOUND}\n\nBunun için *{found[0]['ad']}* ile iletişime geçebilirsin:\n{body}"
+        return Answer(text=text, answered=False)
     if unit is None:
         # Hiçbir birimle eşleşmeyen (çoğu zaman konu dışı) soruya rastgele birim önermiyoruz.
         text = (

@@ -9,7 +9,7 @@ import time
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from app import cache, privacy, stats, takvim
+from app import akademik, cache, privacy, stats, takvim
 from app.config import get_settings
 from app.rag.answer import answer_question, small_talk_reply
 
@@ -82,6 +82,8 @@ def ask(req: AskRequest):
         kind, answered, text = "sohbet", True, chat
     elif (cal := takvim.answer_date_question(q)) is not None:
         kind, answered, text = "takvim", True, cal
+    elif (unit_text := akademik.answer_unit_question(q)) is not None:
+        kind, answered, text = "birim", True, unit_text
     elif (hit := cache.get(q)) is not None:
         kind, answered, text, sources, cached = "rag", True, hit["answer"], hit["sources"], True
     else:

@@ -6,7 +6,7 @@ import pytest
 from fastapi.testclient import TestClient
 from langchain_core.documents import Document
 
-from app import api, cache, stats, takvim, units
+from app import akademik, api, cache, stats, takvim, units
 from app.config import get_settings
 from app.rag import answer, ingest
 
@@ -21,6 +21,8 @@ def tmp_stats(tmp_path, monkeypatch):
     # data/takvim.json güncellendiğinde testler bozulmaz.
     monkeypatch.setattr(get_settings(), "calendar_file", FIXTURES / "takvim.json")
     monkeypatch.setattr(get_settings(), "special_calendar_dir", FIXTURES / "ozel_takvimler")
+    monkeypatch.setattr(get_settings(), "academic_units_file", FIXTURES / "akademik_birimler.json")
+    akademik.load_units.cache_clear()
     monkeypatch.setattr(get_settings(), "cache_file", tmp_path / "cevap_onbellek.json")
     monkeypatch.setattr(get_settings(), "cache_enabled", True)
     monkeypatch.setattr(cache, "_data", None)
@@ -867,3 +869,109 @@ def test_prompt_rules_4_and_7_do_not_conflict():
     """4. kural 'elimdeki resmî belgeler' ifadesini öğrenci deneyimi için kullandırmamalı (altın set 48)."""
     rule4 = answer.SYSTEM_PROMPT.split("4. ", 1)[1].split("\n5. ", 1)[0]
     assert "YALNIZCA etiketsiz" in rule4 and "kural 7" in rule4
+
+
+# --- akademik birim rehberi (fakülte, enstitü, MYO) ---------------------------------
+def test_unit_exists_answer_from_official_list():
+    out = akademik.answer_unit_question("Selçuk'ta hemşirelik fakültesi var mı?")
+    assert "Evet" in out and "Hemşirelik Fakültesi" in out and "0332 000 00 01" in out
+    assert "hemsirelik\\_fakultesi" in out  # Telegram'da eğik yazıya dönmesin
+    assert "Kaynak" in out
+
+
+def test_unit_contact_question():
+    out = akademik.answer_unit_question("Hukuk Fakültesi'nin telefon numarası nedir?")
+    assert out.startswith("*Hukuk Fakültesi* iletişim") and "hukuk@example.edu.tr" in out
+
+
+def test_unit_empty_fields_not_shown_location_note():
+    out = akademik.answer_unit_question("Hemşirelik fakültesi nerede?")
+    assert "✉️" not in out  # boş e-posta gösterilmez
+    assert "doğrulanamadığı" in out and "Haritada ara" in out
+
+
+def test_unit_not_hijacking_other_questions():
+    assert akademik.answer_unit_question("Hukuk fakültesinde staj zorunlu mu?") is None
+    assert akademik.answer_unit_question("İletişim bilgileri nedir?") is None  # sıradan kelime
+    assert akademik.answer_unit_question("Fakültede kantin var mı?") is None
+    assert akademik.answer_unit_question("Kütüphane kaçta kapanıyor?") is None
+
+
+def test_unit_type_disambiguation():
+    assert "Enstitüsü" in akademik.answer_unit_question("Sağlık bilimleri enstitüsü iletişim")
+    assert "Bilimleri Fakültesi" in akademik.answer_unit_question("Sağlık bilimleri fakültesi telefonu")
+
+
+def test_unit_aliases_and_acronyms():
+    assert "*İktisadi ve İdari" in akademik.answer_unit_question("İİBF telefonu")
+    assert "Akşehir" in akademik.answer_unit_question("Akşehir İİBF telefonu")
+    assert "Ilgın" in akademik.answer_unit_question("Ilgın MYO telefonu")
+
+
+def test_unit_list_and_missing():
+    assert "6 fakülte" in akademik.answer_unit_question("Hangi fakülteler var?")
+    out = akademik.answer_unit_question("Mühendislik fakültesi var mı?")
+    assert "bulamadım" in out
+
+
+def test_api_unit_question_skips_llm(monkeypatch):
+    from app import api
+
+    monkeypatch.setattr(api, "answer_question", lambda q: pytest.fail("birim sorusu Gemini'ye gitmemeli"))
+    out = api.ask(api.AskRequest(question="Hemşirelik fakültesi var mı?"))
+    assert out.kind == "birim" and out.answered
+
+
+def test_fallback_routes_to_mentioned_faculty():
+    res = answer.answer_question("Hemşirelik fakültesinde laboratuvar önlüğü zorunlu mu?", retriever=lambda q: [], llm=lambda q, c: "")
+    assert not res.answered and "Hemşirelik Fakültesi" in res.text and "0332 000 00 01" in res.text
+
+
+def test_real_academic_units_file_is_valid():
+    import json
+
+    from app.config import ROOT
+
+    data = json.loads((ROOT / "data" / "akademik_birimler.json").read_text(encoding="utf-8"))
+    units = data["birimler"]
+    assert len(units) >= 50
+    for u in units:
+        assert u["ad"] and u["tur"] and u["anahtar_kelimeler"] and u["web"].startswith("https://")
+
+
+# --- fakülte takvimi: açıklama, tarihsiz etkinlik, sınıf/dönem -----------------------
+def test_event_with_note_and_without_date():
+    out = takvim.format_event({"ad": "Staj sonu sınavı", "aciklama": "Her stajın son iki günü."})
+    assert "kesin tarih verilmemiş" in out and "ℹ️ Her stajın son iki günü." in out
+
+
+def test_semester_and_class_words_optional(tmp_path, monkeypatch):
+    import json
+
+    (tmp_path / "dis_hekimligi.json").write_text(json.dumps({"kaynak": "Test diş", "etkinlikler": [
+        {"etkinlik": "4. sınıf staj", "siniflar": [4], "baslangic": "2026-08-31", "anahtar_kelimeler": ["diş 4 staj"]},
+        {"etkinlik": "5. sınıf staj", "siniflar": [5], "baslangic": "2026-08-31", "anahtar_kelimeler": ["diş 5 staj"]},
+        {"etkinlik": "Güz final", "yariyil": "guz", "baslangic": "2027-01-04", "anahtar_kelimeler": ["diş guz final"]},
+        {"etkinlik": "Bahar final", "yariyil": "bahar", "baslangic": "2027-06-01", "anahtar_kelimeler": ["diş bahar final"]},
+    ]}, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(get_settings(), "special_calendar_dir", tmp_path)
+    takvim.load_special.cache_clear()
+    both = takvim.answer_date_question("Diş hekimliği staj ne zaman?")
+    assert "4. sınıf staj" in both and "5. sınıf staj" in both
+    only4 = takvim.answer_date_question("Diş hekimliği 4. sınıf staj ne zaman?")
+    assert "4. sınıf staj" in only4 and "5. sınıf staj" not in only4
+    finals = takvim.answer_date_question("Diş hekimliği finalleri ne zaman?")
+    assert "Güz final" in finals and "Bahar final" in finals
+    guz = takvim.answer_date_question("Diş hekimliği güz finali ne zaman?")
+    assert "Güz final" in guz and "Bahar final" not in guz
+
+
+# --- bot: Markdown düzeltmesi --------------------------------------------------------
+def test_bot_markdown_tidy_and_plain_fallback():
+    from app.bot import tidy_markdown, to_plain
+
+    text = "Oranlar:\n* Yarıyıl içi %40\n* Final %60\n\n📄 *Kaynak:* olcme\\_degerlendirme.pdf"
+    tidy = tidy_markdown(text)
+    assert "• Yarıyıl içi" in tidy and "\n* " not in tidy
+    plain = to_plain(tidy)
+    assert "olcme_degerlendirme.pdf" in plain and "\\" not in plain and "*" not in plain

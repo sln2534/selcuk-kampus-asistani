@@ -111,15 +111,34 @@ def _special_answer(question: str, key: str) -> str:
             "fakultesi", "fakulte", "tarih", "tarihi", "tarihleri", "takvim", "takvimi", "ne", "zaman",
         }
         words = _tokens(question)
+        # Soruda dönem (güz/bahar) ya da sınıf numarası yoksa anahtar kelimedeki bu kısımlar isteğe bağlı:
+        # "tıp guz ortak zorunlu final" -> "Tıp ortak zorunlu final ne zaman?" sorusunda güz+bahar ikisi de gelir.
+        semesters = {"guz", "bahar"}
+        asked_sem = semesters & set(words)
+        ignore |= semesters - asked_sem
+        if not any(w.isdigit() for w in words):
+            ignore |= {"1", "2", "3", "4", "5", "6"}
         hits = [
             ev for ev in cal["etkinlikler"]
-            if ev.get("baslangic") and any(_keyword_matches(words, kw, ignore) for kw in ev.get("anahtar_kelimeler", []))
+            if any(_keyword_matches(words, kw, ignore) for kw in ev.get("anahtar_kelimeler", []))
         ]
         # "Tıp 5. sınıf" / "dönem 5" gibi bir sınıf numarası varsa yalnızca o dönemin etkinlikleri
         roman = {"1": "I", "2": "II", "3": "III", "4": "IV", "5": "V", "6": "VI"}
         wanted = {roman[w] for w in words if w in roman}
-        if wanted and any(set(e.get("donemler") or []) & wanted for e in hits):
-            hits = [e for e in hits if set(e.get("donemler") or []) & wanted]
+        nums = {int(w) for w in words if w in roman}
+
+        def for_class(e: dict) -> bool:  # Tıp "donemler" (I–VI), Diş Hekimliği "siniflar" (3, 4, 5)
+            return bool(set(e.get("donemler") or []) & wanted or set(e.get("siniflar") or []) & nums)
+
+        if wanted and any(for_class(e) for e in hits):
+            hits = [e for e in hits if for_class(e)]
+        if asked_sem:  # "Tıp güz finali" -> yalnızca güz etkinlikleri (yarıyılı belirtilmemişler kalır)
+            def sem(e: dict) -> str:
+                return str(e.get("yariyil") or e.get("donem") or "").lower().replace("güz", "guz")
+
+            hits = [e for e in hits if sem(e) not in semesters or sem(e) in asked_sem]
+        # Tarihi belli olanlar önce; tarihi takvimde verilmeyenler açıklamasıyla sonda
+        hits.sort(key=lambda e: e.get("baslangic") is None)
         if hits:
             source = cal.get("kaynak")
             if isinstance(source, dict):
@@ -139,9 +158,12 @@ def _fmt(d: str) -> str:
 
 def format_event(ev: dict) -> str:
     title = ev.get("ad") or ev.get("etkinlik") or "Etkinlik"
-    when = _fmt(ev["baslangic"])
-    if ev.get("bitis") and ev["bitis"] != ev["baslangic"]:
-        when += f" – {_fmt(ev['bitis'])}"
+    if ev.get("baslangic"):
+        when = _fmt(ev["baslangic"])
+        if ev.get("bitis") and ev["bitis"] != ev["baslangic"]:
+            when += f" – {_fmt(ev['bitis'])}"
+    else:
+        when = "takvimde kesin tarih verilmemiş"
     extra = []
     semester = ev.get("yariyil") or ev.get("donem")  # dosyalar farklı alan adı kullanıyor
     if semester and str(semester).lower() in ("guz", "güz", "bahar", "yaz"):
@@ -149,7 +171,10 @@ def format_event(ev: dict) -> str:
     if ev.get("donemler"):
         extra.append("Dönem " + ", ".join(ev["donemler"]))
     suffix = f" ({'; '.join(extra)})" if extra else ""
-    return f"📅 *{title}*{suffix}: {when}"
+    line = f"📅 *{title}*{suffix}: {when}"
+    if ev.get("aciklama"):  # takvimdeki dipnot: "Her stajın son iki günü…" gibi
+        line += f"\n    ℹ️ {ev['aciklama']}"
+    return line
 
 
 def upcoming(today: date | None = None, limit: int = 5) -> list[dict]:
